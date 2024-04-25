@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - php7
+  pull_request:
+    branches:
+      - php7
+  workflow_dispatch:
+
+jobs:
+  windows:
+    name: Windows
+    runs-on: windows-2019
+
+    defaults:
+      run:
+        shell: cmd
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "8.2"
+          - "8.3"
+        arch:
+          - "x64"
+        ts:
+          - nts
+          - ts
+        vsversion:
+          - "16.0"
+
+    steps:
+      - name: Configure git
+        run: git config --system core.autocrlf false
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Setup PHP
+        id: setup-php
+        uses: php/setup-php-sdk@v0.8
+        with:
+          version: "${{ matrix.php-version }}"
+          arch: "${{ matrix.arch }}"
+          ts: "${{ matrix.ts }}"
+      - name: Enable developer cli
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: "${{ matrix.arch }}"
+          toolset: "${{ steps.setup-php.outputs.toolset }}"
+          vsversion: "${{ matrix.vsversion }}"
+      - name: Generate build files
+        run: phpize
+      - name: Configure build
+        run: configure --with-gpf --with-prefix=${{ steps.setup-php.outputs.prefix }}
+      - name: Report msvc problems
+        uses: ammaraskar/msvc-problem-matcher@master
+      - name: Build
+        run: nmake /D /P
+      - name: Run tests
+        run: nmake test TESTS="-n --show-diff tests"
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: "yaml_${{ matrix.php-version }}_win32_${{ matrix.ts }}_${{ matrix.arch }}"
+          path: x64/

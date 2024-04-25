@@ -1,0 +1,7 @@
+ARG_ENABLE('gpf', 'gpf support', 'no');
+
+if (PHP_TEST != 'no') {
+	AC_DEFINE('HAVE_TEST', 1, 'gpf support enabled');
+
+	EXTENSION('gpf', 'php_gpf.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
