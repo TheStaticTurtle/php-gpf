@@ -31,7 +31,7 @@ extern "C" {
 extern "C" {
 #endif
 
-	#define PHP_PGF_VERSION "0.1.0"
+	#define PHP_PGF_VERSION "1.0.0"
 
 	extern zend_module_entry pgf_module_entry;
 	#define phpext_pgf_ptr &pgf_module_entry

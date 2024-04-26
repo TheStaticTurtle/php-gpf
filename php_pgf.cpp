@@ -8,6 +8,8 @@
 #include "php_pgf.h"
 #include "php_pgf_int.h"
 
+#include "pgf_decode.hpp"
+
 #include <string>
 
 #ifdef __cplusplus
@@ -21,8 +23,10 @@ static PHP_MINFO_FUNCTION(pgf);
 
 static PHP_GINIT_FUNCTION(pgf);
 
-static PHP_FUNCTION(pgf_fn1);
-static PHP_FUNCTION(pgf_fn2);
+static PHP_FUNCTION(pgf_decode_to_rgba);
+#ifdef HAVE_PGF_TO_PNG
+static PHP_FUNCTION(pgf_decode_to_png);
+#endif
 /* }}} */
 
 
@@ -38,16 +42,23 @@ PHP_INI_END()
 
 
 /* {{{ argument informations */
-ZEND_BEGIN_ARG_INFO_EX(arginfo_pgf_fn1, ZEND_SEND_BY_VAL, ZEND_RETURN_VALUE, 0)
+ZEND_BEGIN_ARG_INFO_EX(arginfo_pgf_decode_to_rgba, ZEND_SEND_BY_VAL, ZEND_RETURN_VALUE, 1)
+	ZEND_ARG_INFO(0, pgf_data)
+	ZEND_ARG_INFO(0, level)
 ZEND_END_ARG_INFO()
 
-ZEND_BEGIN_ARG_INFO_EX(arginfo_pgf_fn2, ZEND_SEND_BY_VAL, ZEND_RETURN_VALUE, 1)
-	ZEND_ARG_INFO(0, str)
+#ifdef HAVE_PGF_TO_PNG
+ZEND_BEGIN_ARG_INFO_EX(arginfo_pgf_decode_to_png, ZEND_SEND_BY_VAL, ZEND_RETURN_VALUE, 1)
+	ZEND_ARG_INFO(0, pgf_data)
+	ZEND_ARG_INFO(0, level)
 ZEND_END_ARG_INFO()
+#endif
 
 static zend_function_entry pgf_functions[] = {
-	PHP_FE(pgf_fn1,		arginfo_pgf_fn1)
-	PHP_FE(pgf_fn2,		arginfo_pgf_fn2)
+	PHP_FE(pgf_decode_to_rgba,		arginfo_pgf_decode_to_rgba)
+#ifdef HAVE_PGF_TO_PNG
+	PHP_FE(pgf_decode_to_png,		arginfo_pgf_decode_to_png)
+#endif
 	PHP_FE_END
 };
 /* }}} */
@@ -103,7 +114,13 @@ PHP_MINFO_FUNCTION(pgf) {
     php_info_print_table_start();
     php_info_print_table_row(2, "PGF Support", "enabled");
     php_info_print_table_row(2, "Version", PHP_PGF_VERSION);
-    php_info_print_table_row(2, "PGFCodec Version", std::string(PGFCodecVersion).c_str());
+    php_info_print_table_row(2, "PGF Codec version", std::string(PGFCodecVersion).c_str());
+	#ifdef HAVE_PGF_TO_PNG
+    	php_info_print_table_row(2, "Export to PNG support", "On");
+    	php_info_print_table_row(2, "LodePNG version", LODEPNG_VERSION_STRING);
+	#else
+    	php_info_print_table_row(2, "Export to PNG support", "Off");
+	#endif
     php_info_print_table_end();
 
 	DISPLAY_INI_ENTRIES();
@@ -113,30 +130,33 @@ static PHP_GINIT_FUNCTION(pgf) {
 }
 
 
-PHP_FUNCTION(pgf_fn1){
-	ZEND_PARSE_PARAMETERS_NONE();
+PHP_FUNCTION(pgf_decode_to_rgba){
+	zend_string* pgf_data;
+	int level = 0;
 
-	php_printf("The extension %s is loaded and working!\r\n", "pgf");
-	
-	RETURN_NULL();
-}
-
-PHP_FUNCTION(pgf_fn2){
-	zend_string *input;
-	
-	if (FAILURE == zend_parse_parameters(ZEND_NUM_ARGS(), "S", &input)) {
+	if (FAILURE == zend_parse_parameters(ZEND_NUM_ARGS(), "S|l", &pgf_data, &level)) {
 		return;
 	}
 	
-    zend_string *hex_str = zend_string_safe_alloc(2, ZSTR_LEN(input), 0, /* persistent */ 0);
-    char *p = ZSTR_VAL(hex_str);
-    for (size_t i = 0; i < ZSTR_LEN(input); i++) {
-        const char *to_hex = "0123456789abcdef";
-        unsigned char c = ZSTR_VAL(input)[i];
-        *p++ = to_hex[c >> 4];
-        *p++ = to_hex[c & 0xf];
-    }
-    *p = '\0';
+	auto rgba_result = pgf_decode_to_rgba({ZSTR_VAL(pgf_data), ZSTR_LEN(pgf_data)}, level);
 	
-	RETURN_STR(hex_str);
+	// TODO: Return width/height/bpp
+
+    zend_string * result = zend_string_init((char*)rgba_result.data, rgba_result.size(), 0);
+    RETURN_STR(result);
 }
+
+#ifdef HAVE_PGF_TO_PNG
+PHP_FUNCTION(pgf_decode_to_png){
+	zend_string* pgf_data;
+	int level = 0;
+
+	if (FAILURE == zend_parse_parameters(ZEND_NUM_ARGS(), "S|l", &pgf_data, &level)) {
+		return;
+	}
+	
+	auto png_result = pgf_decode_to_png({ZSTR_VAL(pgf_data), ZSTR_LEN(pgf_data)}, level)
+
+	RETURN_STR(png_result.c_str(), png_result.size());
+}
+#endif

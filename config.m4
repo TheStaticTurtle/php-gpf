@@ -11,5 +11,5 @@ if pgf "$PHP_c" != "no"; then
 	PHP_ADD_INCLUDE(libpgf/include)
   
 	AC_DEFINE(HAVE_PGF, 1, [ ])
-	PHP_NEW_EXTENSION(pgf, php_pgf.cpp, $ext_shared)
+	PHP_NEW_EXTENSION(pgf, php_pgf.cpp pgf_decode.cpp, $ext_shared)
 fi

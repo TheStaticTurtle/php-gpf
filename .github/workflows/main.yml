@@ -27,7 +27,7 @@ jobs:
         arch:
           - "x64"
         ts:
-          - nts
+#         - nts
           - ts
         vsversion:
           - "16.0"
