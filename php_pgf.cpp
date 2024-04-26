@@ -11,6 +11,7 @@
 #include "pgf_decode.hpp"
 
 #include <string>
+#include <stdexcept>
 
 #ifdef __cplusplus
 extern "C" {
@@ -127,12 +128,24 @@ PHP_FUNCTION(pgf_decode_to_rgba){
 		return;
 	}
 	
-	auto rgba_result = pgf_decode_to_rgba({ZSTR_VAL(pgf_data), ZSTR_LEN(pgf_data)}, level);
-	
-	// TODO: Return width/height/bpp
+	rgba_image rgba_result;
+	try {
+		rgba_result = pgf_decode_to_rgba({ZSTR_VAL(pgf_data), ZSTR_LEN(pgf_data)}, level);
+	} catch (const std::exception& err) {
+		zend_throw_exception(NULL, err.what().c_str());
+		RETURN_NULL();
+	}
 
-    zend_string * result = zend_string_init((char*)rgba_result.data, rgba_result.size(), 0);
-    RETURN_STR(result);
+    //zend_string* data = zend_string_init((char*)rgba_result.data, rgba_result.size(), 0);
+    //RETVAL_STR(data);
+
+	array_init(result);
+	add_assoc_long(result, "height", rgba_result.height);
+	add_assoc_long(result, "width",  rgba_result.width);
+	add_assoc_long(result, "byte_per_pixel", rgba_result.byte_per_pixel);
+	add_assoc_string(result, "data", (char*)rgba_result.data, rgba_result.size());
+
+    RETVAL_ARR(result);
 }
 
 PHP_FUNCTION(pgf_decode_to_png){
@@ -143,7 +156,14 @@ PHP_FUNCTION(pgf_decode_to_png){
 		return;
 	}
 	
-	auto png_result = pgf_decode_to_png({ZSTR_VAL(pgf_data), ZSTR_LEN(pgf_data)}, level)
+	std::string png_result;
+	try {
+		png_result = pgf_decode_to_png({ZSTR_VAL(pgf_data), ZSTR_LEN(pgf_data)}, level);
+	} catch (const std::exception& err) {
+		zend_throw_exception(NULL, err.what().c_str());
+		RETURN_NULL();
+	}
 
-	RETURN_STR(png_result.c_str(), png_result.size());
+    zend_string * result = zend_string_init(png_result.c_str(), png_result.size(), 0);
+    RETURN_STR(result);
 }

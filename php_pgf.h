@@ -18,8 +18,9 @@ extern "C" {
 	#	include "TSRM.h"
 	#endif
 
+	#include "zend_exceptions.h"
+
 	#include <ext/standard/info.h>
-	#include <ext/standard/base64.h>
 
 #ifdef __cplusplus
 } /* extern "C" */
