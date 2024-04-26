@@ -1,0 +1,480 @@
+\hypertarget{PGFplatform_8h}{}\section{P\+G\+Fplatform.\+h File Reference}
+\label{PGFplatform_8h}\index{PGFplatform.h@{PGFplatform.h}}
+
+
+P\+GF platform specific definitions.  
+
+
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a96e10919059743496c33ac08997de3a5}{\+\_\+\+\_\+\+P\+G\+F\+R\+O\+I\+S\+U\+P\+P\+O\+R\+T\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_aa78b4644e74419b9844cc268b0b97345}{\+\_\+\+\_\+\+P\+G\+F32\+S\+U\+P\+P\+O\+R\+T\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{Word\+Width}}~32
+\begin{DoxyCompactList}\small\item\em Word\+Bytes$\ast$8. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{Word\+Width\+Log}}~5
+\begin{DoxyCompactList}\small\item\em ld of Word\+Width \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a02921b6e5430c4b9de7181d802125bdc}{Word\+Mask}}~0x\+F\+F\+F\+F\+F\+F\+E0
+\begin{DoxyCompactList}\small\item\em least Word\+Width\+Log bits are zero \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}}~4
+\begin{DoxyCompactList}\small\item\em sizeof(\+U\+I\+N\+T32) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ab2dd67aefd8e74b44ea5bd9b79cb3de7}{Word\+Bytes\+Mask}}~0x\+F\+F\+F\+F\+F\+F\+FC
+\begin{DoxyCompactList}\small\item\em least Word\+Bytes\+Log bits are zero \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a53b5e7fa0f08ce6c609217017ae3dc5c}{Word\+Bytes\+Log}}~2
+\begin{DoxyCompactList}\small\item\em ld of Word\+Bytes \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a5e4b038d49a5b8169c4af56c80ee5ac2}{D\+W\+W\+I\+D\+T\+H\+B\+I\+TS}}(bits)~(((bits) + \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{Word\+Width}} -\/ 1) \& \mbox{\hyperlink{PGFplatform_8h_a02921b6e5430c4b9de7181d802125bdc}{Word\+Mask}})
+\begin{DoxyCompactList}\small\item\em aligns scanline width in bits to D\+W\+O\+RD value \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ac0b68f6649b541591637d4a0c3801411}{D\+W\+W\+I\+D\+TH}}(bytes)~(((bytes) + \mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}} -\/ 1) \& \mbox{\hyperlink{PGFplatform_8h_ab2dd67aefd8e74b44ea5bd9b79cb3de7}{Word\+Bytes\+Mask}})
+\begin{DoxyCompactList}\small\item\em aligns scanline width in bytes to D\+W\+O\+RD value \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_adb44cec3b215759869d8e41b02ebaf6d}{D\+W\+W\+I\+D\+T\+H\+R\+E\+ST}}(bytes)~((\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}} -\/ (bytes)\%\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}})\%\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{PGFplatform_8h_ac0b68f6649b541591637d4a0c3801411}{D\+W\+W\+I\+D\+T\+H(bytes)}} -\/ bytes. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ad6d0138bf7e2cdaabeedc3fea40767ad}{\+\_\+\+\_\+min}}(x,  y)~((x) $<$= (y) ? (x) \+: (y))
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_af643213a7d426b69429d1430cef4ecbb}{\+\_\+\+\_\+max}}(x,  y)~((x) $>$= (y) ? (x) \+: (y))
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a8905b28d0e3b96cf340ed34957738648}{Image\+Mode\+Bitmap}}~0
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ac73bfc2f52b9da3083b7087d154c1e2e}{Image\+Mode\+Gray\+Scale}}~1
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_af1937c5b38a21ec5e6b3e11851264be2}{Image\+Mode\+Indexed\+Color}}~2
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a07e2059cc6697336c5484447578264fc}{Image\+Mode\+R\+G\+B\+Color}}~3
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_af50b920dae1922b4eb0bcd82361d880c}{Image\+Mode\+C\+M\+Y\+K\+Color}}~4
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a5e4deddebb6ff58e1168fc20b0e15cb3}{Image\+Mode\+H\+S\+L\+Color}}~5
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_aca2b65c53ff44940ed27f809de3b28f5}{Image\+Mode\+H\+S\+B\+Color}}~6
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_af6b085632d689b6a17e519f78e97502c}{Image\+Mode\+Multichannel}}~7
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a74586128f823ada3315809e5f0a28691}{Image\+Mode\+Duotone}}~8
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_aa1d93456909be3c716a8c5a30b191c00}{Image\+Mode\+Lab\+Color}}~9
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_aedd00370d778fa28db56e5d4032d4c5c}{Image\+Mode\+Gray16}}~10
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ac04b7a3633a0caadba20e20e161239e1}{Image\+Mode\+R\+G\+B48}}~11
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ae7de617953bf44d768dfd82b62a98db5}{Image\+Mode\+Lab48}}~12
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ac250ca543e6f93f370614801122b61f6}{Image\+Mode\+C\+M\+Y\+K64}}~13
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a79c7cc8a02b4ef28c758e8c0af7cf146}{Image\+Mode\+Deep\+Multichannel}}~14
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ab55fcb3295421dc19ae7bb801d6da219}{Image\+Mode\+Duotone16}}~15
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ab7cb460804a8abce27d823d09682c85b}{Image\+Mode\+R\+G\+BA}}~17
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a205e54791f7ad54d357330bb99cab3b2}{Image\+Mode\+Gray32}}~18
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a1dbd9112d53e5eea856e65ed1e9c6d50}{Image\+Mode\+R\+G\+B12}}~19
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_aadaf1bd7eedf80c33287cfd311dbf068}{Image\+Mode\+R\+G\+B16}}~20
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_a797bd5db500e431c26b93c6b4686c257}{Image\+Mode\+Unknown}}~255
+\item 
+\#define \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\+\_\+\+\_\+\+V\+AL}}(x)~(x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+GF platform specific definitions. 
+
+\begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{PGFplatform_8h_af643213a7d426b69429d1430cef4ecbb}\label{PGFplatform_8h_af643213a7d426b69429d1430cef4ecbb}} 
+\index{PGFplatform.h@{PGFplatform.h}!\_\_max@{\_\_max}}
+\index{\_\_max@{\_\_max}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{\_\_max}{\_\_max}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+max(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~((x) $>$= (y) ? (x) \+: (y))}
+
+
+
+Definition at line 92 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ad6d0138bf7e2cdaabeedc3fea40767ad}\label{PGFplatform_8h_ad6d0138bf7e2cdaabeedc3fea40767ad}} 
+\index{PGFplatform.h@{PGFplatform.h}!\_\_min@{\_\_min}}
+\index{\_\_min@{\_\_min}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{\_\_min}{\_\_min}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+min(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~((x) $<$= (y) ? (x) \+: (y))}
+
+
+
+Definition at line 91 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_aa78b4644e74419b9844cc268b0b97345}\label{PGFplatform_8h_aa78b4644e74419b9844cc268b0b97345}} 
+\index{PGFplatform.h@{PGFplatform.h}!\_\_PGF32SUPPORT\_\_@{\_\_PGF32SUPPORT\_\_}}
+\index{\_\_PGF32SUPPORT\_\_@{\_\_PGF32SUPPORT\_\_}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{\_\_PGF32SUPPORT\_\_}{\_\_PGF32SUPPORT\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+P\+G\+F32\+S\+U\+P\+P\+O\+R\+T\+\_\+\+\_\+}
+
+
+
+Definition at line 67 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a96e10919059743496c33ac08997de3a5}\label{PGFplatform_8h_a96e10919059743496c33ac08997de3a5}} 
+\index{PGFplatform.h@{PGFplatform.h}!\_\_PGFROISUPPORT\_\_@{\_\_PGFROISUPPORT\_\_}}
+\index{\_\_PGFROISUPPORT\_\_@{\_\_PGFROISUPPORT\_\_}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{\_\_PGFROISUPPORT\_\_}{\_\_PGFROISUPPORT\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+P\+G\+F\+R\+O\+I\+S\+U\+P\+P\+O\+R\+T\+\_\+\+\_\+}
+
+
+
+Definition at line 60 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}\label{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}} 
+\index{PGFplatform.h@{PGFplatform.h}!\_\_VAL@{\_\_VAL}}
+\index{\_\_VAL@{\_\_VAL}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{\_\_VAL}{\_\_VAL}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+V\+AL(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x)}
+
+
+
+Definition at line 603 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ac0b68f6649b541591637d4a0c3801411}\label{PGFplatform_8h_ac0b68f6649b541591637d4a0c3801411}} 
+\index{PGFplatform.h@{PGFplatform.h}!DWWIDTH@{DWWIDTH}}
+\index{DWWIDTH@{DWWIDTH}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{DWWIDTH}{DWWIDTH}}
+{\footnotesize\ttfamily \#define D\+W\+W\+I\+D\+TH(\begin{DoxyParamCaption}\item[{}]{bytes }\end{DoxyParamCaption})~(((bytes) + \mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}} -\/ 1) \& \mbox{\hyperlink{PGFplatform_8h_ab2dd67aefd8e74b44ea5bd9b79cb3de7}{Word\+Bytes\+Mask}})}
+
+
+
+aligns scanline width in bytes to D\+W\+O\+RD value 
+
+
+
+Definition at line 84 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a5e4b038d49a5b8169c4af56c80ee5ac2}\label{PGFplatform_8h_a5e4b038d49a5b8169c4af56c80ee5ac2}} 
+\index{PGFplatform.h@{PGFplatform.h}!DWWIDTHBITS@{DWWIDTHBITS}}
+\index{DWWIDTHBITS@{DWWIDTHBITS}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{DWWIDTHBITS}{DWWIDTHBITS}}
+{\footnotesize\ttfamily \#define D\+W\+W\+I\+D\+T\+H\+B\+I\+TS(\begin{DoxyParamCaption}\item[{}]{bits }\end{DoxyParamCaption})~(((bits) + \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{Word\+Width}} -\/ 1) \& \mbox{\hyperlink{PGFplatform_8h_a02921b6e5430c4b9de7181d802125bdc}{Word\+Mask}})}
+
+
+
+aligns scanline width in bits to D\+W\+O\+RD value 
+
+
+
+Definition at line 83 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_adb44cec3b215759869d8e41b02ebaf6d}\label{PGFplatform_8h_adb44cec3b215759869d8e41b02ebaf6d}} 
+\index{PGFplatform.h@{PGFplatform.h}!DWWIDTHREST@{DWWIDTHREST}}
+\index{DWWIDTHREST@{DWWIDTHREST}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{DWWIDTHREST}{DWWIDTHREST}}
+{\footnotesize\ttfamily \#define D\+W\+W\+I\+D\+T\+H\+R\+E\+ST(\begin{DoxyParamCaption}\item[{}]{bytes }\end{DoxyParamCaption})~((\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}} -\/ (bytes)\%\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}})\%\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{Word\+Bytes}})}
+
+
+
+\mbox{\hyperlink{PGFplatform_8h_ac0b68f6649b541591637d4a0c3801411}{D\+W\+W\+I\+D\+T\+H(bytes)}} -\/ bytes. 
+
+
+
+Definition at line 85 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a8905b28d0e3b96cf340ed34957738648}\label{PGFplatform_8h_a8905b28d0e3b96cf340ed34957738648}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeBitmap@{ImageModeBitmap}}
+\index{ImageModeBitmap@{ImageModeBitmap}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeBitmap}{ImageModeBitmap}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Bitmap~0}
+
+
+
+Definition at line 98 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ac250ca543e6f93f370614801122b61f6}\label{PGFplatform_8h_ac250ca543e6f93f370614801122b61f6}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeCMYK64@{ImageModeCMYK64}}
+\index{ImageModeCMYK64@{ImageModeCMYK64}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeCMYK64}{ImageModeCMYK64}}
+{\footnotesize\ttfamily \#define Image\+Mode\+C\+M\+Y\+K64~13}
+
+
+
+Definition at line 111 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_af50b920dae1922b4eb0bcd82361d880c}\label{PGFplatform_8h_af50b920dae1922b4eb0bcd82361d880c}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeCMYKColor@{ImageModeCMYKColor}}
+\index{ImageModeCMYKColor@{ImageModeCMYKColor}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeCMYKColor}{ImageModeCMYKColor}}
+{\footnotesize\ttfamily \#define Image\+Mode\+C\+M\+Y\+K\+Color~4}
+
+
+
+Definition at line 102 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a79c7cc8a02b4ef28c758e8c0af7cf146}\label{PGFplatform_8h_a79c7cc8a02b4ef28c758e8c0af7cf146}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeDeepMultichannel@{ImageModeDeepMultichannel}}
+\index{ImageModeDeepMultichannel@{ImageModeDeepMultichannel}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeDeepMultichannel}{ImageModeDeepMultichannel}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Deep\+Multichannel~14}
+
+
+
+Definition at line 112 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a74586128f823ada3315809e5f0a28691}\label{PGFplatform_8h_a74586128f823ada3315809e5f0a28691}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeDuotone@{ImageModeDuotone}}
+\index{ImageModeDuotone@{ImageModeDuotone}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeDuotone}{ImageModeDuotone}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Duotone~8}
+
+
+
+Definition at line 106 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ab55fcb3295421dc19ae7bb801d6da219}\label{PGFplatform_8h_ab55fcb3295421dc19ae7bb801d6da219}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeDuotone16@{ImageModeDuotone16}}
+\index{ImageModeDuotone16@{ImageModeDuotone16}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeDuotone16}{ImageModeDuotone16}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Duotone16~15}
+
+
+
+Definition at line 113 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_aedd00370d778fa28db56e5d4032d4c5c}\label{PGFplatform_8h_aedd00370d778fa28db56e5d4032d4c5c}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeGray16@{ImageModeGray16}}
+\index{ImageModeGray16@{ImageModeGray16}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeGray16}{ImageModeGray16}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Gray16~10}
+
+
+
+Definition at line 108 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a205e54791f7ad54d357330bb99cab3b2}\label{PGFplatform_8h_a205e54791f7ad54d357330bb99cab3b2}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeGray32@{ImageModeGray32}}
+\index{ImageModeGray32@{ImageModeGray32}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeGray32}{ImageModeGray32}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Gray32~18}
+
+
+
+Definition at line 116 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ac73bfc2f52b9da3083b7087d154c1e2e}\label{PGFplatform_8h_ac73bfc2f52b9da3083b7087d154c1e2e}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeGrayScale@{ImageModeGrayScale}}
+\index{ImageModeGrayScale@{ImageModeGrayScale}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeGrayScale}{ImageModeGrayScale}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Gray\+Scale~1}
+
+
+
+Definition at line 99 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_aca2b65c53ff44940ed27f809de3b28f5}\label{PGFplatform_8h_aca2b65c53ff44940ed27f809de3b28f5}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeHSBColor@{ImageModeHSBColor}}
+\index{ImageModeHSBColor@{ImageModeHSBColor}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeHSBColor}{ImageModeHSBColor}}
+{\footnotesize\ttfamily \#define Image\+Mode\+H\+S\+B\+Color~6}
+
+
+
+Definition at line 104 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a5e4deddebb6ff58e1168fc20b0e15cb3}\label{PGFplatform_8h_a5e4deddebb6ff58e1168fc20b0e15cb3}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeHSLColor@{ImageModeHSLColor}}
+\index{ImageModeHSLColor@{ImageModeHSLColor}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeHSLColor}{ImageModeHSLColor}}
+{\footnotesize\ttfamily \#define Image\+Mode\+H\+S\+L\+Color~5}
+
+
+
+Definition at line 103 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_af1937c5b38a21ec5e6b3e11851264be2}\label{PGFplatform_8h_af1937c5b38a21ec5e6b3e11851264be2}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeIndexedColor@{ImageModeIndexedColor}}
+\index{ImageModeIndexedColor@{ImageModeIndexedColor}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeIndexedColor}{ImageModeIndexedColor}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Indexed\+Color~2}
+
+
+
+Definition at line 100 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ae7de617953bf44d768dfd82b62a98db5}\label{PGFplatform_8h_ae7de617953bf44d768dfd82b62a98db5}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeLab48@{ImageModeLab48}}
+\index{ImageModeLab48@{ImageModeLab48}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeLab48}{ImageModeLab48}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Lab48~12}
+
+
+
+Definition at line 110 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_aa1d93456909be3c716a8c5a30b191c00}\label{PGFplatform_8h_aa1d93456909be3c716a8c5a30b191c00}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeLabColor@{ImageModeLabColor}}
+\index{ImageModeLabColor@{ImageModeLabColor}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeLabColor}{ImageModeLabColor}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Lab\+Color~9}
+
+
+
+Definition at line 107 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_af6b085632d689b6a17e519f78e97502c}\label{PGFplatform_8h_af6b085632d689b6a17e519f78e97502c}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeMultichannel@{ImageModeMultichannel}}
+\index{ImageModeMultichannel@{ImageModeMultichannel}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeMultichannel}{ImageModeMultichannel}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Multichannel~7}
+
+
+
+Definition at line 105 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a1dbd9112d53e5eea856e65ed1e9c6d50}\label{PGFplatform_8h_a1dbd9112d53e5eea856e65ed1e9c6d50}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeRGB12@{ImageModeRGB12}}
+\index{ImageModeRGB12@{ImageModeRGB12}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeRGB12}{ImageModeRGB12}}
+{\footnotesize\ttfamily \#define Image\+Mode\+R\+G\+B12~19}
+
+
+
+Definition at line 117 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_aadaf1bd7eedf80c33287cfd311dbf068}\label{PGFplatform_8h_aadaf1bd7eedf80c33287cfd311dbf068}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeRGB16@{ImageModeRGB16}}
+\index{ImageModeRGB16@{ImageModeRGB16}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeRGB16}{ImageModeRGB16}}
+{\footnotesize\ttfamily \#define Image\+Mode\+R\+G\+B16~20}
+
+
+
+Definition at line 118 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ac04b7a3633a0caadba20e20e161239e1}\label{PGFplatform_8h_ac04b7a3633a0caadba20e20e161239e1}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeRGB48@{ImageModeRGB48}}
+\index{ImageModeRGB48@{ImageModeRGB48}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeRGB48}{ImageModeRGB48}}
+{\footnotesize\ttfamily \#define Image\+Mode\+R\+G\+B48~11}
+
+
+
+Definition at line 109 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ab7cb460804a8abce27d823d09682c85b}\label{PGFplatform_8h_ab7cb460804a8abce27d823d09682c85b}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeRGBA@{ImageModeRGBA}}
+\index{ImageModeRGBA@{ImageModeRGBA}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeRGBA}{ImageModeRGBA}}
+{\footnotesize\ttfamily \#define Image\+Mode\+R\+G\+BA~17}
+
+
+
+Definition at line 115 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a07e2059cc6697336c5484447578264fc}\label{PGFplatform_8h_a07e2059cc6697336c5484447578264fc}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeRGBColor@{ImageModeRGBColor}}
+\index{ImageModeRGBColor@{ImageModeRGBColor}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeRGBColor}{ImageModeRGBColor}}
+{\footnotesize\ttfamily \#define Image\+Mode\+R\+G\+B\+Color~3}
+
+
+
+Definition at line 101 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a797bd5db500e431c26b93c6b4686c257}\label{PGFplatform_8h_a797bd5db500e431c26b93c6b4686c257}} 
+\index{PGFplatform.h@{PGFplatform.h}!ImageModeUnknown@{ImageModeUnknown}}
+\index{ImageModeUnknown@{ImageModeUnknown}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{ImageModeUnknown}{ImageModeUnknown}}
+{\footnotesize\ttfamily \#define Image\+Mode\+Unknown~255}
+
+
+
+Definition at line 119 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}\label{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}} 
+\index{PGFplatform.h@{PGFplatform.h}!WordBytes@{WordBytes}}
+\index{WordBytes@{WordBytes}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{WordBytes}{WordBytes}}
+{\footnotesize\ttfamily \#define Word\+Bytes~4}
+
+
+
+sizeof(\+U\+I\+N\+T32) 
+
+
+
+Definition at line 76 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a53b5e7fa0f08ce6c609217017ae3dc5c}\label{PGFplatform_8h_a53b5e7fa0f08ce6c609217017ae3dc5c}} 
+\index{PGFplatform.h@{PGFplatform.h}!WordBytesLog@{WordBytesLog}}
+\index{WordBytesLog@{WordBytesLog}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{WordBytesLog}{WordBytesLog}}
+{\footnotesize\ttfamily \#define Word\+Bytes\+Log~2}
+
+
+
+ld of Word\+Bytes 
+
+
+
+Definition at line 78 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_ab2dd67aefd8e74b44ea5bd9b79cb3de7}\label{PGFplatform_8h_ab2dd67aefd8e74b44ea5bd9b79cb3de7}} 
+\index{PGFplatform.h@{PGFplatform.h}!WordBytesMask@{WordBytesMask}}
+\index{WordBytesMask@{WordBytesMask}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{WordBytesMask}{WordBytesMask}}
+{\footnotesize\ttfamily \#define Word\+Bytes\+Mask~0x\+F\+F\+F\+F\+F\+F\+FC}
+
+
+
+least Word\+Bytes\+Log bits are zero 
+
+
+
+Definition at line 77 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a02921b6e5430c4b9de7181d802125bdc}\label{PGFplatform_8h_a02921b6e5430c4b9de7181d802125bdc}} 
+\index{PGFplatform.h@{PGFplatform.h}!WordMask@{WordMask}}
+\index{WordMask@{WordMask}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{WordMask}{WordMask}}
+{\footnotesize\ttfamily \#define Word\+Mask~0x\+F\+F\+F\+F\+F\+F\+E0}
+
+
+
+least Word\+Width\+Log bits are zero 
+
+
+
+Definition at line 75 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}\label{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}} 
+\index{PGFplatform.h@{PGFplatform.h}!WordWidth@{WordWidth}}
+\index{WordWidth@{WordWidth}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{WordWidth}{WordWidth}}
+{\footnotesize\ttfamily \#define Word\+Width~32}
+
+
+
+Word\+Bytes$\ast$8. 
+
+
+
+Definition at line 73 of file P\+G\+Fplatform.\+h.
+
+\mbox{\Hypertarget{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}\label{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}} 
+\index{PGFplatform.h@{PGFplatform.h}!WordWidthLog@{WordWidthLog}}
+\index{WordWidthLog@{WordWidthLog}!PGFplatform.h@{PGFplatform.h}}
+\subsubsection{\texorpdfstring{WordWidthLog}{WordWidthLog}}
+{\footnotesize\ttfamily \#define Word\+Width\+Log~5}
+
+
+
+ld of Word\+Width 
+
+
+
+Definition at line 74 of file P\+G\+Fplatform.\+h.
+

@@ -1,0 +1,771 @@
+\hypertarget{classCSubband}{}\section{C\+Subband Class Reference}
+\label{classCSubband}\index{CSubband@{CSubband}}
+
+
+Wavelet channel class.  
+
+
+
+
+{\ttfamily \#include $<$Subband.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCSubband_afa9c10af42bd47d2b001e90dfd1031b5}{C\+Subband}} ()
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCSubband_aea6470d90e54f665e0bc7392fad0dd82}{$\sim$\+C\+Subband}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}{Alloc\+Memory}} ()
+\item 
+void \mbox{\hyperlink{classCSubband_a62f1ed27fe4771e2f10f58a0eeafd7b1}{Free\+Memory}} ()
+\begin{DoxyCompactList}\small\item\em Delete the memory buffer of this subband. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCSubband_a85cb6f480676ba18999f66e682370d65}{Extract\+Tile}} (\mbox{\hyperlink{classCEncoder}{C\+Encoder}} \&encoder, bool tile=false, U\+I\+N\+T32 tileX=0, U\+I\+N\+T32 tileY=0)
+\item 
+void \mbox{\hyperlink{classCSubband_af109a0516ded3bea57348a0f4318c2fb}{Place\+Tile}} (\mbox{\hyperlink{classCDecoder}{C\+Decoder}} \&decoder, int quant\+Param, bool tile=false, U\+I\+N\+T32 tileX=0, U\+I\+N\+T32 tileY=0)
+\item 
+void \mbox{\hyperlink{classCSubband_a5de71c37eb00e5e5dad3fe5e38b81ced}{Quantize}} (int quant\+Param)
+\item 
+void \mbox{\hyperlink{classCSubband_a45102bab9eee9b4e2beeea105712f292}{Dequantize}} (int quant\+Param)
+\item 
+void \mbox{\hyperlink{classCSubband_a1f128e212fb98c19f2d1dcd7ac6ccc0b}{Set\+Data}} (U\+I\+N\+T32 pos, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} v)
+\item 
+\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$ \mbox{\hyperlink{classCSubband_aa4a60fd0c2e3ad2742bca6b8e819d5c5}{Get\+Buffer}} ()
+\item 
+\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} \mbox{\hyperlink{classCSubband_af3b0eb40a0887219e6caaeb5cb394f63}{Get\+Data}} (U\+I\+N\+T32 pos) const
+\item 
+int \mbox{\hyperlink{classCSubband_a4099f78d8e5541cb8b4d27fea63c8f1b}{Get\+Level}} () const
+\item 
+int \mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{Get\+Height}} () const
+\item 
+int \mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{Get\+Width}} () const
+\item 
+\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}} \mbox{\hyperlink{classCSubband_a5564725a3c96d5359a875a25d9f938b3}{Get\+Orientation}} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCSubband_a5bdfe417903304a7b7348feb65904839}{Initialize}} (U\+I\+N\+T32 width, U\+I\+N\+T32 height, int level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}} orient)
+\item 
+void \mbox{\hyperlink{classCSubband_a3bebc017649e7dbef182efe3cbe17965}{Write\+Buffer}} (\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} val)
+\item 
+void \mbox{\hyperlink{classCSubband_a2da2078e1050116b47760ede30e4e503}{Set\+Buffer}} (\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$b)
+\item 
+\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} \mbox{\hyperlink{classCSubband_ad32cf00a5ee6a65573bcacd440308673}{Read\+Buffer}} ()
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCSubband_a682074175296debbf4ca81a24cba0268}{Get\+Buff\+Pos}} () const
+\item 
+void \mbox{\hyperlink{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}{Init\+Buff\+Pos}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em width in pixels \end{DoxyCompactList}\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em height in pixels \end{DoxyCompactList}\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em size of data buffer m\+\_\+data \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\+\_\+level}}
+\begin{DoxyCompactList}\small\item\em recursion level \end{DoxyCompactList}\item 
+\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}} \mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\+\_\+orientation}}
+\begin{DoxyCompactList}\small\item\em 0=LL, 1=HL, 2=LH, 3=HH L=lowpass filtered, H=highpass filterd \end{DoxyCompactList}\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\+\_\+data\+Pos}}
+\begin{DoxyCompactList}\small\item\em current position in m\+\_\+data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$ \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCSubband_a30d2cc4fc1b1060bf29a6576d926a615}{C\+Wavelet\+Transform}}
+\item 
+class \mbox{\hyperlink{classCSubband_a12f1d468e72e4621ac470795f8a9aee4}{C\+Roi\+Indices}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wavelet channel class. 
+
+P\+GF wavelet channel subband class. \begin{DoxyAuthor}{Author}
+C. Stamm, R. Spuler 
+\end{DoxyAuthor}
+
+
+Definition at line 42 of file Subband.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCSubband_afa9c10af42bd47d2b001e90dfd1031b5}\label{classCSubband_afa9c10af42bd47d2b001e90dfd1031b5}} 
+\index{CSubband@{CSubband}!CSubband@{CSubband}}
+\index{CSubband@{CSubband}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{CSubband()}{CSubband()}}
+{\footnotesize\ttfamily C\+Subband\+::\+C\+Subband (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Standard constructor. 
+
+
+
+Definition at line 35 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 : \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}}(0)}
+\DoxyCodeLine{37 , \mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\_height}}(0)}
+\DoxyCodeLine{38 , \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}(0)}
+\DoxyCodeLine{39 , \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}}(0)}
+\DoxyCodeLine{40 , \mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}}(\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}})}
+\DoxyCodeLine{41 , \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}(0)}
+\DoxyCodeLine{42 , \mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}}(0)}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{44 , m\_nTiles(0)}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_aea6470d90e54f665e0bc7392fad0dd82}\label{classCSubband_aea6470d90e54f665e0bc7392fad0dd82}} 
+\index{CSubband@{CSubband}!````~CSubband@{$\sim$CSubband}}
+\index{````~CSubband@{$\sim$CSubband}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{$\sim$CSubband()}{~CSubband()}}
+{\footnotesize\ttfamily C\+Subband\+::$\sim$\+C\+Subband (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 51 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                     \{}
+\DoxyCodeLine{52         \mbox{\hyperlink{classCSubband_a62f1ed27fe4771e2f10f58a0eeafd7b1}{FreeMemory}}();}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}\label{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}} 
+\index{CSubband@{CSubband}!AllocMemory@{AllocMemory}}
+\index{AllocMemory@{AllocMemory}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{AllocMemory()}{AllocMemory()}}
+{\footnotesize\ttfamily bool C\+Subband\+::\+Alloc\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Allocate a memory buffer to store all wavelet coefficients of this subband. \begin{DoxyReturn}{Returns}
+True if the allocation did work without any problems 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{77                            \{}
+\DoxyCodeLine{78         UINT32 oldSize = \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{81         \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}} = BufferWidth()*m\_ROI.Height();}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{83         ASSERT(\mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}} > 0);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}) \{}
+\DoxyCodeLine{86                 \textcolor{keywordflow}{if} (oldSize >= \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}) \{}
+\DoxyCodeLine{87                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{88                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{89                         \textcolor{keyword}{delete}[] \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}};}
+\DoxyCodeLine{90                         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}} = \textcolor{keyword}{new}(std::nothrow) \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}[\mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}];}
+\DoxyCodeLine{91                         \textcolor{keywordflow}{return} (\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}} != 0);}
+\DoxyCodeLine{92                 \}}
+\DoxyCodeLine{93         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{94                 \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}} = \textcolor{keyword}{new}(std::nothrow) \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}[\mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}];}
+\DoxyCodeLine{95                 \textcolor{keywordflow}{return} (\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}} != 0);}
+\DoxyCodeLine{96         \}}
+\DoxyCodeLine{97 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a45102bab9eee9b4e2beeea105712f292}\label{classCSubband_a45102bab9eee9b4e2beeea105712f292}} 
+\index{CSubband@{CSubband}!Dequantize@{Dequantize}}
+\index{Dequantize@{Dequantize}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{Dequantize()}{Dequantize()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Dequantize (\begin{DoxyParamCaption}\item[{int}]{quant\+Param }\end{DoxyParamCaption})}
+
+Perform subband dequantization with given quantization parameter. A scalar quantization (with dead-\/zone) is used. A large quantization value results in strong quantization and therefore in big quality loss. 
+\begin{DoxyParams}{Parameters}
+{\em quant\+Param} & A quantization parameter (larger or equal to 0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{154                                         \{}
+\DoxyCodeLine{155         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}} == \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}) \{}
+\DoxyCodeLine{156                 quantParam -= \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}} + 1;}
+\DoxyCodeLine{157         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}} == \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}) \{}
+\DoxyCodeLine{158                 quantParam -= \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}} - 1;}
+\DoxyCodeLine{159         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{160                 quantParam -= \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}};}
+\DoxyCodeLine{161         \}}
+\DoxyCodeLine{162         \textcolor{keywordflow}{if} (quantParam > 0) \{}
+\DoxyCodeLine{163                 \textcolor{keywordflow}{for} (UINT32 i=0; i < \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}; i++) \{}
+\DoxyCodeLine{164                         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] <<= quantParam;}
+\DoxyCodeLine{165                 \}}
+\DoxyCodeLine{166         \}}
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a85cb6f480676ba18999f66e682370d65}\label{classCSubband_a85cb6f480676ba18999f66e682370d65}} 
+\index{CSubband@{CSubband}!ExtractTile@{ExtractTile}}
+\index{ExtractTile@{ExtractTile}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{ExtractTile()}{ExtractTile()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Extract\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCEncoder}{C\+Encoder}} \&}]{encoder,  }\item[{bool}]{tile = {\ttfamily false},  }\item[{U\+I\+N\+T32}]{tileX = {\ttfamily 0},  }\item[{U\+I\+N\+T32}]{tileY = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Extracts a rectangular subregion of this subband. Write wavelet coefficients into buffer. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em encoder} & An encoder instance \\
+\hline
+{\em tile} & True if just a rectangular region is extracted, false if the entire subband is extracted. \\
+\hline
+{\em tileX} & Tile index in x-\/direction \\
+\hline
+{\em tileY} & Tile index in y-\/direction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{177                                                                                          \{}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{179         \textcolor{keywordflow}{if} (tile) \{}
+\DoxyCodeLine{180                 \textcolor{comment}{// compute tile position and size}}
+\DoxyCodeLine{181                 UINT32 xPos, yPos, w, h;}
+\DoxyCodeLine{182                 TilePosition(tileX, tileY, xPos, yPos, w, h);}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184                 \textcolor{comment}{// write values into buffer using partitiong scheme}}
+\DoxyCodeLine{185                 encoder.\mbox{\hyperlink{classCEncoder_a297a9fdb00fadf770852f215ab1c799c}{Partition}}(\textcolor{keyword}{this}, w, h, xPos + yPos*\mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}}, \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}});}
+\DoxyCodeLine{186         \} \textcolor{keywordflow}{else} }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{188         \{}
+\DoxyCodeLine{189                 tileX; tileY; tile; \textcolor{comment}{// prevents from unreferenced formal parameter warning}}
+\DoxyCodeLine{190                 \textcolor{comment}{// write values into buffer using partitiong scheme}}
+\DoxyCodeLine{191                 encoder.\mbox{\hyperlink{classCEncoder_a297a9fdb00fadf770852f215ab1c799c}{Partition}}(\textcolor{keyword}{this}, \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}}, \mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\_height}}, 0, \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}});}
+\DoxyCodeLine{192         \}}
+\DoxyCodeLine{193 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a62f1ed27fe4771e2f10f58a0eeafd7b1}\label{classCSubband_a62f1ed27fe4771e2f10f58a0eeafd7b1}} 
+\index{CSubband@{CSubband}!FreeMemory@{FreeMemory}}
+\index{FreeMemory@{FreeMemory}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{FreeMemory()}{FreeMemory()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Free\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Delete the memory buffer of this subband. 
+
+
+
+Definition at line 101 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                           \{}
+\DoxyCodeLine{102         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}) \{}
+\DoxyCodeLine{103                 \textcolor{keyword}{delete}[] \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}; \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}} = 0;}
+\DoxyCodeLine{104         \}}
+\DoxyCodeLine{105 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_aa4a60fd0c2e3ad2742bca6b8e819d5c5}\label{classCSubband_aa4a60fd0c2e3ad2742bca6b8e819d5c5}} 
+\index{CSubband@{CSubband}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{GetBuffer()}{GetBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}$\ast$ C\+Subband\+::\+Get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a pointer to an array of all wavelet coefficients of this subband. \begin{DoxyReturn}{Returns}
+Pointer to array of wavelet coefficients 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a682074175296debbf4ca81a24cba0268}\label{classCSubband_a682074175296debbf4ca81a24cba0268}} 
+\index{CSubband@{CSubband}!GetBuffPos@{GetBuffPos}}
+\index{GetBuffPos@{GetBuffPos}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{GetBuffPos()}{GetBuffPos()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Subband\+::\+Get\+Buff\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 151 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{151 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_af3b0eb40a0887219e6caaeb5cb394f63}\label{classCSubband_af3b0eb40a0887219e6caaeb5cb394f63}} 
+\index{CSubband@{CSubband}!GetData@{GetData}}
+\index{GetData@{GetData}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} C\+Subband\+::\+Get\+Data (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return wavelet coefficient at given position. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & A subband position ($>$= 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wavelet coefficient 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113 \{ ASSERT(pos < \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}); \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[pos]; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_ab318beb155b4526adf67f91ea1c4b930}\label{classCSubband_ab318beb155b4526adf67f91ea1c4b930}} 
+\index{CSubband@{CSubband}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily int C\+Subband\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return height of this subband. \begin{DoxyReturn}{Returns}
+Height of this subband (in pixels) 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\_height}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a4099f78d8e5541cb8b4d27fea63c8f1b}\label{classCSubband_a4099f78d8e5541cb8b4d27fea63c8f1b}} 
+\index{CSubband@{CSubband}!GetLevel@{GetLevel}}
+\index{GetLevel@{GetLevel}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{GetLevel()}{GetLevel()}}
+{\footnotesize\ttfamily int C\+Subband\+::\+Get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return level of this subband. \begin{DoxyReturn}{Returns}
+Level of this subband 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{118 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a5564725a3c96d5359a875a25d9f938b3}\label{classCSubband_a5564725a3c96d5359a875a25d9f938b3}} 
+\index{CSubband@{CSubband}!GetOrientation@{GetOrientation}}
+\index{GetOrientation@{GetOrientation}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{GetOrientation()}{GetOrientation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}} C\+Subband\+::\+Get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return orientation of this subband. LL LH HL HH \begin{DoxyReturn}{Returns}
+Orientation of this subband (LL, HL, LH, HH) 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}\label{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}} 
+\index{CSubband@{CSubband}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily int C\+Subband\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return width of this subband. \begin{DoxyReturn}{Returns}
+Width of this subband (in pixels) 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{128 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}\label{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}} 
+\index{CSubband@{CSubband}!InitBuffPos@{InitBuffPos}}
+\index{InitBuffPos@{InitBuffPos}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{InitBuffPos()}{InitBuffPos()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Init\+Buff\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 162 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{162 \{ \mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}} = 0; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a5bdfe417903304a7b7348feb65904839}\label{classCSubband_a5bdfe417903304a7b7348feb65904839}} 
+\index{CSubband@{CSubband}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Initialize (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{width,  }\item[{U\+I\+N\+T32}]{height,  }\item[{int}]{level,  }\item[{\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}}}]{orient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                                                     \{}
+\DoxyCodeLine{58         \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}} = width;}
+\DoxyCodeLine{59         \mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\_height}} = height;}
+\DoxyCodeLine{60         \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}} = \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}}*\mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\_height}};}
+\DoxyCodeLine{61         \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}} = level;}
+\DoxyCodeLine{62         \mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}} = orient;}
+\DoxyCodeLine{63         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}} = 0;}
+\DoxyCodeLine{64         \mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}} = 0;}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{66         m\_ROI.left = 0;}
+\DoxyCodeLine{67         m\_ROI.top = 0;}
+\DoxyCodeLine{68         m\_ROI.right = \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}};}
+\DoxyCodeLine{69         m\_ROI.bottom = \mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\_height}};}
+\DoxyCodeLine{70         m\_nTiles = 0;}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_af109a0516ded3bea57348a0f4318c2fb}\label{classCSubband_af109a0516ded3bea57348a0f4318c2fb}} 
+\index{CSubband@{CSubband}!PlaceTile@{PlaceTile}}
+\index{PlaceTile@{PlaceTile}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{PlaceTile()}{PlaceTile()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Place\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCDecoder}{C\+Decoder}} \&}]{decoder,  }\item[{int}]{quant\+Param,  }\item[{bool}]{tile = {\ttfamily false},  }\item[{U\+I\+N\+T32}]{tileX = {\ttfamily 0},  }\item[{U\+I\+N\+T32}]{tileY = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Decoding and dequantization of this subband. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em decoder} & A decoder instance \\
+\hline
+{\em quant\+Param} & Dequantization value \\
+\hline
+{\em tile} & True if just a rectangular region is placed, false if the entire subband is placed. \\
+\hline
+{\em tileX} & Tile index in x-\/direction \\
+\hline
+{\em tileY} & Tile index in y-\/direction \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 203 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{203                                                                                                        \{}
+\DoxyCodeLine{204         \textcolor{comment}{// allocate memory}}
+\DoxyCodeLine{205         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}{AllocMemory}}()) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207         \textcolor{comment}{// correct quantParam with normalization factor}}
+\DoxyCodeLine{208         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}} == \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}) \{}
+\DoxyCodeLine{209                 quantParam -= \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}} + 1;}
+\DoxyCodeLine{210         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}} == \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}) \{}
+\DoxyCodeLine{211                 quantParam -= \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}} - 1;}
+\DoxyCodeLine{212         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{213                 quantParam -= \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}};}
+\DoxyCodeLine{214         \}}
+\DoxyCodeLine{215         \textcolor{keywordflow}{if} (quantParam < 0) quantParam = 0;}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{218         \textcolor{keywordflow}{if} (tile) \{}
+\DoxyCodeLine{219                 UINT32 xPos, yPos, w, h;}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221                 \textcolor{comment}{// compute tile position and size}}
+\DoxyCodeLine{222                 TilePosition(tileX, tileY, xPos, yPos, w, h);}
+\DoxyCodeLine{223                 }
+\DoxyCodeLine{224                 ASSERT(xPos >= m\_ROI.left \&\& yPos >= m\_ROI.top);}
+\DoxyCodeLine{225                 decoder.\mbox{\hyperlink{classCDecoder_a61a588ddb407e323bb3647eb6f70fa6b}{Partition}}(\textcolor{keyword}{this}, quantParam, w, h, (xPos - m\_ROI.left) + (yPos - m\_ROI.top)*BufferWidth(), BufferWidth());}
+\DoxyCodeLine{226         \} \textcolor{keywordflow}{else} }
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{228         \{}
+\DoxyCodeLine{229                 tileX; tileY; tile; \textcolor{comment}{// prevents from unreferenced formal parameter warning}}
+\DoxyCodeLine{230                 \textcolor{comment}{// read values into buffer using partitiong scheme}}
+\DoxyCodeLine{231                 decoder.\mbox{\hyperlink{classCDecoder_a61a588ddb407e323bb3647eb6f70fa6b}{Partition}}(\textcolor{keyword}{this}, quantParam, \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}}, \mbox{\hyperlink{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}{m\_height}}, 0, \mbox{\hyperlink{classCSubband_af83106176dc938d0dcd45c155e93a7ed}{m\_width}});}
+\DoxyCodeLine{232         \}}
+\DoxyCodeLine{233 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a5de71c37eb00e5e5dad3fe5e38b81ced}\label{classCSubband_a5de71c37eb00e5e5dad3fe5e38b81ced}} 
+\index{CSubband@{CSubband}!Quantize@{Quantize}}
+\index{Quantize@{Quantize}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{Quantize()}{Quantize()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Quantize (\begin{DoxyParamCaption}\item[{int}]{quant\+Param }\end{DoxyParamCaption})}
+
+Perform subband quantization with given quantization parameter. A scalar quantization (with dead-\/zone) is used. A large quantization value results in strong quantization and therefore in big quality loss. 
+\begin{DoxyParams}{Parameters}
+{\em quant\+Param} & A quantization parameter (larger or equal to 0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file Subband.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                                       \{}
+\DoxyCodeLine{113         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}} == \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}) \{}
+\DoxyCodeLine{114                 quantParam -= (\mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}} + 1);}
+\DoxyCodeLine{115                 \textcolor{comment}{// uniform rounding quantization}}
+\DoxyCodeLine{116                 \textcolor{keywordflow}{if} (quantParam > 0) \{}
+\DoxyCodeLine{117                         quantParam--;}
+\DoxyCodeLine{118                         \textcolor{keywordflow}{for} (UINT32 i=0; i < \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}; i++) \{}
+\DoxyCodeLine{119                                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] < 0) \{}
+\DoxyCodeLine{120                                         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] = -(((-\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] >> quantParam) + 1) >> 1);}
+\DoxyCodeLine{121                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{122                                         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] = ((\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] >> quantParam) + 1) >> 1;}
+\DoxyCodeLine{123                                 \}}
+\DoxyCodeLine{124                         \}}
+\DoxyCodeLine{125                 \}}
+\DoxyCodeLine{126         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{127                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}{m\_orientation}} == \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}) \{}
+\DoxyCodeLine{128                         quantParam -= (\mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}} - 1);}
+\DoxyCodeLine{129                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{130                         quantParam -= \mbox{\hyperlink{classCSubband_a9deef80f2ba4a3d119411e96496987de}{m\_level}};}
+\DoxyCodeLine{131                 \}}
+\DoxyCodeLine{132                 \textcolor{comment}{// uniform deadzone quantization}}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{if} (quantParam > 0) \{}
+\DoxyCodeLine{134                         \textcolor{keywordtype}{int} threshold = ((1 << quantParam) * 7)/5;      \textcolor{comment}{// good value}}
+\DoxyCodeLine{135                         quantParam--;}
+\DoxyCodeLine{136                         \textcolor{keywordflow}{for} (UINT32 i=0; i < \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}; i++) \{}
+\DoxyCodeLine{137                                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] < -threshold) \{}
+\DoxyCodeLine{138                                         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] = -(((-\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] >> quantParam) + 1) >> 1);}
+\DoxyCodeLine{139                                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] > threshold) \{}
+\DoxyCodeLine{140                                         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] = ((\mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] >> quantParam) + 1) >> 1;}
+\DoxyCodeLine{141                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{142                                         \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[i] = 0;}
+\DoxyCodeLine{143                                 \}}
+\DoxyCodeLine{144                         \}}
+\DoxyCodeLine{145                 \}}
+\DoxyCodeLine{146         \}}
+\DoxyCodeLine{147 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_ad32cf00a5ee6a65573bcacd440308673}\label{classCSubband_ad32cf00a5ee6a65573bcacd440308673}} 
+\index{CSubband@{CSubband}!ReadBuffer@{ReadBuffer}}
+\index{ReadBuffer@{ReadBuffer}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{ReadBuffer()}{ReadBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} C\+Subband\+::\+Read\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 149 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149 \{ ASSERT(\mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}} < \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}); \textcolor{keywordflow}{return} \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[\mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}}++]; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a2da2078e1050116b47760ede30e4e503}\label{classCSubband_a2da2078e1050116b47760ede30e4e503}} 
+\index{CSubband@{CSubband}!SetBuffer@{SetBuffer}}
+\index{SetBuffer@{SetBuffer}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{SetBuffer()}{SetBuffer()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Set\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 148 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148 \{ ASSERT(b); \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}} = b; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a1f128e212fb98c19f2d1dcd7ac6ccc0b}\label{classCSubband_a1f128e212fb98c19f2d1dcd7ac6ccc0b}} 
+\index{CSubband@{CSubband}!SetData@{SetData}}
+\index{SetData@{SetData}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{SetData()}{SetData()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Set\+Data (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{pos,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Store wavelet coefficient in subband at given position. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & A subband position ($>$= 0) \\
+\hline
+{\em v} & A wavelet coefficient \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102 \{ ASSERT(pos < \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}); \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[pos] = v; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCSubband_a3bebc017649e7dbef182efe3cbe17965}\label{classCSubband_a3bebc017649e7dbef182efe3cbe17965}} 
+\index{CSubband@{CSubband}!WriteBuffer@{WriteBuffer}}
+\index{WriteBuffer@{WriteBuffer}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{WriteBuffer()}{WriteBuffer()}}
+{\footnotesize\ttfamily void C\+Subband\+::\+Write\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 147 of file Subband.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147 \{ ASSERT(\mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}} < \mbox{\hyperlink{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}{m\_size}}); \mbox{\hyperlink{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}{m\_data}}[\mbox{\hyperlink{classCSubband_a274d3cbc79f66725f961e3216b823167}{m\_dataPos}}++] = val; \}}
+
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCSubband_a12f1d468e72e4621ac470795f8a9aee4}\label{classCSubband_a12f1d468e72e4621ac470795f8a9aee4}} 
+\index{CSubband@{CSubband}!CRoiIndices@{CRoiIndices}}
+\index{CRoiIndices@{CRoiIndices}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{CRoiIndices}{CRoiIndices}}
+{\footnotesize\ttfamily friend class C\+Roi\+Indices\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 44 of file Subband.\+h.
+
+\mbox{\Hypertarget{classCSubband_a30d2cc4fc1b1060bf29a6576d926a615}\label{classCSubband_a30d2cc4fc1b1060bf29a6576d926a615}} 
+\index{CSubband@{CSubband}!CWaveletTransform@{CWaveletTransform}}
+\index{CWaveletTransform@{CWaveletTransform}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{CWaveletTransform}{CWaveletTransform}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classCWaveletTransform}{C\+Wavelet\+Transform}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 43 of file Subband.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}\label{classCSubband_a8181f6adf76abb704ae8990843fdc2c4}} 
+\index{CSubband@{CSubband}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}$\ast$ C\+Subband\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+buffer 
+
+
+
+Definition at line 172 of file Subband.\+h.
+
+\mbox{\Hypertarget{classCSubband_a274d3cbc79f66725f961e3216b823167}\label{classCSubband_a274d3cbc79f66725f961e3216b823167}} 
+\index{CSubband@{CSubband}!m\_dataPos@{m\_dataPos}}
+\index{m\_dataPos@{m\_dataPos}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{m\_dataPos}{m\_dataPos}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Subband\+::m\+\_\+data\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current position in m\+\_\+data 
+
+
+
+Definition at line 171 of file Subband.\+h.
+
+\mbox{\Hypertarget{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}\label{classCSubband_a7c442889ba89b9b46af24392b9c65ee6}} 
+\index{CSubband@{CSubband}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Subband\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+height in pixels 
+
+
+
+Definition at line 167 of file Subband.\+h.
+
+\mbox{\Hypertarget{classCSubband_a9deef80f2ba4a3d119411e96496987de}\label{classCSubband_a9deef80f2ba4a3d119411e96496987de}} 
+\index{CSubband@{CSubband}!m\_level@{m\_level}}
+\index{m\_level@{m\_level}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{m\_level}{m\_level}}
+{\footnotesize\ttfamily int C\+Subband\+::m\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+recursion level 
+
+
+
+Definition at line 169 of file Subband.\+h.
+
+\mbox{\Hypertarget{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}\label{classCSubband_a7fe0ebc633e4d07fa938a561a68f596f}} 
+\index{CSubband@{CSubband}!m\_orientation@{m\_orientation}}
+\index{m\_orientation@{m\_orientation}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{m\_orientation}{m\_orientation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}} C\+Subband\+::m\+\_\+orientation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+0=LL, 1=HL, 2=LH, 3=HH L=lowpass filtered, H=highpass filterd 
+
+
+
+Definition at line 170 of file Subband.\+h.
+
+\mbox{\Hypertarget{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}\label{classCSubband_a1eca7bf4dad801599ffde81b9b25ab4d}} 
+\index{CSubband@{CSubband}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Subband\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+size of data buffer m\+\_\+data 
+
+
+
+Definition at line 168 of file Subband.\+h.
+
+\mbox{\Hypertarget{classCSubband_af83106176dc938d0dcd45c155e93a7ed}\label{classCSubband_af83106176dc938d0dcd45c155e93a7ed}} 
+\index{CSubband@{CSubband}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!CSubband@{CSubband}}
+\subsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Subband\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+width in pixels 
+
+
+
+Definition at line 166 of file Subband.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Subband_8h}{Subband.\+h}}\item 
+\mbox{\hyperlink{Subband_8cpp}{Subband.\+cpp}}\end{DoxyCompactItemize}

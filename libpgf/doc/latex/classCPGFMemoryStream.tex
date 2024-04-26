@@ -1,0 +1,549 @@
+\hypertarget{classCPGFMemoryStream}{}\section{C\+P\+G\+F\+Memory\+Stream Class Reference}
+\label{classCPGFMemoryStream}\index{CPGFMemoryStream@{CPGFMemoryStream}}
+
+
+Memory stream class.  
+
+
+
+
+{\ttfamily \#include $<$P\+G\+Fstream.\+h$>$}
+
+Inheritance diagram for C\+P\+G\+F\+Memory\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCPGFMemoryStream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCPGFMemoryStream_a04270a0cc3b62a272c11289931e91986}{C\+P\+G\+F\+Memory\+Stream}} (size\+\_\+t size)
+\item 
+\mbox{\hyperlink{classCPGFMemoryStream_a7b1d3b9977b016ebbb077a233b461bd5}{C\+P\+G\+F\+Memory\+Stream}} (U\+I\+N\+T8 $\ast$p\+Buffer, size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{classCPGFMemoryStream_afb1145a071e4156a4343c6203ad18b0c}{Reinitialize}} (U\+I\+N\+T8 $\ast$p\+Buffer, size\+\_\+t size)
+\item 
+virtual \mbox{\hyperlink{classCPGFMemoryStream_ab562ed581dd1ed8364a41463b6da5006}{$\sim$\+C\+P\+G\+F\+Memory\+Stream}} ()
+\item 
+virtual void \mbox{\hyperlink{classCPGFMemoryStream_a627161d30d8d10fc306f50ea9c37f1a5}{Write}} (int $\ast$count, void $\ast$buffer)
+\item 
+virtual void \mbox{\hyperlink{classCPGFMemoryStream_a4cf0499309d901fcdcd9282a7351d24d}{Read}} (int $\ast$count, void $\ast$buffer)
+\item 
+virtual void \mbox{\hyperlink{classCPGFMemoryStream_a28e8defe72f535c49535c40ffe2ad299}{Set\+Pos}} (short pos\+Mode, I\+N\+T64 pos\+Off)
+\item 
+virtual U\+I\+N\+T64 \mbox{\hyperlink{classCPGFMemoryStream_a40556ef625e2bd49144281b3f6e1f0dd}{Get\+Pos}} () const
+\item 
+virtual bool \mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{Is\+Valid}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classCPGFMemoryStream_a44170277f36028bbff876fd6ebaeef21}{Get\+Size}} () const
+\item 
+const U\+I\+N\+T8 $\ast$ \mbox{\hyperlink{classCPGFMemoryStream_a4cfd2eca6ce408dbc37c018cbed20424}{Get\+Buffer}} () const
+\item 
+U\+I\+N\+T8 $\ast$ \mbox{\hyperlink{classCPGFMemoryStream_ae6c636725895a016902ea76aeb5d9301}{Get\+Buffer}} ()
+\item 
+U\+I\+N\+T64 \mbox{\hyperlink{classCPGFMemoryStream_adac05f8f6c35bb8b82cfeef431bc7171}{Get\+E\+OS}} () const
+\item 
+void \mbox{\hyperlink{classCPGFMemoryStream_a0e295b7061f07f840580d36f7946f523}{Set\+E\+OS}} (U\+I\+N\+T64 length)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+I\+N\+T8 $\ast$ \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\+\_\+buffer}}
+\item 
+U\+I\+N\+T8 $\ast$ \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em buffer start address and current buffer address \end{DoxyCompactList}\item 
+U\+I\+N\+T8 $\ast$ \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\+\_\+eos}}
+\begin{DoxyCompactList}\small\item\em end of stream (first address beyond written area) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em buffer size \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}{m\+\_\+allocated}}
+\begin{DoxyCompactList}\small\item\em indicates a new allocated buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Memory stream class. 
+
+A P\+GF stream subclass for internal memory. \begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+Definition at line 106 of file P\+G\+Fstream.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCPGFMemoryStream_a04270a0cc3b62a272c11289931e91986}\label{classCPGFMemoryStream_a04270a0cc3b62a272c11289931e91986}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!CPGFMemoryStream@{CPGFMemoryStream}}
+\index{CPGFMemoryStream@{CPGFMemoryStream}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{CPGFMemoryStream()}{CPGFMemoryStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+P\+G\+F\+Memory\+Stream\+::\+C\+P\+G\+F\+Memory\+Stream (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of new allocated memory buffer\\
+\hline
+\end{DoxyParams}
+Allocate memory block of given size 
+\begin{DoxyParams}{Parameters}
+{\em size} & Memory size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{79 : \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}}(size)}
+\DoxyCodeLine{80 , \mbox{\hyperlink{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}{m\_allocated}}(\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{81         \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} = \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} = \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} = \textcolor{keyword}{new}(std::nothrow) UINT8[\mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}}];}
+\DoxyCodeLine{82         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{83 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a7b1d3b9977b016ebbb077a233b461bd5}\label{classCPGFMemoryStream_a7b1d3b9977b016ebbb077a233b461bd5}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!CPGFMemoryStream@{CPGFMemoryStream}}
+\index{CPGFMemoryStream@{CPGFMemoryStream}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{CPGFMemoryStream()}{CPGFMemoryStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+P\+G\+F\+Memory\+Stream\+::\+C\+P\+G\+F\+Memory\+Stream (\begin{DoxyParamCaption}\item[{U\+I\+N\+T8 $\ast$}]{p\+Buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Constructor. Use already allocated memory of given size 
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & Memory location \\
+\hline
+{\em size} & Memory size\\
+\hline
+\end{DoxyParams}
+Use already allocated memory of given size 
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & Memory location \\
+\hline
+{\em size} & Memory size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90 : \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}(pBuffer)}
+\DoxyCodeLine{91 , \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}}(pBuffer)}
+\DoxyCodeLine{92 , \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}}(pBuffer + size)}
+\DoxyCodeLine{93 , \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}}(size)}
+\DoxyCodeLine{94 , \mbox{\hyperlink{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}{m\_allocated}}(\textcolor{keyword}{false}) \{}
+\DoxyCodeLine{95         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{IsValid}}());}
+\DoxyCodeLine{96 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_ab562ed581dd1ed8364a41463b6da5006}\label{classCPGFMemoryStream_ab562ed581dd1ed8364a41463b6da5006}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!````~CPGFMemoryStream@{$\sim$CPGFMemoryStream}}
+\index{````~CPGFMemoryStream@{$\sim$CPGFMemoryStream}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{$\sim$CPGFMemoryStream()}{~CPGFMemoryStream()}}
+{\footnotesize\ttfamily virtual C\+P\+G\+F\+Memory\+Stream\+::$\sim$\+C\+P\+G\+F\+Memory\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 128 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{128                                     \{ }
+\DoxyCodeLine{129                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} = 0; }
+\DoxyCodeLine{130                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}{m\_allocated}}) \{}
+\DoxyCodeLine{131                         \textcolor{comment}{// the memory buffer has been allocated inside of CPMFmemoryStream constructor}}
+\DoxyCodeLine{132                         \textcolor{keyword}{delete}[] \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}; \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} = 0;}
+\DoxyCodeLine{133                 \}}
+\DoxyCodeLine{134         \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCPGFMemoryStream_a4cfd2eca6ce408dbc37c018cbed20424}\label{classCPGFMemoryStream_a4cfd2eca6ce408dbc37c018cbed20424}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{GetBuffer()}{GetBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const U\+I\+N\+T8$\ast$ C\+P\+G\+F\+Memory\+Stream\+::\+Get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Memory buffer 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_ae6c636725895a016902ea76aeb5d9301}\label{classCPGFMemoryStream_ae6c636725895a016902ea76aeb5d9301}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{GetBuffer()}{GetBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily U\+I\+N\+T8$\ast$ C\+P\+G\+F\+Memory\+Stream\+::\+Get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Memory buffer 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_adac05f8f6c35bb8b82cfeef431bc7171}\label{classCPGFMemoryStream_adac05f8f6c35bb8b82cfeef431bc7171}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!GetEOS@{GetEOS}}
+\index{GetEOS@{GetEOS}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{GetEOS()}{GetEOS()}}
+{\footnotesize\ttfamily U\+I\+N\+T64 C\+P\+G\+F\+Memory\+Stream\+::\+Get\+E\+OS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+relative position of end of stream (= stream length) 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149 \{ ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{IsValid}}()); \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} - \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a40556ef625e2bd49144281b3f6e1f0dd}\label{classCPGFMemoryStream_a40556ef625e2bd49144281b3f6e1f0dd}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!GetPos@{GetPos}}
+\index{GetPos@{GetPos}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{GetPos()}{GetPos()}}
+{\footnotesize\ttfamily virtual U\+I\+N\+T64 C\+P\+G\+F\+Memory\+Stream\+::\+Get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get current stream position. \begin{DoxyReturn}{Returns}
+Current stream position 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 139 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{139 \{ ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{IsValid}}()); \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} - \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a44170277f36028bbff876fd6ebaeef21}\label{classCPGFMemoryStream_a44170277f36028bbff876fd6ebaeef21}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily size\+\_\+t C\+P\+G\+F\+Memory\+Stream\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Memory size 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{143 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}\label{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily virtual bool C\+P\+G\+F\+Memory\+Stream\+::\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Check stream validity. \begin{DoxyReturn}{Returns}
+True if stream and current position is valid 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_abf99169c9bcf0feb57edc55cec215b95}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 140 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} != 0; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a4cf0499309d901fcdcd9282a7351d24d}\label{classCPGFMemoryStream_a4cf0499309d901fcdcd9282a7351d24d}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!Read@{Read}}
+\index{Read@{Read}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+Memory\+Stream\+::\+Read (\begin{DoxyParamCaption}\item[{int $\ast$}]{count,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Read some bytes from this stream and stores them into a buffer. 
+\begin{DoxyParams}{Parameters}
+{\em count} & A pointer to a value containing the number of bytes should be read. After this call it contains the number of read bytes. \\
+\hline
+{\em buffer} & A memory buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 148 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148                                                      \{}
+\DoxyCodeLine{149         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{IsValid}}());}
+\DoxyCodeLine{150         ASSERT(count);}
+\DoxyCodeLine{151         ASSERT(buffPtr);}
+\DoxyCodeLine{152         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} + \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}} >= \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}});}
+\DoxyCodeLine{153         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} <= \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}});}
+\DoxyCodeLine{154         }
+\DoxyCodeLine{155         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} + *count <= \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}}) \{}
+\DoxyCodeLine{156                 memcpy(buffPtr, \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}}, *count);}
+\DoxyCodeLine{157                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} += *count;}
+\DoxyCodeLine{158         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{159                 \textcolor{comment}{// end of memory block reached -> read only until end}}
+\DoxyCodeLine{160                 *count = (int)\mbox{\hyperlink{PGFplatform_8h_af643213a7d426b69429d1430cef4ecbb}{\_\_max}}(0, \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} - \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}});}
+\DoxyCodeLine{161                 memcpy(buffPtr, \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}}, *count);}
+\DoxyCodeLine{162                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} += *count;}
+\DoxyCodeLine{163         \}}
+\DoxyCodeLine{164         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} <= \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}});}
+\DoxyCodeLine{165 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_afb1145a071e4156a4343c6203ad18b0c}\label{classCPGFMemoryStream_afb1145a071e4156a4343c6203ad18b0c}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!Reinitialize@{Reinitialize}}
+\index{Reinitialize@{Reinitialize}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{Reinitialize()}{Reinitialize()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+Memory\+Stream\+::\+Reinitialize (\begin{DoxyParamCaption}\item[{U\+I\+N\+T8 $\ast$}]{p\+Buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Use already allocated memory of given size 
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & Memory location \\
+\hline
+{\em size} & Memory size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102                                                                \{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}{m\_allocated}}) \{}
+\DoxyCodeLine{104                 \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} = \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} = pBuffer;}
+\DoxyCodeLine{105                 \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}} = size;}
+\DoxyCodeLine{106                 \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} = \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} + size;}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a0e295b7061f07f840580d36f7946f523}\label{classCPGFMemoryStream_a0e295b7061f07f840580d36f7946f523}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!SetEOS@{SetEOS}}
+\index{SetEOS@{SetEOS}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{SetEOS()}{SetEOS()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+Memory\+Stream\+::\+Set\+E\+OS (\begin{DoxyParamCaption}\item[{U\+I\+N\+T64}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Stream length (= relative position of end of stream) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{151 \{ ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{IsValid}}()); \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} = \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} + length; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a28e8defe72f535c49535c40ffe2ad299}\label{classCPGFMemoryStream_a28e8defe72f535c49535c40ffe2ad299}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!SetPos@{SetPos}}
+\index{SetPos@{SetPos}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{SetPos()}{SetPos()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+Memory\+Stream\+::\+Set\+Pos (\begin{DoxyParamCaption}\item[{short}]{pos\+Mode,  }\item[{I\+N\+T64}]{pos\+Off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set stream position either absolute or relative. 
+\begin{DoxyParams}{Parameters}
+{\em pos\+Mode} & A position mode (F\+S\+From\+Start, F\+S\+From\+Current, F\+S\+From\+End) \\
+\hline
+{\em pos\+Off} & A new stream position (absolute positioning) or a position offset (relative positioning) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 168 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{168                                                          \{}
+\DoxyCodeLine{169         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{IsValid}}());}
+\DoxyCodeLine{170         \textcolor{keywordflow}{switch}(posMode) \{}
+\DoxyCodeLine{171         \textcolor{keywordflow}{case} FSFromStart:}
+\DoxyCodeLine{172                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} = \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} + posOff;}
+\DoxyCodeLine{173                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{174         \textcolor{keywordflow}{case} FSFromCurrent:}
+\DoxyCodeLine{175                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} += posOff;}
+\DoxyCodeLine{176                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{177         \textcolor{keywordflow}{case} FSFromEnd:}
+\DoxyCodeLine{178                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} = \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} + posOff;}
+\DoxyCodeLine{179                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{180         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{181                 ASSERT(\textcolor{keyword}{false});}
+\DoxyCodeLine{182         \}}
+\DoxyCodeLine{183         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} > \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}}) }
+\DoxyCodeLine{184                 ReturnWithError(InvalidStreamPos);}
+\DoxyCodeLine{185 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFMemoryStream_a627161d30d8d10fc306f50ea9c37f1a5}\label{classCPGFMemoryStream_a627161d30d8d10fc306f50ea9c37f1a5}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!Write@{Write}}
+\index{Write@{Write}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+Memory\+Stream\+::\+Write (\begin{DoxyParamCaption}\item[{int $\ast$}]{count,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Write some bytes out of a buffer into this stream. 
+\begin{DoxyParams}{Parameters}
+{\em count} & A pointer to a value containing the number of bytes should be written. After this call it contains the number of written bytes. \\
+\hline
+{\em buffer} & A memory buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_a0a46ae977995134787219288f4123134}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 111 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111                                                       \{}
+\DoxyCodeLine{112         ASSERT(count);}
+\DoxyCodeLine{113         ASSERT(buffPtr);}
+\DoxyCodeLine{114         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{IsValid}}());}
+\DoxyCodeLine{115         \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} deltaSize = 0x4000 + *count;}
+\DoxyCodeLine{116         }
+\DoxyCodeLine{117         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} + *count <= \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} + \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}}) \{}
+\DoxyCodeLine{118                 memcpy(\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}}, buffPtr, *count);}
+\DoxyCodeLine{119                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} += *count; }
+\DoxyCodeLine{120                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} > \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}}) \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} = \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}};}
+\DoxyCodeLine{121         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}{m\_allocated}}) \{}
+\DoxyCodeLine{122                 \textcolor{comment}{// memory block is too small -> reallocate a deltaSize larger block}}
+\DoxyCodeLine{123                 \textcolor{keywordtype}{size\_t} offset = \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} - \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}};}
+\DoxyCodeLine{124                 UINT8 *buf\_tmp = (UINT8 *)realloc(\mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}}, \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}} + deltaSize);}
+\DoxyCodeLine{125                 \textcolor{keywordflow}{if} (!buf\_tmp) \{}
+\DoxyCodeLine{126                         \textcolor{keyword}{delete}[] \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}};}
+\DoxyCodeLine{127                         \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} = 0;}
+\DoxyCodeLine{128                         ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{129                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{130                         \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} = buf\_tmp;}
+\DoxyCodeLine{131                 \}}
+\DoxyCodeLine{132                 \mbox{\hyperlink{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}{m\_size}} += deltaSize;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134                 \textcolor{comment}{// reposition m\_pos}}
+\DoxyCodeLine{135                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} = \mbox{\hyperlink{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}{m\_buffer}} + offset;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137                 \textcolor{comment}{// write block}}
+\DoxyCodeLine{138                 memcpy(\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}}, buffPtr, *count);}
+\DoxyCodeLine{139                 \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} += *count; }
+\DoxyCodeLine{140                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} > \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}}) \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}} = \mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}};}
+\DoxyCodeLine{141         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{142                 ReturnWithError(InsufficientMemory);    }
+\DoxyCodeLine{143         \}}
+\DoxyCodeLine{144         ASSERT(\mbox{\hyperlink{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}{m\_pos}} <= \mbox{\hyperlink{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}{m\_eos}});}
+\DoxyCodeLine{145 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}\label{classCPGFMemoryStream_ad067b8fcb304992bc8596d634fbbe20b}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!m\_allocated@{m\_allocated}}
+\index{m\_allocated@{m\_allocated}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{m\_allocated}{m\_allocated}}
+{\footnotesize\ttfamily bool C\+P\+G\+F\+Memory\+Stream\+::m\+\_\+allocated\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+indicates a new allocated buffer 
+
+
+
+Definition at line 111 of file P\+G\+Fstream.\+h.
+
+\mbox{\Hypertarget{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}\label{classCPGFMemoryStream_a9d4c1baa334c288fba0f5e4fc9e9a31e}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily U\+I\+N\+T8$\ast$ C\+P\+G\+F\+Memory\+Stream\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 108 of file P\+G\+Fstream.\+h.
+
+\mbox{\Hypertarget{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}\label{classCPGFMemoryStream_a7c0a47341ab8962728284db230b44203}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!m\_eos@{m\_eos}}
+\index{m\_eos@{m\_eos}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{m\_eos}{m\_eos}}
+{\footnotesize\ttfamily U\+I\+N\+T8$\ast$ C\+P\+G\+F\+Memory\+Stream\+::m\+\_\+eos\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+end of stream (first address beyond written area) 
+
+
+
+Definition at line 109 of file P\+G\+Fstream.\+h.
+
+\mbox{\Hypertarget{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}\label{classCPGFMemoryStream_a901356d38f0aee983fa19bff73727ec6}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!m\_pos@{m\_pos}}
+\index{m\_pos@{m\_pos}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{m\_pos}{m\_pos}}
+{\footnotesize\ttfamily U\+I\+N\+T8 $\ast$ C\+P\+G\+F\+Memory\+Stream\+::m\+\_\+pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+buffer start address and current buffer address 
+
+
+
+Definition at line 108 of file P\+G\+Fstream.\+h.
+
+\mbox{\Hypertarget{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}\label{classCPGFMemoryStream_a640b0fa8b5cfef4ea4d25adc7bf30ffa}} 
+\index{CPGFMemoryStream@{CPGFMemoryStream}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!CPGFMemoryStream@{CPGFMemoryStream}}
+\subsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily size\+\_\+t C\+P\+G\+F\+Memory\+Stream\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+buffer size 
+
+
+
+Definition at line 110 of file P\+G\+Fstream.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PGFstream_8h}{P\+G\+Fstream.\+h}}\item 
+\mbox{\hyperlink{PGFstream_8cpp}{P\+G\+Fstream.\+cpp}}\end{DoxyCompactItemize}

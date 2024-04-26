@@ -1,0 +1,619 @@
+\hypertarget{classCDecoder_1_1CMacroBlock}{}\section{C\+Decoder\+::C\+Macro\+Block Class Reference}
+\label{classCDecoder_1_1CMacroBlock}\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+
+
+A macro block is a decoding unit of fixed size (uncoded)  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_aca6c25f512f637244f971e21f813f433}{C\+Macro\+Block}} ()
+\begin{DoxyCompactList}\small\item\em Constructor\+: Initializes new macro block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a0425cb162ca41e04f6ae0886a62b3cc9}{Is\+Completely\+Read}} () const
+\item 
+void \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a72899e368b29833bd485c4858b5ad7ef}{Bitplane\+Decode}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{unionROIBlockHeader}{R\+O\+I\+Block\+Header}} \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a19247bd5e6073252c45abf9d33b44ee0}{m\+\_\+header}}
+\begin{DoxyCompactList}\small\item\em block header \end{DoxyCompactList}\item 
+\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\+\_\+value}} \mbox{[}\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em output buffer of values with index m\+\_\+value\+Pos \end{DoxyCompactList}\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\+\_\+code\+Buffer}} \mbox{[}\mbox{\hyperlink{Encoder_8h_a05a74e73e6c734fcad194efbca053ed5}{Code\+Buffer\+Len}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em input buffer for encoded bitstream \end{DoxyCompactList}\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}{m\+\_\+value\+Pos}}
+\begin{DoxyCompactList}\small\item\em current position in m\+\_\+value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a580e46028e0104de8d6afab733c8b679}{Compose\+Bitplane}} (U\+I\+N\+T32 buffer\+Size, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} plane\+Mask, U\+I\+N\+T32 $\ast$sig\+Bits, U\+I\+N\+T32 $\ast$ref\+Bits, U\+I\+N\+T32 $\ast$sign\+Bits)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_aa6e8f0dedcdeb9e592de7dde07b5025e}{Compose\+Bitplane\+R\+LD}} (U\+I\+N\+T32 buffer\+Size, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} plane\+Mask, U\+I\+N\+T32 sig\+Pos, U\+I\+N\+T32 $\ast$ref\+Bits)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af7de96f745479ca3956f671a7f794489}{Compose\+Bitplane\+R\+LD}} (U\+I\+N\+T32 buffer\+Size, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} plane\+Mask, U\+I\+N\+T32 $\ast$sig\+Bits, U\+I\+N\+T32 $\ast$ref\+Bits, U\+I\+N\+T32 sign\+Pos)
+\item 
+void \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}{Set\+Bit\+At\+Pos}} (U\+I\+N\+T32 pos, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} plane\+Mask)
+\item 
+void \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7fd4539d524903d148ceb4de940d3194}{Set\+Sign}} (U\+I\+N\+T32 pos, bool sign)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\+\_\+sig\+Flag\+Vector}} \mbox{[}\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}+1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A macro block is a decoding unit of fixed size (uncoded) 
+
+P\+GF decoder macro block class. \begin{DoxyAuthor}{Author}
+C. Stamm, I. Bauersachs 
+\end{DoxyAuthor}
+
+
+Definition at line 51 of file Decoder.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_aca6c25f512f637244f971e21f813f433}\label{classCDecoder_1_1CMacroBlock_aca6c25f512f637244f971e21f813f433}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!CMacroBlock@{CMacroBlock}}
+\index{CMacroBlock@{CMacroBlock}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{CMacroBlock()}{CMacroBlock()}}
+{\footnotesize\ttfamily C\+Decoder\+::\+C\+Macro\+Block\+::\+C\+Macro\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor\+: Initializes new macro block. 
+
+
+
+Definition at line 55 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                 : \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a19247bd5e6073252c45abf9d33b44ee0}{m\_header}}(0)                                                           \textcolor{comment}{// makes sure that IsCompletelyRead() returns true for an empty macro block}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#pragma warning( suppress : 4351 )}}
+\DoxyCodeLine{58                 , \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}()}
+\DoxyCodeLine{59                 , \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}()}
+\DoxyCodeLine{60                 , \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}{m\_valuePos}}(0)}
+\DoxyCodeLine{61                 , \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}()}
+\DoxyCodeLine{62                 \{}
+\DoxyCodeLine{63                 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a72899e368b29833bd485c4858b5ad7ef}\label{classCDecoder_1_1CMacroBlock_a72899e368b29833bd485c4858b5ad7ef}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!BitplaneDecode@{BitplaneDecode}}
+\index{BitplaneDecode@{BitplaneDecode}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{BitplaneDecode()}{BitplaneDecode()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+C\+Macro\+Block\+::\+Bitplane\+Decode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Decodes already read input data into this macro block. Several macro blocks can be decoded in parallel. Call \mbox{\hyperlink{classCDecoder_a55cbccabab76500fd47e15332d6b6506}{C\+Decoder\+::\+Read\+Macro\+Block}} before this method. 
+
+Definition at line 650 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{650                                          \{}
+\DoxyCodeLine{651         UINT32 bufferSize = \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a19247bd5e6073252c45abf9d33b44ee0}{m\_header}}.\mbox{\hyperlink{unionROIBlockHeader_a15ceb2e488c3767cc1ab774323c02ded}{rbh}}.\mbox{\hyperlink{structROIBlockHeader_1_1RBH_af0c3de8c247b06116a9d84d2f9515762}{bufferSize}}; ASSERT(bufferSize <= \mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{BufferSize}});}
+\DoxyCodeLine{652 }
+\DoxyCodeLine{653         \textcolor{comment}{// clear significance vector}}
+\DoxyCodeLine{654         \textcolor{keywordflow}{for} (UINT32 k=0; k < bufferSize; k++) \{}
+\DoxyCodeLine{655                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[k] = \textcolor{keyword}{false};}
+\DoxyCodeLine{656         \}}
+\DoxyCodeLine{657         \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[bufferSize] = \textcolor{keyword}{true}; \textcolor{comment}{// sentinel}}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{659         \textcolor{comment}{// clear output buffer}}
+\DoxyCodeLine{660         \textcolor{keywordflow}{for} (UINT32 k=0; k < \mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{BufferSize}}; k++) \{}
+\DoxyCodeLine{661                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[k] = 0;}
+\DoxyCodeLine{662         \}}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664         \textcolor{comment}{// read number of bit planes}}
+\DoxyCodeLine{665         \textcolor{comment}{// <nPlanes>}}
+\DoxyCodeLine{666         UINT32 nPlanes = \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{GetValueBlock}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, 0, \mbox{\hyperlink{PGFtypes_8h_a0acbc7f581c1eceef6a70713308987d5}{MaxBitPlanesLog}}); }
+\DoxyCodeLine{667         UINT32 codePos = \mbox{\hyperlink{PGFtypes_8h_a0acbc7f581c1eceef6a70713308987d5}{MaxBitPlanesLog}};}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669         \textcolor{comment}{// loop through all bit planes}}
+\DoxyCodeLine{670         \textcolor{keywordflow}{if} (nPlanes == 0) nPlanes = \mbox{\hyperlink{PGFtypes_8h_ae0625b6a0d1a8187599a680c6b559860}{MaxBitPlanes}} + 1;}
+\DoxyCodeLine{671         ASSERT(0 < nPlanes \&\& nPlanes <= \mbox{\hyperlink{PGFtypes_8h_ae0625b6a0d1a8187599a680c6b559860}{MaxBitPlanes}} + 1);}
+\DoxyCodeLine{672         \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} planeMask = 1 << (nPlanes - 1);}
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} plane = nPlanes - 1; plane >= 0; plane--) \{}
+\DoxyCodeLine{675                 UINT32 sigLen = 0;}
+\DoxyCodeLine{676 }
+\DoxyCodeLine{677                 \textcolor{comment}{// read RL code}}
+\DoxyCodeLine{678                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos)) \{}
+\DoxyCodeLine{679                         \textcolor{comment}{// RL coding of sigBits is used}}
+\DoxyCodeLine{680                         \textcolor{comment}{// <1><codeLen><codedSigAndSignBits>\_<refBits>}}
+\DoxyCodeLine{681                         codePos++;}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683                         \textcolor{comment}{// read codeLen}}
+\DoxyCodeLine{684                         UINT32 codeLen = \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{GetValueBlock}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos, \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}); ASSERT(codeLen <= \mbox{\hyperlink{Decoder_8cpp_add8bd7fd3fbb318e2f76b4ae33cf6020}{MaxCodeLen}});}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{686                         \textcolor{comment}{// position of encoded sigBits and signBits}}
+\DoxyCodeLine{687                         UINT32 sigPos = codePos + \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}; ASSERT(sigPos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{688 }
+\DoxyCodeLine{689                         \textcolor{comment}{// refinement bits}}
+\DoxyCodeLine{690                         codePos = \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{AlignWordPos}}(sigPos + codeLen); ASSERT(codePos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}}); }
+\DoxyCodeLine{691 }
+\DoxyCodeLine{692                         \textcolor{comment}{// run-length decode significant bits and signs from m\_codeBuffer and }}
+\DoxyCodeLine{693                         \textcolor{comment}{// read refinement bits from m\_codeBuffer and compose bit plane}}
+\DoxyCodeLine{694                         sigLen = \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_aa6e8f0dedcdeb9e592de7dde07b5025e}{ComposeBitplaneRLD}}(bufferSize, planeMask, sigPos, \&\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}[codePos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}]);}
+\DoxyCodeLine{695 }
+\DoxyCodeLine{696                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{697                         \textcolor{comment}{// no RL coding is used for sigBits and signBits together}}
+\DoxyCodeLine{698                         \textcolor{comment}{// <0><sigLen>}}
+\DoxyCodeLine{699                         codePos++;}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701                         \textcolor{comment}{// read sigLen}}
+\DoxyCodeLine{702                         sigLen = \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{GetValueBlock}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos, \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}); ASSERT(sigLen <= \mbox{\hyperlink{Decoder_8cpp_add8bd7fd3fbb318e2f76b4ae33cf6020}{MaxCodeLen}});}
+\DoxyCodeLine{703                         codePos += \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}; ASSERT(codePos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{704 }
+\DoxyCodeLine{705                         \textcolor{comment}{// read RL code for signBits}}
+\DoxyCodeLine{706                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos)) \{}
+\DoxyCodeLine{707                                 \textcolor{comment}{// RL coding is used just for signBits}}
+\DoxyCodeLine{708                                 \textcolor{comment}{// <1><codeLen><codedSignBits>\_<sigBits>\_<refBits>}}
+\DoxyCodeLine{709                                 codePos++;}
+\DoxyCodeLine{710 }
+\DoxyCodeLine{711                                 \textcolor{comment}{// read codeLen}}
+\DoxyCodeLine{712                                 UINT32 codeLen = \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{GetValueBlock}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos, \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}); ASSERT(codeLen <= \mbox{\hyperlink{Decoder_8cpp_add8bd7fd3fbb318e2f76b4ae33cf6020}{MaxCodeLen}});}
+\DoxyCodeLine{713 }
+\DoxyCodeLine{714                                 \textcolor{comment}{// sign bits}}
+\DoxyCodeLine{715                                 UINT32 signPos = codePos + \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}; ASSERT(signPos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{716                                 }
+\DoxyCodeLine{717                                 \textcolor{comment}{// significant bits}}
+\DoxyCodeLine{718                                 UINT32 sigPos = \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{AlignWordPos}}(signPos + codeLen); ASSERT(sigPos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{719 }
+\DoxyCodeLine{720                                 \textcolor{comment}{// refinement bits}}
+\DoxyCodeLine{721                                 codePos = \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{AlignWordPos}}(sigPos + sigLen); ASSERT(codePos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{722 }
+\DoxyCodeLine{723                                 \textcolor{comment}{// read significant and refinement bitset from m\_codeBuffer}}
+\DoxyCodeLine{724                                 sigLen = \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_aa6e8f0dedcdeb9e592de7dde07b5025e}{ComposeBitplaneRLD}}(bufferSize, planeMask, \&\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}[sigPos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}], \&\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}[codePos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}], signPos);}
+\DoxyCodeLine{725                         }
+\DoxyCodeLine{726                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{727                                 \textcolor{comment}{// RL coding of signBits was not efficient and therefore not used}}
+\DoxyCodeLine{728                                 \textcolor{comment}{// <0><signLen>\_<signBits>\_<sigBits>\_<refBits>}}
+\DoxyCodeLine{729                                 codePos++;}
+\DoxyCodeLine{730 }
+\DoxyCodeLine{731                                 \textcolor{comment}{// read signLen}}
+\DoxyCodeLine{732                                 UINT32 signLen = \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{GetValueBlock}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos, \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}); ASSERT(signLen <= \mbox{\hyperlink{Decoder_8cpp_add8bd7fd3fbb318e2f76b4ae33cf6020}{MaxCodeLen}});}
+\DoxyCodeLine{733                                 }
+\DoxyCodeLine{734                                 \textcolor{comment}{// sign bits}}
+\DoxyCodeLine{735                                 UINT32 signPos = \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{AlignWordPos}}(codePos + \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}}); ASSERT(signPos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{736 }
+\DoxyCodeLine{737                                 \textcolor{comment}{// significant bits}}
+\DoxyCodeLine{738                                 UINT32 sigPos = \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{AlignWordPos}}(signPos + signLen); ASSERT(sigPos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{739 }
+\DoxyCodeLine{740                                 \textcolor{comment}{// refinement bits}}
+\DoxyCodeLine{741                                 codePos = \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{AlignWordPos}}(sigPos + sigLen); ASSERT(codePos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}});}
+\DoxyCodeLine{742 }
+\DoxyCodeLine{743                                 \textcolor{comment}{// read significant and refinement bitset from m\_codeBuffer}}
+\DoxyCodeLine{744                                 sigLen = \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a580e46028e0104de8d6afab733c8b679}{ComposeBitplane}}(bufferSize, planeMask, \&\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}[sigPos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}], \&\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}[codePos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}], \&\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}[signPos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}]);}
+\DoxyCodeLine{745                         \}}
+\DoxyCodeLine{746                 \}}
+\DoxyCodeLine{747 }
+\DoxyCodeLine{748                 \textcolor{comment}{// start of next chunk}}
+\DoxyCodeLine{749                 codePos = \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{AlignWordPos}}(codePos + bufferSize - sigLen); ASSERT(codePos < \mbox{\hyperlink{Decoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{CodeBufferBitLen}}); }
+\DoxyCodeLine{750                 }
+\DoxyCodeLine{751                 \textcolor{comment}{// next plane}}
+\DoxyCodeLine{752                 planeMask >>= 1;}
+\DoxyCodeLine{753         \}}
+\DoxyCodeLine{754 }
+\DoxyCodeLine{755         \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}{m\_valuePos}} = 0;}
+\DoxyCodeLine{756 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a580e46028e0104de8d6afab733c8b679}\label{classCDecoder_1_1CMacroBlock_a580e46028e0104de8d6afab733c8b679}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!ComposeBitplane@{ComposeBitplane}}
+\index{ComposeBitplane@{ComposeBitplane}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{ComposeBitplane()}{ComposeBitplane()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::\+C\+Macro\+Block\+::\+Compose\+Bitplane (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{buffer\+Size,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}}]{plane\+Mask,  }\item[{U\+I\+N\+T32 $\ast$}]{sig\+Bits,  }\item[{U\+I\+N\+T32 $\ast$}]{ref\+Bits,  }\item[{U\+I\+N\+T32 $\ast$}]{sign\+Bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 763 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{763                                                                                                                                   \{}
+\DoxyCodeLine{764         ASSERT(sigBits);}
+\DoxyCodeLine{765         ASSERT(refBits);}
+\DoxyCodeLine{766         ASSERT(signBits);}
+\DoxyCodeLine{767 }
+\DoxyCodeLine{768         UINT32 valPos = 0, signPos = 0, refPos = 0, sigPos = 0;}
+\DoxyCodeLine{769 }
+\DoxyCodeLine{770         \textcolor{keywordflow}{while} (valPos < bufferSize) \{}
+\DoxyCodeLine{771                 \textcolor{comment}{// search next 1 in m\_sigFlagVector using searching with sentinel}}
+\DoxyCodeLine{772                 UINT32 sigEnd = valPos;}
+\DoxyCodeLine{773                 \textcolor{keywordflow}{while}(!\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[sigEnd]) \{ sigEnd++; \}}
+\DoxyCodeLine{774                 sigEnd -= valPos;}
+\DoxyCodeLine{775                 sigEnd += sigPos;}
+\DoxyCodeLine{776 }
+\DoxyCodeLine{777                 \textcolor{comment}{// search 1's in sigBits[sigPos..sigEnd)}}
+\DoxyCodeLine{778                 \textcolor{comment}{// these 1's are significant bits}}
+\DoxyCodeLine{779                 \textcolor{keywordflow}{while} (sigPos < sigEnd) \{}
+\DoxyCodeLine{780                         \textcolor{comment}{// search 0's}}
+\DoxyCodeLine{781                         UINT32 zerocnt = \mbox{\hyperlink{BitStream_8h_ae36276982f7302d827c1345dd6440a8c}{SeekBitRange}}(sigBits, sigPos, sigEnd - sigPos);}
+\DoxyCodeLine{782                         sigPos += zerocnt;}
+\DoxyCodeLine{783                         valPos += zerocnt;}
+\DoxyCodeLine{784                         \textcolor{keywordflow}{if} (sigPos < sigEnd) \{}
+\DoxyCodeLine{785                                 \textcolor{comment}{// write bit to m\_value}}
+\DoxyCodeLine{786                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}{SetBitAtPos}}(valPos, planeMask);}
+\DoxyCodeLine{787 }
+\DoxyCodeLine{788                                 \textcolor{comment}{// copy sign bit}}
+\DoxyCodeLine{789                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7fd4539d524903d148ceb4de940d3194}{SetSign}}(valPos, \mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(signBits, signPos++)); }
+\DoxyCodeLine{790 }
+\DoxyCodeLine{791                                 \textcolor{comment}{// update significance flag vector}}
+\DoxyCodeLine{792                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[valPos++] = \textcolor{keyword}{true};}
+\DoxyCodeLine{793                                 sigPos++; }
+\DoxyCodeLine{794                         \}}
+\DoxyCodeLine{795                 \}}
+\DoxyCodeLine{796                 \textcolor{comment}{// refinement bit}}
+\DoxyCodeLine{797                 \textcolor{keywordflow}{if} (valPos < bufferSize) \{}
+\DoxyCodeLine{798                         \textcolor{comment}{// write one refinement bit}}
+\DoxyCodeLine{799                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(refBits, refPos)) \{}
+\DoxyCodeLine{800                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}{SetBitAtPos}}(valPos, planeMask);}
+\DoxyCodeLine{801                         \}}
+\DoxyCodeLine{802                         refPos++;}
+\DoxyCodeLine{803                         valPos++;}
+\DoxyCodeLine{804                 \}}
+\DoxyCodeLine{805         \}}
+\DoxyCodeLine{806         ASSERT(sigPos <= bufferSize);}
+\DoxyCodeLine{807         ASSERT(refPos <= bufferSize);}
+\DoxyCodeLine{808         ASSERT(signPos <= bufferSize);}
+\DoxyCodeLine{809         ASSERT(valPos == bufferSize);}
+\DoxyCodeLine{810 }
+\DoxyCodeLine{811         \textcolor{keywordflow}{return} sigPos;}
+\DoxyCodeLine{812 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_aa6e8f0dedcdeb9e592de7dde07b5025e}\label{classCDecoder_1_1CMacroBlock_aa6e8f0dedcdeb9e592de7dde07b5025e}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!ComposeBitplaneRLD@{ComposeBitplaneRLD}}
+\index{ComposeBitplaneRLD@{ComposeBitplaneRLD}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{ComposeBitplaneRLD()}{ComposeBitplaneRLD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::\+C\+Macro\+Block\+::\+Compose\+Bitplane\+R\+LD (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{buffer\+Size,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}}]{plane\+Mask,  }\item[{U\+I\+N\+T32}]{sig\+Pos,  }\item[{U\+I\+N\+T32 $\ast$}]{ref\+Bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 824 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{824                                                                                                                   \{}
+\DoxyCodeLine{825         ASSERT(refBits);}
+\DoxyCodeLine{826 }
+\DoxyCodeLine{827         UINT32 valPos = 0, refPos = 0;}
+\DoxyCodeLine{828         UINT32 sigPos = 0, sigEnd;}
+\DoxyCodeLine{829         UINT32 k = 3;}
+\DoxyCodeLine{830         UINT32 runlen = 1 << k; \textcolor{comment}{// = 2\string^k}}
+\DoxyCodeLine{831         UINT32 count = 0, rest = 0;}
+\DoxyCodeLine{832         \textcolor{keywordtype}{bool} set1 = \textcolor{keyword}{false};}
+\DoxyCodeLine{833 }
+\DoxyCodeLine{834         \textcolor{keywordflow}{while} (valPos < bufferSize) \{}
+\DoxyCodeLine{835                 \textcolor{comment}{// search next 1 in m\_sigFlagVector using searching with sentinel}}
+\DoxyCodeLine{836                 sigEnd = valPos;}
+\DoxyCodeLine{837                 \textcolor{keywordflow}{while}(!\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[sigEnd]) \{ sigEnd++; \}}
+\DoxyCodeLine{838                 sigEnd -= valPos;}
+\DoxyCodeLine{839                 sigEnd += sigPos;}
+\DoxyCodeLine{840 }
+\DoxyCodeLine{841                 \textcolor{keywordflow}{while} (sigPos < sigEnd) \{}
+\DoxyCodeLine{842                         \textcolor{keywordflow}{if} (rest || set1) \{}
+\DoxyCodeLine{843                                 \textcolor{comment}{// rest of last run}}
+\DoxyCodeLine{844                                 sigPos += rest;}
+\DoxyCodeLine{845                                 valPos += rest;}
+\DoxyCodeLine{846                                 rest = 0;}
+\DoxyCodeLine{847                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{848                                 \textcolor{comment}{// decode significant bits}}
+\DoxyCodeLine{849                                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos++)) \{}
+\DoxyCodeLine{850                                         \textcolor{comment}{// extract counter and generate zero run of length count}}
+\DoxyCodeLine{851                                         \textcolor{keywordflow}{if} (k > 0) \{}
+\DoxyCodeLine{852                                                 \textcolor{comment}{// extract counter}}
+\DoxyCodeLine{853                                                 count = \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{GetValueBlock}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos, k); }
+\DoxyCodeLine{854                                                 codePos += k;}
+\DoxyCodeLine{855                                                 \textcolor{keywordflow}{if} (count > 0) \{}
+\DoxyCodeLine{856                                                         sigPos += count;}
+\DoxyCodeLine{857                                                         valPos += count;}
+\DoxyCodeLine{858                                                 \}}
+\DoxyCodeLine{859 }
+\DoxyCodeLine{860                                                 \textcolor{comment}{// adapt k (half run-length interval)}}
+\DoxyCodeLine{861                                                 k--;}
+\DoxyCodeLine{862                                                 runlen >>= 1;}
+\DoxyCodeLine{863                                         \}}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865                                         set1 = \textcolor{keyword}{true};}
+\DoxyCodeLine{866 }
+\DoxyCodeLine{867                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{868                                         \textcolor{comment}{// generate zero run of length 2\string^k}}
+\DoxyCodeLine{869                                         sigPos += runlen;}
+\DoxyCodeLine{870                                         valPos += runlen;}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872                                         \textcolor{comment}{// adapt k (double run-length interval)}}
+\DoxyCodeLine{873                                         \textcolor{keywordflow}{if} (k < \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}}) \{}
+\DoxyCodeLine{874                                                 k++;}
+\DoxyCodeLine{875                                                 runlen <<= 1;}
+\DoxyCodeLine{876                                         \}}
+\DoxyCodeLine{877                                 \}}
+\DoxyCodeLine{878                         \}}
+\DoxyCodeLine{879 }
+\DoxyCodeLine{880                         \textcolor{keywordflow}{if} (sigPos < sigEnd) \{}
+\DoxyCodeLine{881                                 \textcolor{keywordflow}{if} (set1) \{}
+\DoxyCodeLine{882                                         set1 = \textcolor{keyword}{false};}
+\DoxyCodeLine{883 }
+\DoxyCodeLine{884                                         \textcolor{comment}{// write 1 bit}}
+\DoxyCodeLine{885                                         \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}{SetBitAtPos}}(valPos, planeMask);}
+\DoxyCodeLine{886 }
+\DoxyCodeLine{887                                         \textcolor{comment}{// set sign bit}}
+\DoxyCodeLine{888                                         \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7fd4539d524903d148ceb4de940d3194}{SetSign}}(valPos, \mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, codePos++)); }
+\DoxyCodeLine{889 }
+\DoxyCodeLine{890                                         \textcolor{comment}{// update significance flag vector}}
+\DoxyCodeLine{891                                         \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[valPos++] = \textcolor{keyword}{true};}
+\DoxyCodeLine{892                                         sigPos++;}
+\DoxyCodeLine{893                                 \}}
+\DoxyCodeLine{894                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{895                                 rest = sigPos - sigEnd;}
+\DoxyCodeLine{896                                 sigPos = sigEnd;}
+\DoxyCodeLine{897                                 valPos -= rest;}
+\DoxyCodeLine{898                         \}}
+\DoxyCodeLine{899 }
+\DoxyCodeLine{900                 \}}
+\DoxyCodeLine{901 }
+\DoxyCodeLine{902                 \textcolor{comment}{// refinement bit}}
+\DoxyCodeLine{903                 \textcolor{keywordflow}{if} (valPos < bufferSize) \{}
+\DoxyCodeLine{904                         \textcolor{comment}{// write one refinement bit}}
+\DoxyCodeLine{905                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(refBits, refPos)) \{}
+\DoxyCodeLine{906                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}{SetBitAtPos}}(valPos, planeMask);}
+\DoxyCodeLine{907                         \}}
+\DoxyCodeLine{908                         refPos++;}
+\DoxyCodeLine{909                         valPos++;}
+\DoxyCodeLine{910                 \}}
+\DoxyCodeLine{911         \}}
+\DoxyCodeLine{912         ASSERT(sigPos <= bufferSize);}
+\DoxyCodeLine{913         ASSERT(refPos <= bufferSize);}
+\DoxyCodeLine{914         ASSERT(valPos == bufferSize);}
+\DoxyCodeLine{915 }
+\DoxyCodeLine{916         \textcolor{keywordflow}{return} sigPos;}
+\DoxyCodeLine{917 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_af7de96f745479ca3956f671a7f794489}\label{classCDecoder_1_1CMacroBlock_af7de96f745479ca3956f671a7f794489}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!ComposeBitplaneRLD@{ComposeBitplaneRLD}}
+\index{ComposeBitplaneRLD@{ComposeBitplaneRLD}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{ComposeBitplaneRLD()}{ComposeBitplaneRLD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::\+C\+Macro\+Block\+::\+Compose\+Bitplane\+R\+LD (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{buffer\+Size,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}}]{plane\+Mask,  }\item[{U\+I\+N\+T32 $\ast$}]{sig\+Bits,  }\item[{U\+I\+N\+T32 $\ast$}]{ref\+Bits,  }\item[{U\+I\+N\+T32}]{sign\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 927 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{927                                                                                                                                    \{}
+\DoxyCodeLine{928         ASSERT(sigBits);}
+\DoxyCodeLine{929         ASSERT(refBits);}
+\DoxyCodeLine{930 }
+\DoxyCodeLine{931         UINT32 valPos = 0, refPos = 0;}
+\DoxyCodeLine{932         UINT32 sigPos = 0, sigEnd;}
+\DoxyCodeLine{933         UINT32 zerocnt, count = 0;}
+\DoxyCodeLine{934         UINT32 k = 0;}
+\DoxyCodeLine{935         UINT32 runlen = 1 << k; \textcolor{comment}{// = 2\string^k}}
+\DoxyCodeLine{936         \textcolor{keywordtype}{bool} signBit = \textcolor{keyword}{false};}
+\DoxyCodeLine{937         \textcolor{keywordtype}{bool} zeroAfterRun = \textcolor{keyword}{false};}
+\DoxyCodeLine{938 }
+\DoxyCodeLine{939         \textcolor{keywordflow}{while} (valPos < bufferSize) \{}
+\DoxyCodeLine{940                 \textcolor{comment}{// search next 1 in m\_sigFlagVector using searching with sentinel}}
+\DoxyCodeLine{941                 sigEnd = valPos;}
+\DoxyCodeLine{942                 \textcolor{keywordflow}{while}(!\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[sigEnd]) \{ sigEnd++; \}}
+\DoxyCodeLine{943                 sigEnd -= valPos;}
+\DoxyCodeLine{944                 sigEnd += sigPos;}
+\DoxyCodeLine{945 }
+\DoxyCodeLine{946                 \textcolor{comment}{// search 1's in sigBits[sigPos..sigEnd)}}
+\DoxyCodeLine{947                 \textcolor{comment}{// these 1's are significant bits}}
+\DoxyCodeLine{948                 \textcolor{keywordflow}{while} (sigPos < sigEnd) \{}
+\DoxyCodeLine{949                         \textcolor{comment}{// search 0's}}
+\DoxyCodeLine{950                         zerocnt = \mbox{\hyperlink{BitStream_8h_ae36276982f7302d827c1345dd6440a8c}{SeekBitRange}}(sigBits, sigPos, sigEnd - sigPos);}
+\DoxyCodeLine{951                         sigPos += zerocnt;}
+\DoxyCodeLine{952                         valPos += zerocnt;}
+\DoxyCodeLine{953                         \textcolor{keywordflow}{if} (sigPos < sigEnd) \{}
+\DoxyCodeLine{954                                 \textcolor{comment}{// write bit to m\_value}}
+\DoxyCodeLine{955                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}{SetBitAtPos}}(valPos, planeMask);}
+\DoxyCodeLine{956 }
+\DoxyCodeLine{957                                 \textcolor{comment}{// check sign bit}}
+\DoxyCodeLine{958                                 \textcolor{keywordflow}{if} (count == 0) \{}
+\DoxyCodeLine{959                                         \textcolor{comment}{// all 1's have been set}}
+\DoxyCodeLine{960                                         \textcolor{keywordflow}{if} (zeroAfterRun) \{}
+\DoxyCodeLine{961                                                 \textcolor{comment}{// finish the run with a 0}}
+\DoxyCodeLine{962                                                 signBit = \textcolor{keyword}{false};}
+\DoxyCodeLine{963                                                 zeroAfterRun = \textcolor{keyword}{false};}
+\DoxyCodeLine{964                                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{965                                                 \textcolor{comment}{// decode next sign bit}}
+\DoxyCodeLine{966                                                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, signPos++)) \{}
+\DoxyCodeLine{967                                                         \textcolor{comment}{// generate 1's run of length 2\string^k}}
+\DoxyCodeLine{968                                                         count = runlen - 1;}
+\DoxyCodeLine{969                                                         signBit = \textcolor{keyword}{true};}
+\DoxyCodeLine{970                         }
+\DoxyCodeLine{971                                                         \textcolor{comment}{// adapt k (double run-length interval)}}
+\DoxyCodeLine{972                                                         \textcolor{keywordflow}{if} (k < \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}}) \{}
+\DoxyCodeLine{973                                                                 k++; }
+\DoxyCodeLine{974                                                                 runlen <<= 1;}
+\DoxyCodeLine{975                                                         \}}
+\DoxyCodeLine{976                                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{977                                                         \textcolor{comment}{// extract counter and generate 1's run of length count}}
+\DoxyCodeLine{978                                                         \textcolor{keywordflow}{if} (k > 0) \{}
+\DoxyCodeLine{979                                                                 \textcolor{comment}{// extract counter}}
+\DoxyCodeLine{980                                                                 count = \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{GetValueBlock}}(\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}{m\_codeBuffer}}, signPos, k); }
+\DoxyCodeLine{981                                                                 signPos += k;}
+\DoxyCodeLine{982 }
+\DoxyCodeLine{983                                                                 \textcolor{comment}{// adapt k (half run-length interval)}}
+\DoxyCodeLine{984                                                                 k--; }
+\DoxyCodeLine{985                                                                 runlen >>= 1;}
+\DoxyCodeLine{986                                                         \}}
+\DoxyCodeLine{987                                                         \textcolor{keywordflow}{if} (count > 0) \{}
+\DoxyCodeLine{988                                                                 count--;}
+\DoxyCodeLine{989                                                                 signBit = \textcolor{keyword}{true};}
+\DoxyCodeLine{990                                                                 zeroAfterRun = \textcolor{keyword}{true};}
+\DoxyCodeLine{991                                                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{992                                                                 signBit = \textcolor{keyword}{false};}
+\DoxyCodeLine{993                                                         \}}
+\DoxyCodeLine{994                                                 \}}
+\DoxyCodeLine{995                                         \}}
+\DoxyCodeLine{996                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{997                                         ASSERT(count > 0);}
+\DoxyCodeLine{998                                         ASSERT(signBit);}
+\DoxyCodeLine{999                                         count--;}
+\DoxyCodeLine{1000                                 \}}
+\DoxyCodeLine{1001 }
+\DoxyCodeLine{1002                                 \textcolor{comment}{// copy sign bit}}
+\DoxyCodeLine{1003                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7fd4539d524903d148ceb4de940d3194}{SetSign}}(valPos, signBit); }
+\DoxyCodeLine{1004 }
+\DoxyCodeLine{1005                                 \textcolor{comment}{// update significance flag vector}}
+\DoxyCodeLine{1006                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}{m\_sigFlagVector}}[valPos++] = \textcolor{keyword}{true};}
+\DoxyCodeLine{1007                                 sigPos++; }
+\DoxyCodeLine{1008                         \}}
+\DoxyCodeLine{1009                 \}}
+\DoxyCodeLine{1010 }
+\DoxyCodeLine{1011                 \textcolor{comment}{// refinement bit}}
+\DoxyCodeLine{1012                 \textcolor{keywordflow}{if} (valPos < bufferSize) \{}
+\DoxyCodeLine{1013                         \textcolor{comment}{// write one refinement bit}}
+\DoxyCodeLine{1014                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{GetBit}}(refBits, refPos)) \{}
+\DoxyCodeLine{1015                                 \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}{SetBitAtPos}}(valPos, planeMask);}
+\DoxyCodeLine{1016                         \}}
+\DoxyCodeLine{1017                         refPos++;}
+\DoxyCodeLine{1018                         valPos++;}
+\DoxyCodeLine{1019                 \}}
+\DoxyCodeLine{1020         \}}
+\DoxyCodeLine{1021         ASSERT(sigPos <= bufferSize);}
+\DoxyCodeLine{1022         ASSERT(refPos <= bufferSize);}
+\DoxyCodeLine{1023         ASSERT(valPos == bufferSize);}
+\DoxyCodeLine{1024 }
+\DoxyCodeLine{1025         \textcolor{keywordflow}{return} sigPos;}
+\DoxyCodeLine{1026 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a0425cb162ca41e04f6ae0886a62b3cc9}\label{classCDecoder_1_1CMacroBlock_a0425cb162ca41e04f6ae0886a62b3cc9}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!IsCompletelyRead@{IsCompletelyRead}}
+\index{IsCompletelyRead@{IsCompletelyRead}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{IsCompletelyRead()}{IsCompletelyRead()}}
+{\footnotesize\ttfamily bool C\+Decoder\+::\+C\+Macro\+Block\+::\+Is\+Completely\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if this macro block has been completely read. \begin{DoxyReturn}{Returns}
+true if current value position is at block end 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}{m\_valuePos}} >= \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a19247bd5e6073252c45abf9d33b44ee0}{m\_header}}.\mbox{\hyperlink{unionROIBlockHeader_a15ceb2e488c3767cc1ab774323c02ded}{rbh}}.\mbox{\hyperlink{structROIBlockHeader_1_1RBH_af0c3de8c247b06116a9d84d2f9515762}{bufferSize}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}\label{classCDecoder_1_1CMacroBlock_a4bf1b6bc026f95ef4d93fbdfaf69f724}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!SetBitAtPos@{SetBitAtPos}}
+\index{SetBitAtPos@{SetBitAtPos}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{SetBitAtPos()}{SetBitAtPos()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+C\+Macro\+Block\+::\+Set\+Bit\+At\+Pos (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{pos,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}}]{plane\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 85 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{85 \{ (\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[pos] >= 0) ? \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[pos] |= planeMask : \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[pos] -= planeMask; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a7fd4539d524903d148ceb4de940d3194}\label{classCDecoder_1_1CMacroBlock_a7fd4539d524903d148ceb4de940d3194}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!SetSign@{SetSign}}
+\index{SetSign@{SetSign}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{SetSign()}{SetSign()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+C\+Macro\+Block\+::\+Set\+Sign (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{pos,  }\item[{bool}]{sign }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 86 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86 \{ \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[pos] = -\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[pos]*sign + \mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[pos]*(!sign); \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}\label{classCDecoder_1_1CMacroBlock_ace0702d7f8281972b1db091248c3c80b}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!m\_codeBuffer@{m\_codeBuffer}}
+\index{m\_codeBuffer@{m\_codeBuffer}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{m\_codeBuffer}{m\_codeBuffer}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::\+C\+Macro\+Block\+::m\+\_\+code\+Buffer\mbox{[}\mbox{\hyperlink{Encoder_8h_a05a74e73e6c734fcad194efbca053ed5}{Code\+Buffer\+Len}}\mbox{]}}
+
+
+
+input buffer for encoded bitstream 
+
+
+
+Definition at line 78 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a19247bd5e6073252c45abf9d33b44ee0}\label{classCDecoder_1_1CMacroBlock_a19247bd5e6073252c45abf9d33b44ee0}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!m\_header@{m\_header}}
+\index{m\_header@{m\_header}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{m\_header}{m\_header}}
+{\footnotesize\ttfamily \mbox{\hyperlink{unionROIBlockHeader}{R\+O\+I\+Block\+Header}} C\+Decoder\+::\+C\+Macro\+Block\+::m\+\_\+header}
+
+
+
+block header 
+
+
+
+Definition at line 76 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}\label{classCDecoder_1_1CMacroBlock_af6931769654b397d6c3becae44e868b0}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!m\_sigFlagVector@{m\_sigFlagVector}}
+\index{m\_sigFlagVector@{m\_sigFlagVector}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{m\_sigFlagVector}{m\_sigFlagVector}}
+{\footnotesize\ttfamily bool C\+Decoder\+::\+C\+Macro\+Block\+::m\+\_\+sig\+Flag\+Vector\mbox{[}\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}+1\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 88 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}\label{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!m\_value@{m\_value}}
+\index{m\_value@{m\_value}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{m\_value}{m\_value}}
+{\footnotesize\ttfamily \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} C\+Decoder\+::\+C\+Macro\+Block\+::m\+\_\+value\mbox{[}\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}\mbox{]}}
+
+
+
+output buffer of values with index m\+\_\+value\+Pos 
+
+
+
+Definition at line 77 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}\label{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}} 
+\index{CDecoder::CMacroBlock@{CDecoder::CMacroBlock}!m\_valuePos@{m\_valuePos}}
+\index{m\_valuePos@{m\_valuePos}!CDecoder::CMacroBlock@{CDecoder::CMacroBlock}}
+\subsubsection{\texorpdfstring{m\_valuePos}{m\_valuePos}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::\+C\+Macro\+Block\+::m\+\_\+value\+Pos}
+
+
+
+current position in m\+\_\+value 
+
+
+
+Definition at line 79 of file Decoder.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Decoder_8h}{Decoder.\+h}}\item 
+\mbox{\hyperlink{Decoder_8cpp}{Decoder.\+cpp}}\end{DoxyCompactItemize}

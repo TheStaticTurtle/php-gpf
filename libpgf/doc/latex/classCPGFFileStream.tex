@@ -1,0 +1,297 @@
+\hypertarget{classCPGFFileStream}{}\section{C\+P\+G\+F\+File\+Stream Class Reference}
+\label{classCPGFFileStream}\index{CPGFFileStream@{CPGFFileStream}}
+
+
+File stream class.  
+
+
+
+
+{\ttfamily \#include $<$P\+G\+Fstream.\+h$>$}
+
+Inheritance diagram for C\+P\+G\+F\+File\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCPGFFileStream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCPGFFileStream_ae505bb374fe13a0b9cdac3b71ae414e2}{C\+P\+G\+F\+File\+Stream}} ()
+\item 
+\mbox{\hyperlink{classCPGFFileStream_ac429f9fa68a762203d727a6c0d586eec}{C\+P\+G\+F\+File\+Stream}} (H\+A\+N\+D\+LE h\+File)
+\item 
+H\+A\+N\+D\+LE \mbox{\hyperlink{classCPGFFileStream_a94046c82916ffeb6aa868f27f25b1c37}{Get\+Handle}} ()
+\item 
+virtual \mbox{\hyperlink{classCPGFFileStream_ac9da1053f6b3cb8f3e403060ff7a44ae}{$\sim$\+C\+P\+G\+F\+File\+Stream}} ()
+\item 
+virtual void \mbox{\hyperlink{classCPGFFileStream_a28a060662951edf72f7739ba575c9fff}{Write}} (int $\ast$count, void $\ast$buffer)
+\item 
+virtual void \mbox{\hyperlink{classCPGFFileStream_a3ff32003518e1d996cc8af33c5bbbfaf}{Read}} (int $\ast$count, void $\ast$buffer)
+\item 
+virtual void \mbox{\hyperlink{classCPGFFileStream_a2460f1fdab77a44ddf24420139a50043}{Set\+Pos}} (short pos\+Mode, I\+N\+T64 pos\+Off)
+\item 
+virtual U\+I\+N\+T64 \mbox{\hyperlink{classCPGFFileStream_a9ec4715342add84461c62631101e1ce6}{Get\+Pos}} () const
+\item 
+virtual bool \mbox{\hyperlink{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}{Is\+Valid}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+N\+D\+LE \mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\+\_\+h\+File}}
+\begin{DoxyCompactList}\small\item\em file handle \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File stream class. 
+
+A P\+GF stream subclass for external storage files. \begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+Definition at line 82 of file P\+G\+Fstream.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCPGFFileStream_ae505bb374fe13a0b9cdac3b71ae414e2}\label{classCPGFFileStream_ae505bb374fe13a0b9cdac3b71ae414e2}} 
+\index{CPGFFileStream@{CPGFFileStream}!CPGFFileStream@{CPGFFileStream}}
+\index{CPGFFileStream@{CPGFFileStream}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{CPGFFileStream()}{CPGFFileStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+P\+G\+F\+File\+Stream\+::\+C\+P\+G\+F\+File\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 87 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87 : \mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}}(0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFFileStream_ac429f9fa68a762203d727a6c0d586eec}\label{classCPGFFileStream_ac429f9fa68a762203d727a6c0d586eec}} 
+\index{CPGFFileStream@{CPGFFileStream}!CPGFFileStream@{CPGFFileStream}}
+\index{CPGFFileStream@{CPGFFileStream}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{CPGFFileStream()}{CPGFFileStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+P\+G\+F\+File\+Stream\+::\+C\+P\+G\+F\+File\+Stream (\begin{DoxyParamCaption}\item[{H\+A\+N\+D\+LE}]{h\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em h\+File} & File handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90 : \mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}}(hFile) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFFileStream_ac9da1053f6b3cb8f3e403060ff7a44ae}\label{classCPGFFileStream_ac9da1053f6b3cb8f3e403060ff7a44ae}} 
+\index{CPGFFileStream@{CPGFFileStream}!````~CPGFFileStream@{$\sim$CPGFFileStream}}
+\index{````~CPGFFileStream@{$\sim$CPGFFileStream}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{$\sim$CPGFFileStream()}{~CPGFFileStream()}}
+{\footnotesize\ttfamily virtual C\+P\+G\+F\+File\+Stream\+::$\sim$\+C\+P\+G\+F\+File\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 94 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94 \{ \mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}} = 0; \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCPGFFileStream_a94046c82916ffeb6aa868f27f25b1c37}\label{classCPGFFileStream_a94046c82916ffeb6aa868f27f25b1c37}} 
+\index{CPGFFileStream@{CPGFFileStream}!GetHandle@{GetHandle}}
+\index{GetHandle@{GetHandle}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{GetHandle()}{GetHandle()}}
+{\footnotesize\ttfamily H\+A\+N\+D\+LE C\+P\+G\+F\+File\+Stream\+::\+Get\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+File handle 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFFileStream_a9ec4715342add84461c62631101e1ce6}\label{classCPGFFileStream_a9ec4715342add84461c62631101e1ce6}} 
+\index{CPGFFileStream@{CPGFFileStream}!GetPos@{GetPos}}
+\index{GetPos@{GetPos}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{GetPos()}{GetPos()}}
+{\footnotesize\ttfamily U\+I\+N\+T64 C\+P\+G\+F\+File\+Stream\+::\+Get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get current stream position. \begin{DoxyReturn}{Returns}
+Current stream position 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 64 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64                                     \{}
+\DoxyCodeLine{65         ASSERT(\mbox{\hyperlink{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}{IsValid}}());}
+\DoxyCodeLine{66         OSError err;}
+\DoxyCodeLine{67         UINT64 pos = 0;}
+\DoxyCodeLine{68         \textcolor{keywordflow}{if} ((err = GetFPos(\mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}}, \&pos)) != NoError) ReturnWithError2(err, pos);}
+\DoxyCodeLine{69         \textcolor{keywordflow}{return} pos;}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}\label{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}} 
+\index{CPGFFileStream@{CPGFFileStream}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily virtual bool C\+P\+G\+F\+File\+Stream\+::\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Check stream validity. \begin{DoxyReturn}{Returns}
+True if stream and current position is valid 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_abf99169c9bcf0feb57edc55cec215b95}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 99 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}} != 0; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFFileStream_a3ff32003518e1d996cc8af33c5bbbfaf}\label{classCPGFFileStream_a3ff32003518e1d996cc8af33c5bbbfaf}} 
+\index{CPGFFileStream@{CPGFFileStream}!Read@{Read}}
+\index{Read@{Read}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+File\+Stream\+::\+Read (\begin{DoxyParamCaption}\item[{int $\ast$}]{count,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Read some bytes from this stream and stores them into a buffer. 
+\begin{DoxyParams}{Parameters}
+{\em count} & A pointer to a value containing the number of bytes should be read. After this call it contains the number of read bytes. \\
+\hline
+{\em buffer} & A memory buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 48 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48                                                    \{}
+\DoxyCodeLine{49         ASSERT(count);}
+\DoxyCodeLine{50         ASSERT(buffPtr);}
+\DoxyCodeLine{51         ASSERT(\mbox{\hyperlink{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}{IsValid}}());}
+\DoxyCodeLine{52         OSError err;}
+\DoxyCodeLine{53         \textcolor{keywordflow}{if} ((err = FileRead(\mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}}, count, buffPtr)) != NoError) ReturnWithError(err);}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFFileStream_a2460f1fdab77a44ddf24420139a50043}\label{classCPGFFileStream_a2460f1fdab77a44ddf24420139a50043}} 
+\index{CPGFFileStream@{CPGFFileStream}!SetPos@{SetPos}}
+\index{SetPos@{SetPos}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{SetPos()}{SetPos()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+File\+Stream\+::\+Set\+Pos (\begin{DoxyParamCaption}\item[{short}]{pos\+Mode,  }\item[{I\+N\+T64}]{pos\+Off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set stream position either absolute or relative. 
+\begin{DoxyParams}{Parameters}
+{\em pos\+Mode} & A position mode (F\+S\+From\+Start, F\+S\+From\+Current, F\+S\+From\+End) \\
+\hline
+{\em pos\+Off} & A new stream position (absolute positioning) or a position offset (relative positioning) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 57 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                        \{}
+\DoxyCodeLine{58         ASSERT(\mbox{\hyperlink{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}{IsValid}}());}
+\DoxyCodeLine{59         OSError err;}
+\DoxyCodeLine{60         \textcolor{keywordflow}{if} ((err = SetFPos(\mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}}, posMode, posOff)) != NoError) ReturnWithError(err);}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFFileStream_a28a060662951edf72f7739ba575c9fff}\label{classCPGFFileStream_a28a060662951edf72f7739ba575c9fff}} 
+\index{CPGFFileStream@{CPGFFileStream}!Write@{Write}}
+\index{Write@{Write}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void C\+P\+G\+F\+File\+Stream\+::\+Write (\begin{DoxyParamCaption}\item[{int $\ast$}]{count,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Write some bytes out of a buffer into this stream. 
+\begin{DoxyParams}{Parameters}
+{\em count} & A pointer to a value containing the number of bytes should be written. After this call it contains the number of written bytes. \\
+\hline
+{\em buffer} & A memory buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCPGFStream_a0a46ae977995134787219288f4123134}{C\+P\+G\+F\+Stream}}.
+
+
+
+Definition at line 38 of file P\+G\+Fstream.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38                                                     \{}
+\DoxyCodeLine{39         ASSERT(count);}
+\DoxyCodeLine{40         ASSERT(buffPtr);}
+\DoxyCodeLine{41         ASSERT(\mbox{\hyperlink{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}{IsValid}}());}
+\DoxyCodeLine{42         OSError err;}
+\DoxyCodeLine{43         \textcolor{keywordflow}{if} ((err = FileWrite(\mbox{\hyperlink{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}{m\_hFile}}, count, buffPtr)) != NoError) ReturnWithError(err);}
+\DoxyCodeLine{44         }
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}\label{classCPGFFileStream_a3e442cbf8c1a8f66d737c36ceb0c9f32}} 
+\index{CPGFFileStream@{CPGFFileStream}!m\_hFile@{m\_hFile}}
+\index{m\_hFile@{m\_hFile}!CPGFFileStream@{CPGFFileStream}}
+\subsubsection{\texorpdfstring{m\_hFile}{m\_hFile}}
+{\footnotesize\ttfamily H\+A\+N\+D\+LE C\+P\+G\+F\+File\+Stream\+::m\+\_\+h\+File\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+file handle 
+
+
+
+Definition at line 84 of file P\+G\+Fstream.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PGFstream_8h}{P\+G\+Fstream.\+h}}\item 
+\mbox{\hyperlink{PGFstream_8cpp}{P\+G\+Fstream.\+cpp}}\end{DoxyCompactItemize}

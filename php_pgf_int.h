@@ -2,6 +2,9 @@
 #ifndef PHP_PGF_INT_H
 #define PHP_PGF_INT_H
 
+#include "PGFimage.h"
+#include "PGFstream.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif

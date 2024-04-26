@@ -1,0 +1,988 @@
+\hypertarget{classCDecoder}{}\section{C\+Decoder Class Reference}
+\label{classCDecoder}\index{CDecoder@{CDecoder}}
+
+
+P\+GF decoder.  
+
+
+
+
+{\ttfamily \#include $<$Decoder.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCDecoder_1_1CMacroBlock}{C\+Macro\+Block}}
+\begin{DoxyCompactList}\small\item\em A macro block is a decoding unit of fixed size (uncoded) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCDecoder_acc4f2d5e39048b4dfd079d56dafd18fd}{C\+Decoder}} (\mbox{\hyperlink{classCPGFStream}{C\+P\+G\+F\+Stream}} $\ast$stream, \mbox{\hyperlink{structPGFPreHeader}{P\+G\+F\+Pre\+Header}} \&pre\+Header, \mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}} \&header, \mbox{\hyperlink{structPGFPostHeader}{P\+G\+F\+Post\+Header}} \&post\+Header, U\+I\+N\+T32 $\ast$\&level\+Length, U\+I\+N\+T64 \&user\+Data\+Pos, bool use\+O\+MP, U\+I\+N\+T32 user\+Data\+Policy)
+\item 
+\mbox{\hyperlink{classCDecoder_acb3e9a62be775af9a88da18730cd6f0e}{$\sim$\+C\+Decoder}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCDecoder_a61a588ddb407e323bb3647eb6f70fa6b}{Partition}} (\mbox{\hyperlink{classCSubband}{C\+Subband}} $\ast$band, int quant\+Param, int width, int height, int start\+Pos, int pitch)
+\item 
+void \mbox{\hyperlink{classCDecoder_a7112215e28ac56d75bdf4a5786f57a34}{Decode\+Interleaved}} (\mbox{\hyperlink{classCWaveletTransform}{C\+Wavelet\+Transform}} $\ast$wt\+Channel, int level, int quant\+Param)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_a4e9c1ffe92430bf2420b8da76f145fcf}{Get\+Encoded\+Header\+Length}} () const
+\item 
+void \mbox{\hyperlink{classCDecoder_ab043bb3599b2301bebd22527258ac4cf}{Set\+Stream\+Pos\+To\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Resets stream position to beginning of P\+GF pre-\/header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCDecoder_ae6d16df70a317f3dc805894cf6101fe2}{Set\+Stream\+Pos\+To\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Resets stream position to beginning of data block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCDecoder_acc125e94ea5c6af11a91ac1c4a43cf8f}{Skip}} (U\+I\+N\+T64 offset)
+\item 
+void \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{Dequantize\+Value}} (\mbox{\hyperlink{classCSubband}{C\+Subband}} $\ast$band, U\+I\+N\+T32 band\+Pos, int quant\+Param)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_a4146a0adddfe52ca79de8b0be58e8482}{Read\+Encoded\+Data}} (U\+I\+N\+T8 $\ast$target, U\+I\+N\+T32 len) const
+\item 
+void \mbox{\hyperlink{classCDecoder_a78b5590168027919fcdba0ee9cbe2610}{Decode\+Buffer}} ()
+\item 
+\mbox{\hyperlink{classCPGFStream}{C\+P\+G\+F\+Stream}} $\ast$ \mbox{\hyperlink{classCDecoder_a49deab3805a603f9332e2a1b6a58d800}{Get\+Stream}} ()
+\item 
+void \mbox{\hyperlink{classCDecoder_ad152fbdc42a8a47960be7ba00c5fbb85}{Get\+Next\+Macro\+Block}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCDecoder_a55cbccabab76500fd47e15332d6b6506}{Read\+Macro\+Block}} (\mbox{\hyperlink{classCDecoder_1_1CMacroBlock}{C\+Macro\+Block}} $\ast$block)
+\begin{DoxyCompactList}\small\item\em throws \mbox{\hyperlink{structIOException}{I\+O\+Exception}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCPGFStream}{C\+P\+G\+F\+Stream}} $\ast$ \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\+\_\+stream}}
+\begin{DoxyCompactList}\small\item\em input P\+GF stream \end{DoxyCompactList}\item 
+U\+I\+N\+T64 \mbox{\hyperlink{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}{m\+\_\+start\+Pos}}
+\begin{DoxyCompactList}\small\item\em stream position at the beginning of the P\+GF pre-\/header \end{DoxyCompactList}\item 
+U\+I\+N\+T64 \mbox{\hyperlink{classCDecoder_a6562d817189d48cfed14b5e8b921e180}{m\+\_\+stream\+Size\+Estimation}}
+\begin{DoxyCompactList}\small\item\em estimation of stream size \end{DoxyCompactList}\item 
+U\+I\+N\+T32 \mbox{\hyperlink{classCDecoder_aa59513d248af5c39dee8ae193876552b}{m\+\_\+encoded\+Header\+Length}}
+\begin{DoxyCompactList}\small\item\em stream offset from start\+Pos to the beginning of the data part (highest level) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCDecoder_1_1CMacroBlock}{C\+Macro\+Block}} $\ast$$\ast$ \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\+\_\+macro\+Blocks}}
+\begin{DoxyCompactList}\small\item\em array of macroblocks \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}{m\+\_\+current\+Block\+Index}}
+\begin{DoxyCompactList}\small\item\em index of current macro block \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\+\_\+macro\+Block\+Len}}
+\begin{DoxyCompactList}\small\item\em array length \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\+\_\+macro\+Blocks\+Available}}
+\begin{DoxyCompactList}\small\item\em number of decoded macro blocks (including currently used macro block) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCDecoder_1_1CMacroBlock}{C\+Macro\+Block}} $\ast$ \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\+\_\+current\+Block}}
+\begin{DoxyCompactList}\small\item\em current macro block (used by main thread) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+GF decoder. 
+
+P\+GF decoder class. \begin{DoxyAuthor}{Author}
+C. Stamm, R. Spuler 
+\end{DoxyAuthor}
+
+
+Definition at line 46 of file Decoder.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCDecoder_acc4f2d5e39048b4dfd079d56dafd18fd}\label{classCDecoder_acc4f2d5e39048b4dfd079d56dafd18fd}} 
+\index{CDecoder@{CDecoder}!CDecoder@{CDecoder}}
+\index{CDecoder@{CDecoder}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{CDecoder()}{CDecoder()}}
+{\footnotesize\ttfamily C\+Decoder\+::\+C\+Decoder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCPGFStream}{C\+P\+G\+F\+Stream}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{structPGFPreHeader}{P\+G\+F\+Pre\+Header}} \&}]{pre\+Header,  }\item[{\mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}} \&}]{header,  }\item[{\mbox{\hyperlink{structPGFPostHeader}{P\+G\+F\+Post\+Header}} \&}]{post\+Header,  }\item[{U\+I\+N\+T32 $\ast$\&}]{level\+Length,  }\item[{U\+I\+N\+T64 \&}]{user\+Data\+Pos,  }\item[{bool}]{use\+O\+MP,  }\item[{U\+I\+N\+T32}]{user\+Data\+Policy }\end{DoxyParamCaption})}
+
+Constructor\+: Read pre-\/header, header, and level\+Length at current stream position. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A P\+GF stream \\
+\hline
+{\em pre\+Header} & \mbox{[}out\mbox{]} A P\+GF pre-\/header \\
+\hline
+{\em header} & \mbox{[}out\mbox{]} A P\+GF header \\
+\hline
+{\em post\+Header} & \mbox{[}out\mbox{]} A P\+GF post-\/header \\
+\hline
+{\em level\+Length} & The location of the level\+Length array. The array is allocated in this method. The caller has to delete this array. \\
+\hline
+{\em user\+Data\+Pos} & The stream position of the user data (metadata) \\
+\hline
+{\em use\+O\+MP} & If true, then the decoder will use multi-\/threading based on open\+MP \\
+\hline
+{\em user\+Data\+Policy} & Policy of user data (meta-\/data) handling while reading P\+GF headers.\\
+\hline
+\end{DoxyParams}
+Constructor Read pre-\/header, header, and level\+Length It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A P\+GF stream \\
+\hline
+{\em pre\+Header} & \mbox{[}out\mbox{]} A P\+GF pre-\/header \\
+\hline
+{\em header} & \mbox{[}out\mbox{]} A P\+GF header \\
+\hline
+{\em post\+Header} & \mbox{[}out\mbox{]} A P\+GF post-\/header \\
+\hline
+{\em level\+Length} & The location of the level\+Length array. The array is allocated in this method. The caller has to delete this array. \\
+\hline
+{\em user\+Data\+Pos} & The stream position of the user data (metadata) \\
+\hline
+{\em use\+O\+MP} & If true, then the decoder will use multi-\/threading based on open\+MP \\
+\hline
+{\em user\+Data\+Policy} & Policy of user data (meta-\/data) handling while reading P\+GF headers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76 : \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}(stream)}
+\DoxyCodeLine{77 , \mbox{\hyperlink{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}{m\_startPos}}(0)}
+\DoxyCodeLine{78 , \mbox{\hyperlink{classCDecoder_a6562d817189d48cfed14b5e8b921e180}{m\_streamSizeEstimation}}(0)}
+\DoxyCodeLine{79 , \mbox{\hyperlink{classCDecoder_aa59513d248af5c39dee8ae193876552b}{m\_encodedHeaderLength}}(0)}
+\DoxyCodeLine{80 , \mbox{\hyperlink{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}{m\_currentBlockIndex}}(0)}
+\DoxyCodeLine{81 , \mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}}(0)}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{83 , m\_roi(\textcolor{keyword}{false})}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{85 \{}
+\DoxyCodeLine{86         ASSERT(\mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}});}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{int} count, expected;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{comment}{// store current stream position}}
+\DoxyCodeLine{91         \mbox{\hyperlink{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}{m\_startPos}} = \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}{GetPos}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{comment}{// read magic and version}}
+\DoxyCodeLine{94         count = expected = \mbox{\hyperlink{PGFtypes_8h_a7b1bd3bd3f41e82f5e4c3f642079c122}{MagicVersionSize}};}
+\DoxyCodeLine{95         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, \&preHeader);}
+\DoxyCodeLine{96         \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{comment}{// read header size}}
+\DoxyCodeLine{99         \textcolor{keywordflow}{if} (preHeader.\mbox{\hyperlink{structPGFMagicVersion_aa7ff5e50537cac9dd4c62d4c8982d09d}{version}} \& \mbox{\hyperlink{PGFtypes_8h_ab75c5e81917cb1ee3ec6396af51aff27}{Version6}}) \{}
+\DoxyCodeLine{100                 \textcolor{comment}{// 32 bit header size since version 6}}
+\DoxyCodeLine{101                 count = expected = 4;}
+\DoxyCodeLine{102         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{103                 count = expected = 2;}
+\DoxyCodeLine{104         \}}
+\DoxyCodeLine{105         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, ((UINT8*)\&preHeader) + \mbox{\hyperlink{PGFtypes_8h_a7b1bd3bd3f41e82f5e4c3f642079c122}{MagicVersionSize}});}
+\DoxyCodeLine{106         \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \textcolor{comment}{// make sure the values are correct read}}
+\DoxyCodeLine{109         preHeader.hSize = \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\_\_VAL}}(preHeader.hSize);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{comment}{// check magic number}}
+\DoxyCodeLine{112         \textcolor{keywordflow}{if} (memcmp(preHeader.magic, \mbox{\hyperlink{PGFtypes_8h_a6af5fdbb431a51fc87698ac0b2da8e34}{PGFMagic}}, 3) != 0) \{}
+\DoxyCodeLine{113                 \textcolor{comment}{// error condition: wrong Magic number}}
+\DoxyCodeLine{114                 ReturnWithError(FormatCannotRead);}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117         \textcolor{comment}{// read file header}}
+\DoxyCodeLine{118         count = expected = (preHeader.hSize < \mbox{\hyperlink{PGFtypes_8h_a36882df0caa9057f3144aeb429a2d468}{HeaderSize}}) ? preHeader.hSize : \mbox{\hyperlink{PGFtypes_8h_a36882df0caa9057f3144aeb429a2d468}{HeaderSize}};}
+\DoxyCodeLine{119         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, \&header);}
+\DoxyCodeLine{120         \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{comment}{// make sure the values are correct read}}
+\DoxyCodeLine{123         header.\mbox{\hyperlink{structPGFHeader_a7262335e99ca409759e1aa8c0f0164b1}{height}} = \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\_\_VAL}}(UINT32(header.\mbox{\hyperlink{structPGFHeader_a7262335e99ca409759e1aa8c0f0164b1}{height}}));}
+\DoxyCodeLine{124         header.\mbox{\hyperlink{structPGFHeader_a766a68c3284c2ae6d2f54c82e7350ed9}{width}} = \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\_\_VAL}}(UINT32(header.\mbox{\hyperlink{structPGFHeader_a766a68c3284c2ae6d2f54c82e7350ed9}{width}}));}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         \textcolor{comment}{// be ready to read all versions including version 0}}
+\DoxyCodeLine{127         \textcolor{keywordflow}{if} (preHeader.version > 0) \{}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#ifndef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{129                 \textcolor{comment}{// check ROI usage}}
+\DoxyCodeLine{130                 \textcolor{keywordflow}{if} (preHeader.version \& \mbox{\hyperlink{PGFtypes_8h_a0ba6d90f8f69de741164e86a2b4c10af}{PGFROI}}) ReturnWithError(FormatCannotRead);}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133                 UINT32 size = preHeader.hSize;}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135                 \textcolor{keywordflow}{if} (size > \mbox{\hyperlink{PGFtypes_8h_a36882df0caa9057f3144aeb429a2d468}{HeaderSize}}) \{}
+\DoxyCodeLine{136                         size -= \mbox{\hyperlink{PGFtypes_8h_a36882df0caa9057f3144aeb429a2d468}{HeaderSize}};}
+\DoxyCodeLine{137                         count = 0;}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139                         \textcolor{comment}{// read post-header}}
+\DoxyCodeLine{140                         \textcolor{keywordflow}{if} (header.\mbox{\hyperlink{structPGFHeader_a3ddaf075db8ee812ad688d9ed39e0698}{mode}} == \mbox{\hyperlink{PGFplatform_8h_af1937c5b38a21ec5e6b3e11851264be2}{ImageModeIndexedColor}}) \{}
+\DoxyCodeLine{141                                 \textcolor{keywordflow}{if} (size < \mbox{\hyperlink{PGFtypes_8h_a50366374d6b8b02c5314f67cdd5aba9b}{ColorTableSize}}) ReturnWithError(FormatCannotRead);}
+\DoxyCodeLine{142                                 \textcolor{comment}{// read color table}}
+\DoxyCodeLine{143                                 count = expected = \mbox{\hyperlink{PGFtypes_8h_a50366374d6b8b02c5314f67cdd5aba9b}{ColorTableSize}};}
+\DoxyCodeLine{144                                 \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, postHeader.\mbox{\hyperlink{structPGFPostHeader_a3a7faf3091c0faa2e508ecdeb54ea706}{clut}});}
+\DoxyCodeLine{145                                 \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{146                         \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148                         \textcolor{keywordflow}{if} (size > (UINT32)count) \{}
+\DoxyCodeLine{149                                 size -= count;}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151                                 \textcolor{comment}{// read/skip user data}}
+\DoxyCodeLine{152                                 \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096}{UserdataPolicy}} policy = (\mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096}{UserdataPolicy}})((userDataPolicy <= \mbox{\hyperlink{PGFtypes_8h_a513fcd9e30f1a99d382b5c001499cdf5}{MaxUserDataSize}}) ? \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a36fd199cb724d615fbe67a12f7ab69d0}{UP\_CachePrefix}} : 0xFFFFFFFF - userDataPolicy);}
+\DoxyCodeLine{153                                 userDataPos = \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}{GetPos}}();}
+\DoxyCodeLine{154                                 postHeader.\mbox{\hyperlink{structPGFPostHeader_a0fb630d6cd14ed865dd5fe20227279f2}{userDataLen}} = size;}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156                                 \textcolor{keywordflow}{if} (policy == \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a6f539e0d2bcaaa46293243eb2842fd80}{UP\_Skip}}) \{}
+\DoxyCodeLine{157                                         postHeader.\mbox{\hyperlink{structPGFPostHeader_a104e3ef6de85dfdbbd867a250fcd82d4}{cachedUserDataLen}} = 0;}
+\DoxyCodeLine{158                                         postHeader.\mbox{\hyperlink{structPGFPostHeader_aeeb6e57e8343eb3d42406f0baf3ae6e1}{userData}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{159                                         \mbox{\hyperlink{classCDecoder_acc125e94ea5c6af11a91ac1c4a43cf8f}{Skip}}(size);}
+\DoxyCodeLine{160                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{161                                         postHeader.\mbox{\hyperlink{structPGFPostHeader_a104e3ef6de85dfdbbd867a250fcd82d4}{cachedUserDataLen}} = (policy == \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a36fd199cb724d615fbe67a12f7ab69d0}{UP\_CachePrefix}}) ? \mbox{\hyperlink{PGFplatform_8h_ad6d0138bf7e2cdaabeedc3fea40767ad}{\_\_min}}(size, userDataPolicy) : size;}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163                                         \textcolor{comment}{// create user data memory block}}
+\DoxyCodeLine{164                                         postHeader.\mbox{\hyperlink{structPGFPostHeader_aeeb6e57e8343eb3d42406f0baf3ae6e1}{userData}} = \textcolor{keyword}{new}(std::nothrow) UINT8[postHeader.\mbox{\hyperlink{structPGFPostHeader_a104e3ef6de85dfdbbd867a250fcd82d4}{cachedUserDataLen}}];}
+\DoxyCodeLine{165                                         if (!postHeader.\mbox{\hyperlink{structPGFPostHeader_aeeb6e57e8343eb3d42406f0baf3ae6e1}{userData}}) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167                                         \textcolor{comment}{// read user data}}
+\DoxyCodeLine{168                                         count = expected = postHeader.\mbox{\hyperlink{structPGFPostHeader_a104e3ef6de85dfdbbd867a250fcd82d4}{cachedUserDataLen}};}
+\DoxyCodeLine{169                                         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, postHeader.\mbox{\hyperlink{structPGFPostHeader_aeeb6e57e8343eb3d42406f0baf3ae6e1}{userData}});}
+\DoxyCodeLine{170                                         \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172                                         \textcolor{comment}{// skip remaining user data}}
+\DoxyCodeLine{173                                         \textcolor{keywordflow}{if} (postHeader.\mbox{\hyperlink{structPGFPostHeader_a104e3ef6de85dfdbbd867a250fcd82d4}{cachedUserDataLen}} < size) \mbox{\hyperlink{classCDecoder_acc125e94ea5c6af11a91ac1c4a43cf8f}{Skip}}(size - postHeader.\mbox{\hyperlink{structPGFPostHeader_a104e3ef6de85dfdbbd867a250fcd82d4}{cachedUserDataLen}});}
+\DoxyCodeLine{174                                 \}}
+\DoxyCodeLine{175                         \}}
+\DoxyCodeLine{176                 \}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178                 \textcolor{comment}{// create levelLength}}
+\DoxyCodeLine{179                 levelLength = \textcolor{keyword}{new}(std::nothrow) UINT32[header.\mbox{\hyperlink{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}{nLevels}}];}
+\DoxyCodeLine{180                 if (!levelLength) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182                 \textcolor{comment}{// read levelLength}}
+\DoxyCodeLine{183                 count = expected = header.\mbox{\hyperlink{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}{nLevels}}*\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{WordBytes}};}
+\DoxyCodeLine{184                 \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, levelLength);}
+\DoxyCodeLine{185                 \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#ifdef PGF\_USE\_BIG\_ENDIAN }}
+\DoxyCodeLine{188                 \textcolor{comment}{// make sure the values are correct read}}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < header.\mbox{\hyperlink{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}{nLevels}}; i++) \{}
+\DoxyCodeLine{190                         levelLength[i] = \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\_\_VAL}}(levelLength[i]);}
+\DoxyCodeLine{191                 \}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194                 \textcolor{comment}{// compute the total size in bytes; keep attention: level length information is optional}}
+\DoxyCodeLine{195                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < header.\mbox{\hyperlink{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}{nLevels}}; i++) \{}
+\DoxyCodeLine{196                         \mbox{\hyperlink{classCDecoder_a6562d817189d48cfed14b5e8b921e180}{m\_streamSizeEstimation}} += levelLength[i];}
+\DoxyCodeLine{197                 \}}
+\DoxyCodeLine{198                 }
+\DoxyCodeLine{199         \}}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201         \textcolor{comment}{// store current stream position}}
+\DoxyCodeLine{202         \mbox{\hyperlink{classCDecoder_aa59513d248af5c39dee8ae193876552b}{m\_encodedHeaderLength}} = UINT32(\mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}{GetPos}}() - \mbox{\hyperlink{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}{m\_startPos}});}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204         \textcolor{comment}{// set number of threads}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#ifdef LIBPGF\_USE\_OPENMP }}
+\DoxyCodeLine{206         \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}} = omp\_get\_num\_procs();}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{208         \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}} = 1;}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211         \textcolor{keywordflow}{if} (useOMP \&\& \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}} > 1) \{}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#ifdef LIBPGF\_USE\_OPENMP}}
+\DoxyCodeLine{213                 omp\_set\_num\_threads(\mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}});}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216                 \textcolor{comment}{// create macro block array}}
+\DoxyCodeLine{217                 \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}} = \textcolor{keyword}{new}(std::nothrow) CMacroBlock*[\mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}}];}
+\DoxyCodeLine{218                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{219                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}}; i++) \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}[i] = \textcolor{keyword}{new} CMacroBlock();}
+\DoxyCodeLine{220                 \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}} = \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}[\mbox{\hyperlink{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}{m\_currentBlockIndex}}];}
+\DoxyCodeLine{221         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{222                 \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}} = 0;}
+\DoxyCodeLine{223                 \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}} = 1; \textcolor{comment}{// there is only one macro block}}
+\DoxyCodeLine{224                 \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}} = \textcolor{keyword}{new}(std::nothrow) CMacroBlock();}
+\DoxyCodeLine{225                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}}) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{226         \}}
+\DoxyCodeLine{227 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_acb3e9a62be775af9a88da18730cd6f0e}\label{classCDecoder_acb3e9a62be775af9a88da18730cd6f0e}} 
+\index{CDecoder@{CDecoder}!````~CDecoder@{$\sim$CDecoder}}
+\index{````~CDecoder@{$\sim$CDecoder}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{$\sim$CDecoder()}{~CDecoder()}}
+{\footnotesize\ttfamily C\+Decoder\+::$\sim$\+C\+Decoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line 231 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{231                     \{}
+\DoxyCodeLine{232         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}) \{}
+\DoxyCodeLine{233                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}}; i++) \textcolor{keyword}{delete} \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}[i];}
+\DoxyCodeLine{234                 \textcolor{keyword}{delete}[] \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}};}
+\DoxyCodeLine{235         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{236                 \textcolor{keyword}{delete} \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}};}
+\DoxyCodeLine{237         \}}
+\DoxyCodeLine{238 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCDecoder_a78b5590168027919fcdba0ee9cbe2610}\label{classCDecoder_a78b5590168027919fcdba0ee9cbe2610}} 
+\index{CDecoder@{CDecoder}!DecodeBuffer@{DecodeBuffer}}
+\index{DecodeBuffer@{DecodeBuffer}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{DecodeBuffer()}{DecodeBuffer()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Decode\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads next block(s) from stream and decodes them It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+
+Definition at line 494 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{494                             \{}
+\DoxyCodeLine{495         ASSERT(\mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}} <= 0);}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497         \textcolor{comment}{// macro block management}}
+\DoxyCodeLine{498         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}} == 1) \{}
+\DoxyCodeLine{499                 ASSERT(\mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}});}
+\DoxyCodeLine{500                 \mbox{\hyperlink{classCDecoder_a55cbccabab76500fd47e15332d6b6506}{ReadMacroBlock}}(\mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}});}
+\DoxyCodeLine{501                 \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}}->\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a72899e368b29833bd485c4858b5ad7ef}{BitplaneDecode}}();}
+\DoxyCodeLine{502                 \mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}} = 1;}
+\DoxyCodeLine{503         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{504                 \mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}} = 0;}
+\DoxyCodeLine{505                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}{m\_macroBlockLen}}; i++) \{}
+\DoxyCodeLine{506                         \textcolor{comment}{// read sequentially several blocks}}
+\DoxyCodeLine{507                         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{508                                 \mbox{\hyperlink{classCDecoder_a55cbccabab76500fd47e15332d6b6506}{ReadMacroBlock}}(\mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}[i]);}
+\DoxyCodeLine{509                                 \mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}}++;}
+\DoxyCodeLine{510                         \} \textcolor{keywordflow}{catch}(\mbox{\hyperlink{structIOException}{IOException}}\& ex) \{}
+\DoxyCodeLine{511                                 \textcolor{keywordflow}{if} (ex.\mbox{\hyperlink{structIOException_a0bb5b188546419d80622e4e5ef951ec7}{error}} == MissingData || ex.\mbox{\hyperlink{structIOException_a0bb5b188546419d80622e4e5ef951ec7}{error}} == FormatCannotRead) \{}
+\DoxyCodeLine{512                                         \textcolor{keywordflow}{break}; \textcolor{comment}{// no further data available or the data isn't valid PGF data (might occur in streaming or PPPExt)}}
+\DoxyCodeLine{513                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{514                                         \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{515                                 \}}
+\DoxyCodeLine{516                         \}}
+\DoxyCodeLine{517                 \}}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#ifdef LIBPGF\_USE\_OPENMP}}
+\DoxyCodeLine{519                 \textcolor{comment}{// decode in parallel}}
+\DoxyCodeLine{520 \textcolor{preprocessor}{                \#pragma omp parallel for default(shared) //no declared exceptions in next block}}
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{522                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}}; i++) \{}
+\DoxyCodeLine{523                         \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}[i]->\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a72899e368b29833bd485c4858b5ad7ef}{BitplaneDecode}}();}
+\DoxyCodeLine{524                 \}}
+\DoxyCodeLine{525                 }
+\DoxyCodeLine{526                 \textcolor{comment}{// prepare current macro block}}
+\DoxyCodeLine{527                 \mbox{\hyperlink{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}{m\_currentBlockIndex}} = 0;}
+\DoxyCodeLine{528                 \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}} = \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}[\mbox{\hyperlink{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}{m\_currentBlockIndex}}];}
+\DoxyCodeLine{529         \}}
+\DoxyCodeLine{530 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_a7112215e28ac56d75bdf4a5786f57a34}\label{classCDecoder_a7112215e28ac56d75bdf4a5786f57a34}} 
+\index{CDecoder@{CDecoder}!DecodeInterleaved@{DecodeInterleaved}}
+\index{DecodeInterleaved@{DecodeInterleaved}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{DecodeInterleaved()}{DecodeInterleaved()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Decode\+Interleaved (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCWaveletTransform}{C\+Wavelet\+Transform}} $\ast$}]{wt\+Channel,  }\item[{int}]{level,  }\item[{int}]{quant\+Param }\end{DoxyParamCaption})}
+
+Deccoding and dequantization of HL and LH subband (interleaved) using partitioning scheme. Partitioning scheme\+: The plane is partitioned in squares of side length Inter\+Block\+Size. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em wt\+Channel} & A wavelet transform channel containing the HL and HL band \\
+\hline
+{\em level} & Wavelet transform level \\
+\hline
+{\em quant\+Param} & Dequantization value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 333 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{333                                                                                         \{}
+\DoxyCodeLine{334         \mbox{\hyperlink{classCSubband}{CSubband}}* hlBand = wtChannel->\mbox{\hyperlink{classCWaveletTransform_a347b59b1d7bc18de9294c714afac7ddf}{GetSubband}}(level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}});}
+\DoxyCodeLine{335         \mbox{\hyperlink{classCSubband}{CSubband}}* lhBand = wtChannel->\mbox{\hyperlink{classCWaveletTransform_a347b59b1d7bc18de9294c714afac7ddf}{GetSubband}}(level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}});}
+\DoxyCodeLine{336         \textcolor{keyword}{const} div\_t lhH = div(lhBand->\mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{GetHeight}}(), \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}});}
+\DoxyCodeLine{337         \textcolor{keyword}{const} div\_t hlW = div(hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}(), \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}});}
+\DoxyCodeLine{338         \textcolor{keyword}{const} \textcolor{keywordtype}{int} hlws = hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}() - \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}};}
+\DoxyCodeLine{339         \textcolor{keyword}{const} \textcolor{keywordtype}{int} hlwr = hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}() - hlW.rem;}
+\DoxyCodeLine{340         \textcolor{keyword}{const} \textcolor{keywordtype}{int} lhws = lhBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}() - \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}};}
+\DoxyCodeLine{341         \textcolor{keyword}{const} \textcolor{keywordtype}{int} lhwr = lhBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}() - hlW.rem;}
+\DoxyCodeLine{342         \textcolor{keywordtype}{int} hlPos, lhPos;}
+\DoxyCodeLine{343         \textcolor{keywordtype}{int} hlBase = 0, lhBase = 0, hlBase2, lhBase2;}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345         ASSERT(lhBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}() >= hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}());}
+\DoxyCodeLine{346         ASSERT(hlBand->\mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{GetHeight}}() >= lhBand->\mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{GetHeight}}());}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348         \textcolor{keywordflow}{if} (!hlBand->\mbox{\hyperlink{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}{AllocMemory}}()) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{349         \textcolor{keywordflow}{if} (!lhBand->\mbox{\hyperlink{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}{AllocMemory}}()) ReturnWithError(InsufficientMemory);}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351         \textcolor{comment}{// correct quantParam with normalization factor}}
+\DoxyCodeLine{352         quantParam -= level;}
+\DoxyCodeLine{353         \textcolor{keywordflow}{if} (quantParam < 0) quantParam = 0;}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355         \textcolor{comment}{// main height}}
+\DoxyCodeLine{356         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < lhH.quot; i++) \{}
+\DoxyCodeLine{357                 \textcolor{comment}{// main width}}
+\DoxyCodeLine{358                 hlBase2 = hlBase;}
+\DoxyCodeLine{359                 lhBase2 = lhBase;}
+\DoxyCodeLine{360                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j < hlW.quot; j++) \{}
+\DoxyCodeLine{361                         hlPos = hlBase2;}
+\DoxyCodeLine{362                         lhPos = lhBase2;}
+\DoxyCodeLine{363                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}}; y++) \{}
+\DoxyCodeLine{364                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}}; x++) \{}
+\DoxyCodeLine{365                                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(hlBand, hlPos, quantParam);}
+\DoxyCodeLine{366                                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(lhBand, lhPos, quantParam);}
+\DoxyCodeLine{367                                         hlPos++;}
+\DoxyCodeLine{368                                         lhPos++;}
+\DoxyCodeLine{369                                 \}}
+\DoxyCodeLine{370                                 hlPos += hlws;}
+\DoxyCodeLine{371                                 lhPos += lhws;}
+\DoxyCodeLine{372                         \}}
+\DoxyCodeLine{373                         hlBase2 += \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}};}
+\DoxyCodeLine{374                         lhBase2 += \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}};}
+\DoxyCodeLine{375                 \}}
+\DoxyCodeLine{376                 \textcolor{comment}{// rest of width}}
+\DoxyCodeLine{377                 hlPos = hlBase2;}
+\DoxyCodeLine{378                 lhPos = lhBase2;}
+\DoxyCodeLine{379                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}}; y++) \{}
+\DoxyCodeLine{380                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < hlW.rem; x++) \{}
+\DoxyCodeLine{381                                 \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(hlBand, hlPos, quantParam);}
+\DoxyCodeLine{382                                 \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(lhBand, lhPos, quantParam);}
+\DoxyCodeLine{383                                 hlPos++;}
+\DoxyCodeLine{384                                 lhPos++;}
+\DoxyCodeLine{385                         \}}
+\DoxyCodeLine{386                         \textcolor{comment}{// width difference between HL and LH}}
+\DoxyCodeLine{387                         \textcolor{keywordflow}{if} (lhBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}() > hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}()) \{}
+\DoxyCodeLine{388                                 \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(lhBand, lhPos, quantParam);}
+\DoxyCodeLine{389                         \}}
+\DoxyCodeLine{390                         hlPos += hlwr;}
+\DoxyCodeLine{391                         lhPos += lhwr;}
+\DoxyCodeLine{392                         hlBase += hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}();}
+\DoxyCodeLine{393                         lhBase += lhBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}();}
+\DoxyCodeLine{394                 \}}
+\DoxyCodeLine{395         \}}
+\DoxyCodeLine{396         \textcolor{comment}{// main width }}
+\DoxyCodeLine{397         hlBase2 = hlBase;}
+\DoxyCodeLine{398         lhBase2 = lhBase;}
+\DoxyCodeLine{399         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j < hlW.quot; j++) \{}
+\DoxyCodeLine{400                 \textcolor{comment}{// rest of height}}
+\DoxyCodeLine{401                 hlPos = hlBase2;}
+\DoxyCodeLine{402                 lhPos = lhBase2;}
+\DoxyCodeLine{403                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < lhH.rem; y++) \{}
+\DoxyCodeLine{404                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}}; x++) \{}
+\DoxyCodeLine{405                                 \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(hlBand, hlPos, quantParam);}
+\DoxyCodeLine{406                                 \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(lhBand, lhPos, quantParam);}
+\DoxyCodeLine{407                                 hlPos++;}
+\DoxyCodeLine{408                                 lhPos++;}
+\DoxyCodeLine{409                         \}}
+\DoxyCodeLine{410                         hlPos += hlws;}
+\DoxyCodeLine{411                         lhPos += lhws;}
+\DoxyCodeLine{412                 \}}
+\DoxyCodeLine{413                 hlBase2 += \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}};}
+\DoxyCodeLine{414                 lhBase2 += \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{InterBlockSize}};}
+\DoxyCodeLine{415         \}}
+\DoxyCodeLine{416         \textcolor{comment}{// rest of height}}
+\DoxyCodeLine{417         hlPos = hlBase2;}
+\DoxyCodeLine{418         lhPos = lhBase2;}
+\DoxyCodeLine{419         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < lhH.rem; y++) \{}
+\DoxyCodeLine{420                 \textcolor{comment}{// rest of width}}
+\DoxyCodeLine{421                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < hlW.rem; x++) \{}
+\DoxyCodeLine{422                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(hlBand, hlPos, quantParam);}
+\DoxyCodeLine{423                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(lhBand, lhPos, quantParam);}
+\DoxyCodeLine{424                         hlPos++;}
+\DoxyCodeLine{425                         lhPos++;}
+\DoxyCodeLine{426                 \}}
+\DoxyCodeLine{427                 \textcolor{comment}{// width difference between HL and LH}}
+\DoxyCodeLine{428                 \textcolor{keywordflow}{if} (lhBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}() > hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}()) \{}
+\DoxyCodeLine{429                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(lhBand, lhPos, quantParam);}
+\DoxyCodeLine{430                 \}}
+\DoxyCodeLine{431                 hlPos += hlwr;}
+\DoxyCodeLine{432                 lhPos += lhwr;}
+\DoxyCodeLine{433                 hlBase += hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}();}
+\DoxyCodeLine{434         \}}
+\DoxyCodeLine{435         \textcolor{comment}{// height difference between HL and LH}}
+\DoxyCodeLine{436         \textcolor{keywordflow}{if} (hlBand->\mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{GetHeight}}() > lhBand->\mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{GetHeight}}()) \{}
+\DoxyCodeLine{437                 \textcolor{comment}{// total width}}
+\DoxyCodeLine{438                 hlPos = hlBase;}
+\DoxyCodeLine{439                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j < hlBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}(); j++) \{}
+\DoxyCodeLine{440                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(hlBand, hlPos, quantParam);}
+\DoxyCodeLine{441                         hlPos++;}
+\DoxyCodeLine{442                 \}}
+\DoxyCodeLine{443         \}}
+\DoxyCodeLine{444 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}\label{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}} 
+\index{CDecoder@{CDecoder}!DequantizeValue@{DequantizeValue}}
+\index{DequantizeValue@{DequantizeValue}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{DequantizeValue()}{DequantizeValue()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Dequantize\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCSubband}{C\+Subband}} $\ast$}]{band,  }\item[{U\+I\+N\+T32}]{band\+Pos,  }\item[{int}]{quant\+Param }\end{DoxyParamCaption})}
+
+Dequantization of a single value at given position in subband. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em band} & A subband \\
+\hline
+{\em band\+Pos} & A valid position in subband band \\
+\hline
+{\em quant\+Param} & The quantization parameter\\
+\hline
+\end{DoxyParams}
+Dequantization of a single value at given position in subband. If encoded data is available, then stores dequantized band value into buffer m\+\_\+value at position m\+\_\+value\+Pos. Otherwise reads encoded data block and decodes it. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em band} & A subband \\
+\hline
+{\em band\+Pos} & A valid position in subband band \\
+\hline
+{\em quant\+Param} & The quantization parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 462 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{462                                                                              \{}
+\DoxyCodeLine{463         ASSERT(\mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}});}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}}->\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a0425cb162ca41e04f6ae0886a62b3cc9}{IsCompletelyRead}}()) \{}
+\DoxyCodeLine{466                 \textcolor{comment}{// all data of current macro block has been read --> prepare next macro block}}
+\DoxyCodeLine{467                 \mbox{\hyperlink{classCDecoder_ad152fbdc42a8a47960be7ba00c5fbb85}{GetNextMacroBlock}}();}
+\DoxyCodeLine{468         \}}
+\DoxyCodeLine{469         }
+\DoxyCodeLine{470         band->\mbox{\hyperlink{classCSubband_a1f128e212fb98c19f2d1dcd7ac6ccc0b}{SetData}}(bandPos, \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}}->\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a7722de1000647fb5a894db2e2f348bdd}{m\_value}}[\mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}}->\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}{m\_valuePos}}] << quantParam);}
+\DoxyCodeLine{471         \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}}->\mbox{\hyperlink{classCDecoder_1_1CMacroBlock_a38f42e9e2d5ac8387db0122aecac79be}{m\_valuePos}}++;}
+\DoxyCodeLine{472 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_a4e9c1ffe92430bf2420b8da76f145fcf}\label{classCDecoder_a4e9c1ffe92430bf2420b8da76f145fcf}} 
+\index{CDecoder@{CDecoder}!GetEncodedHeaderLength@{GetEncodedHeaderLength}}
+\index{GetEncodedHeaderLength@{GetEncodedHeaderLength}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{GetEncodedHeaderLength()}{GetEncodedHeaderLength()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::\+Get\+Encoded\+Header\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the length of all encoded headers in bytes. \begin{DoxyReturn}{Returns}
+The length of all encoded headers in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCDecoder_aa59513d248af5c39dee8ae193876552b}{m\_encodedHeaderLength}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_ad152fbdc42a8a47960be7ba00c5fbb85}\label{classCDecoder_ad152fbdc42a8a47960be7ba00c5fbb85}} 
+\index{CDecoder@{CDecoder}!GetNextMacroBlock@{GetNextMacroBlock}}
+\index{GetNextMacroBlock@{GetNextMacroBlock}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{GetNextMacroBlock()}{GetNextMacroBlock()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Get\+Next\+Macro\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets next macro block It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+
+Definition at line 477 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{477                                  \{}
+\DoxyCodeLine{478         \textcolor{comment}{// current block has been read --> prepare next current block}}
+\DoxyCodeLine{479         \mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}}--;}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}{m\_macroBlocksAvailable}} > 0) \{}
+\DoxyCodeLine{482                 \mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}} = \mbox{\hyperlink{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}{m\_macroBlocks}}[++\mbox{\hyperlink{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}{m\_currentBlockIndex}}];}
+\DoxyCodeLine{483         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{484                 \mbox{\hyperlink{classCDecoder_a78b5590168027919fcdba0ee9cbe2610}{DecodeBuffer}}();}
+\DoxyCodeLine{485         \}}
+\DoxyCodeLine{486         ASSERT(\mbox{\hyperlink{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}{m\_currentBlock}});}
+\DoxyCodeLine{487 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_a49deab3805a603f9332e2a1b6a58d800}\label{classCDecoder_a49deab3805a603f9332e2a1b6a58d800}} 
+\index{CDecoder@{CDecoder}!GetStream@{GetStream}}
+\index{GetStream@{GetStream}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{GetStream()}{GetStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCPGFStream}{C\+P\+G\+F\+Stream}}$\ast$ C\+Decoder\+::\+Get\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Stream 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{174 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_a61a588ddb407e323bb3647eb6f70fa6b}\label{classCDecoder_a61a588ddb407e323bb3647eb6f70fa6b}} 
+\index{CDecoder@{CDecoder}!Partition@{Partition}}
+\index{Partition@{Partition}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{Partition()}{Partition()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Partition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCSubband}{C\+Subband}} $\ast$}]{band,  }\item[{int}]{quant\+Param,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{start\+Pos,  }\item[{int}]{pitch }\end{DoxyParamCaption})}
+
+Unpartitions a rectangular region of a given subband. Partitioning scheme\+: The plane is partitioned in squares of side length Lin\+Block\+Size. Read wavelet coefficients from the output buffer of a macro block. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em band} & A subband \\
+\hline
+{\em quant\+Param} & Dequantization value \\
+\hline
+{\em width} & The width of the rectangle \\
+\hline
+{\em height} & The height of the rectangle \\
+\hline
+{\em start\+Pos} & The relative subband position of the top left corner of the rectangular region \\
+\hline
+{\em pitch} & The number of bytes in row of the subband \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 266 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{266                                                                                                        \{}
+\DoxyCodeLine{267         ASSERT(band);}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269         \textcolor{keyword}{const} div\_t ww = div(width, \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}});}
+\DoxyCodeLine{270         \textcolor{keyword}{const} div\_t hh = div(height, \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}});}
+\DoxyCodeLine{271         \textcolor{keyword}{const} \textcolor{keywordtype}{int} ws = pitch - \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}};}
+\DoxyCodeLine{272         \textcolor{keyword}{const} \textcolor{keywordtype}{int} wr = pitch - ww.rem;}
+\DoxyCodeLine{273         \textcolor{keywordtype}{int} pos, base = startPos, base2;}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275         \textcolor{comment}{// main height}}
+\DoxyCodeLine{276         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < hh.quot; i++) \{}
+\DoxyCodeLine{277                 \textcolor{comment}{// main width}}
+\DoxyCodeLine{278                 base2 = base;}
+\DoxyCodeLine{279                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j < ww.quot; j++) \{}
+\DoxyCodeLine{280                         pos = base2;}
+\DoxyCodeLine{281                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}}; y++) \{}
+\DoxyCodeLine{282                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}}; x++) \{}
+\DoxyCodeLine{283                                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(band, pos, quantParam);}
+\DoxyCodeLine{284                                         pos++;}
+\DoxyCodeLine{285                                 \}}
+\DoxyCodeLine{286                                 pos += ws;}
+\DoxyCodeLine{287                         \}}
+\DoxyCodeLine{288                         base2 += \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}};}
+\DoxyCodeLine{289                 \}}
+\DoxyCodeLine{290                 \textcolor{comment}{// rest of width}}
+\DoxyCodeLine{291                 pos = base2;}
+\DoxyCodeLine{292                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}}; y++) \{}
+\DoxyCodeLine{293                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < ww.rem; x++) \{}
+\DoxyCodeLine{294                                 \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(band, pos, quantParam);}
+\DoxyCodeLine{295                                 pos++;}
+\DoxyCodeLine{296                         \}}
+\DoxyCodeLine{297                         pos += wr;}
+\DoxyCodeLine{298                         base += pitch;}
+\DoxyCodeLine{299                 \}}
+\DoxyCodeLine{300         \}}
+\DoxyCodeLine{301         \textcolor{comment}{// main width }}
+\DoxyCodeLine{302         base2 = base;}
+\DoxyCodeLine{303         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j < ww.quot; j++) \{}
+\DoxyCodeLine{304                 \textcolor{comment}{// rest of height}}
+\DoxyCodeLine{305                 pos = base2;}
+\DoxyCodeLine{306                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < hh.rem; y++) \{}
+\DoxyCodeLine{307                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}}; x++) \{}
+\DoxyCodeLine{308                                 \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(band, pos, quantParam);}
+\DoxyCodeLine{309                                 pos++;}
+\DoxyCodeLine{310                         \}}
+\DoxyCodeLine{311                         pos += ws;}
+\DoxyCodeLine{312                 \}}
+\DoxyCodeLine{313                 base2 += \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{LinBlockSize}};}
+\DoxyCodeLine{314         \}}
+\DoxyCodeLine{315         \textcolor{comment}{// rest of height}}
+\DoxyCodeLine{316         pos = base2;}
+\DoxyCodeLine{317         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} y=0; y < hh.rem; y++) \{}
+\DoxyCodeLine{318                 \textcolor{comment}{// rest of width}}
+\DoxyCodeLine{319                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} x=0; x < ww.rem; x++) \{}
+\DoxyCodeLine{320                         \mbox{\hyperlink{classCDecoder_acccce19e51f507dedbd564f2ce5c72e7}{DequantizeValue}}(band, pos, quantParam);}
+\DoxyCodeLine{321                         pos++;}
+\DoxyCodeLine{322                 \}}
+\DoxyCodeLine{323                 pos += wr;}
+\DoxyCodeLine{324         \}}
+\DoxyCodeLine{325 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_a4146a0adddfe52ca79de8b0be58e8482}\label{classCDecoder_a4146a0adddfe52ca79de8b0be58e8482}} 
+\index{CDecoder@{CDecoder}!ReadEncodedData@{ReadEncodedData}}
+\index{ReadEncodedData@{ReadEncodedData}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{ReadEncodedData()}{ReadEncodedData()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::\+Read\+Encoded\+Data (\begin{DoxyParamCaption}\item[{U\+I\+N\+T8 $\ast$}]{target,  }\item[{U\+I\+N\+T32}]{len }\end{DoxyParamCaption}) const}
+
+Copies data from the open stream to a target buffer. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The target buffer \\
+\hline
+{\em len} & The number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes copied to the target buffer 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{246                                                                 \{}
+\DoxyCodeLine{247         ASSERT(\mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}});}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249         \textcolor{keywordtype}{int} count = len;}
+\DoxyCodeLine{250         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, target);}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252         \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{253 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_a55cbccabab76500fd47e15332d6b6506}\label{classCDecoder_a55cbccabab76500fd47e15332d6b6506}} 
+\index{CDecoder@{CDecoder}!ReadMacroBlock@{ReadMacroBlock}}
+\index{ReadMacroBlock@{ReadMacroBlock}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{ReadMacroBlock()}{ReadMacroBlock()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Read\+Macro\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCDecoder_1_1CMacroBlock}{C\+Macro\+Block}} $\ast$}]{block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+throws \mbox{\hyperlink{structIOException}{I\+O\+Exception}} 
+
+
+
+Definition at line 535 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{535                                                 \{}
+\DoxyCodeLine{536         ASSERT(block);}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538         UINT16 wordLen;}
+\DoxyCodeLine{539         \mbox{\hyperlink{unionROIBlockHeader}{ROIBlockHeader}} h(\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{BufferSize}});}
+\DoxyCodeLine{540         \textcolor{keywordtype}{int} count, expected;}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542 \textcolor{preprocessor}{\#ifdef TRACE}}
+\DoxyCodeLine{543         \textcolor{comment}{//UINT32 filePos = (UINT32)m\_stream->GetPos();}}
+\DoxyCodeLine{544         \textcolor{comment}{//printf("DecodeBuffer: \%d\(\backslash\)n", filePos);}}
+\DoxyCodeLine{545 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547         \textcolor{comment}{// read wordLen}}
+\DoxyCodeLine{548         count = expected = \textcolor{keyword}{sizeof}(UINT16);}
+\DoxyCodeLine{549         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, \&wordLen); }
+\DoxyCodeLine{550         \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{551         wordLen = \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\_\_VAL}}(wordLen); \textcolor{comment}{// convert wordLen}}
+\DoxyCodeLine{552         \textcolor{keywordflow}{if} (wordLen > \mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{BufferSize}}) ReturnWithError(FormatCannotRead);}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{555         \textcolor{comment}{// read ROIBlockHeader}}
+\DoxyCodeLine{556         \textcolor{keywordflow}{if} (m\_roi) \{}
+\DoxyCodeLine{557                 count = expected = \textcolor{keyword}{sizeof}(\mbox{\hyperlink{unionROIBlockHeader}{ROIBlockHeader}});}
+\DoxyCodeLine{558                 \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, \&h.val);}
+\DoxyCodeLine{559                 \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{560                 h.val = \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\_\_VAL}}(h.val); \textcolor{comment}{// convert ROIBlockHeader}}
+\DoxyCodeLine{561         \}}
+\DoxyCodeLine{562 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{563         \textcolor{comment}{// save header}}
+\DoxyCodeLine{564         block->m\_header = h;}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566         \textcolor{comment}{// read data}}
+\DoxyCodeLine{567         count = expected = wordLen*\mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{WordBytes}};}
+\DoxyCodeLine{568         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}}(\&count, block->m\_codeBuffer);}
+\DoxyCodeLine{569         \textcolor{keywordflow}{if} (count != expected) ReturnWithError(MissingData);}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#ifdef PGF\_USE\_BIG\_ENDIAN }}
+\DoxyCodeLine{572         \textcolor{comment}{// convert data}}
+\DoxyCodeLine{573         count /= \mbox{\hyperlink{PGFplatform_8h_abeb1344b9026903d401004c4493a243f}{WordBytes}};}
+\DoxyCodeLine{574         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < count; i++) \{}
+\DoxyCodeLine{575                 block->m\_codeBuffer[i] = \mbox{\hyperlink{PGFplatform_8h_ab45d30e0f7f4c42f39a63f436cb16f52}{\_\_VAL}}(block->m\_codeBuffer[i]);}
+\DoxyCodeLine{576         \}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{580         ASSERT(m\_roi \&\& h.rbh.bufferSize <= \mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{BufferSize}} || h.rbh.bufferSize == \mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{BufferSize}});}
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{582         ASSERT(h.rbh.bufferSize == \mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{BufferSize}});}
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{584 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_ae6d16df70a317f3dc805894cf6101fe2}\label{classCDecoder_ae6d16df70a317f3dc805894cf6101fe2}} 
+\index{CDecoder@{CDecoder}!SetStreamPosToData@{SetStreamPosToData}}
+\index{SetStreamPosToData@{SetStreamPosToData}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{SetStreamPosToData()}{SetStreamPosToData()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Set\+Stream\+Pos\+To\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets stream position to beginning of data block. 
+
+
+
+Definition at line 144 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144 \{ ASSERT(\mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}); \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}{SetPos}}(FSFromStart, \mbox{\hyperlink{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}{m\_startPos}} + \mbox{\hyperlink{classCDecoder_aa59513d248af5c39dee8ae193876552b}{m\_encodedHeaderLength}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_ab043bb3599b2301bebd22527258ac4cf}\label{classCDecoder_ab043bb3599b2301bebd22527258ac4cf}} 
+\index{CDecoder@{CDecoder}!SetStreamPosToStart@{SetStreamPosToStart}}
+\index{SetStreamPosToStart@{SetStreamPosToStart}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{SetStreamPosToStart()}{SetStreamPosToStart()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Set\+Stream\+Pos\+To\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets stream position to beginning of P\+GF pre-\/header. 
+
+
+
+Definition at line 140 of file Decoder.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140 \{ ASSERT(\mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}); \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}{SetPos}}(FSFromStart, \mbox{\hyperlink{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}{m\_startPos}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCDecoder_acc125e94ea5c6af11a91ac1c4a43cf8f}\label{classCDecoder_acc125e94ea5c6af11a91ac1c4a43cf8f}} 
+\index{CDecoder@{CDecoder}!Skip@{Skip}}
+\index{Skip@{Skip}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{Skip()}{Skip()}}
+{\footnotesize\ttfamily void C\+Decoder\+::\+Skip (\begin{DoxyParamCaption}\item[{U\+I\+N\+T64}]{offset }\end{DoxyParamCaption})}
+
+Skips a given number of bytes in the open stream. It might throw an \mbox{\hyperlink{structIOException}{I\+O\+Exception}}. 
+
+Definition at line 449 of file Decoder.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{449                                  \{}
+\DoxyCodeLine{450         \mbox{\hyperlink{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}{m\_stream}}->\mbox{\hyperlink{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}{SetPos}}(FSFromCurrent, offset);}
+\DoxyCodeLine{451 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}\label{classCDecoder_aa21a930e7af6496ee5e6662659d62ecb}} 
+\index{CDecoder@{CDecoder}!m\_currentBlock@{m\_currentBlock}}
+\index{m\_currentBlock@{m\_currentBlock}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_currentBlock}{m\_currentBlock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCDecoder_1_1CMacroBlock}{C\+Macro\+Block}}$\ast$ C\+Decoder\+::m\+\_\+current\+Block\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current macro block (used by main thread) 
+
+
+
+Definition at line 209 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}\label{classCDecoder_a2e3c3a814d7bc3766e35302367f8d9ae}} 
+\index{CDecoder@{CDecoder}!m\_currentBlockIndex@{m\_currentBlockIndex}}
+\index{m\_currentBlockIndex@{m\_currentBlockIndex}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_currentBlockIndex}{m\_currentBlockIndex}}
+{\footnotesize\ttfamily int C\+Decoder\+::m\+\_\+current\+Block\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+index of current macro block 
+
+
+
+Definition at line 206 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_aa59513d248af5c39dee8ae193876552b}\label{classCDecoder_aa59513d248af5c39dee8ae193876552b}} 
+\index{CDecoder@{CDecoder}!m\_encodedHeaderLength@{m\_encodedHeaderLength}}
+\index{m\_encodedHeaderLength@{m\_encodedHeaderLength}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_encodedHeaderLength}{m\_encodedHeaderLength}}
+{\footnotesize\ttfamily U\+I\+N\+T32 C\+Decoder\+::m\+\_\+encoded\+Header\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stream offset from start\+Pos to the beginning of the data part (highest level) 
+
+
+
+Definition at line 203 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}\label{classCDecoder_a215b9e3cd0bc08c1c67674f28247e63c}} 
+\index{CDecoder@{CDecoder}!m\_macroBlockLen@{m\_macroBlockLen}}
+\index{m\_macroBlockLen@{m\_macroBlockLen}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_macroBlockLen}{m\_macroBlockLen}}
+{\footnotesize\ttfamily int C\+Decoder\+::m\+\_\+macro\+Block\+Len\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+array length 
+
+
+
+Definition at line 207 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}\label{classCDecoder_a7acf80ff3cb6193afed753a44a8d08fa}} 
+\index{CDecoder@{CDecoder}!m\_macroBlocks@{m\_macroBlocks}}
+\index{m\_macroBlocks@{m\_macroBlocks}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_macroBlocks}{m\_macroBlocks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCDecoder_1_1CMacroBlock}{C\+Macro\+Block}}$\ast$$\ast$ C\+Decoder\+::m\+\_\+macro\+Blocks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+array of macroblocks 
+
+
+
+Definition at line 205 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}\label{classCDecoder_a542f95c68cc1661b3629a3cf026f45c4}} 
+\index{CDecoder@{CDecoder}!m\_macroBlocksAvailable@{m\_macroBlocksAvailable}}
+\index{m\_macroBlocksAvailable@{m\_macroBlocksAvailable}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_macroBlocksAvailable}{m\_macroBlocksAvailable}}
+{\footnotesize\ttfamily int C\+Decoder\+::m\+\_\+macro\+Blocks\+Available\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of decoded macro blocks (including currently used macro block) 
+
+
+
+Definition at line 208 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}\label{classCDecoder_a56f84d5e2dc9f94737e9ff76a017eab7}} 
+\index{CDecoder@{CDecoder}!m\_startPos@{m\_startPos}}
+\index{m\_startPos@{m\_startPos}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_startPos}{m\_startPos}}
+{\footnotesize\ttfamily U\+I\+N\+T64 C\+Decoder\+::m\+\_\+start\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stream position at the beginning of the P\+GF pre-\/header 
+
+
+
+Definition at line 201 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}\label{classCDecoder_a4a083ad657a4f6236603c3090b44b2c5}} 
+\index{CDecoder@{CDecoder}!m\_stream@{m\_stream}}
+\index{m\_stream@{m\_stream}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_stream}{m\_stream}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCPGFStream}{C\+P\+G\+F\+Stream}}$\ast$ C\+Decoder\+::m\+\_\+stream\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+input P\+GF stream 
+
+
+
+Definition at line 200 of file Decoder.\+h.
+
+\mbox{\Hypertarget{classCDecoder_a6562d817189d48cfed14b5e8b921e180}\label{classCDecoder_a6562d817189d48cfed14b5e8b921e180}} 
+\index{CDecoder@{CDecoder}!m\_streamSizeEstimation@{m\_streamSizeEstimation}}
+\index{m\_streamSizeEstimation@{m\_streamSizeEstimation}!CDecoder@{CDecoder}}
+\subsubsection{\texorpdfstring{m\_streamSizeEstimation}{m\_streamSizeEstimation}}
+{\footnotesize\ttfamily U\+I\+N\+T64 C\+Decoder\+::m\+\_\+stream\+Size\+Estimation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+estimation of stream size 
+
+
+
+Definition at line 202 of file Decoder.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Decoder_8h}{Decoder.\+h}}\item 
+\mbox{\hyperlink{Decoder_8cpp}{Decoder.\+cpp}}\end{DoxyCompactItemize}

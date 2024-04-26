@@ -1,0 +1,505 @@
+\hypertarget{BitStream_8h}{}\section{Bit\+Stream.\+h File Reference}
+\label{BitStream_8h}\index{BitStream.h@{BitStream.h}}
+{\ttfamily \#include \char`\"{}P\+G\+Ftypes.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{BitStream_8h_ac84b4ebee770a8dc0a8471a3cdaf05af}{M\+A\+K\+E\+U64}}(a,  b)~((U\+I\+N\+T64) (((U\+I\+N\+T32) (a)) $\vert$ ((U\+I\+N\+T64) ((U\+I\+N\+T32) (b))) $<$$<$ 32))
+\begin{DoxyCompactList}\small\item\em Make 64 bit unsigned integer from two 32 bit unsigned integers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{BitStream_8h_a0cfbc258d5f10464b6046e700e2311a1}{Set\+Bit}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos)
+\item 
+void \mbox{\hyperlink{BitStream_8h_a3f00211230dd7a9469f3b9062567d4f7}{Clear\+Bit}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos)
+\item 
+bool \mbox{\hyperlink{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}{Get\+Bit}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos)
+\item 
+bool \mbox{\hyperlink{BitStream_8h_a1c392db19c501c273b12cc21eec4e3cd}{Compare\+Bit\+Block}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos, U\+I\+N\+T32 k, U\+I\+N\+T32 val)
+\item 
+void \mbox{\hyperlink{BitStream_8h_a0e3b853e6738b0af470d485c46a8be5e}{Set\+Value\+Block}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos, U\+I\+N\+T32 val, U\+I\+N\+T32 k)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}{Get\+Value\+Block}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos, U\+I\+N\+T32 k)
+\item 
+void \mbox{\hyperlink{BitStream_8h_a9fafb3007c9cb8188140b21ffe4ef2fa}{Clear\+Bit\+Block}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos, U\+I\+N\+T32 len)
+\item 
+void \mbox{\hyperlink{BitStream_8h_a777d895711c75b4cd4ead3b67fc13e48}{Set\+Bit\+Block}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos, U\+I\+N\+T32 len)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{BitStream_8h_ae36276982f7302d827c1345dd6440a8c}{Seek\+Bit\+Range}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos, U\+I\+N\+T32 len)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{BitStream_8h_ac122c22b2c0f08c3caeeb19ffb57478e}{Seek\+Bit1\+Range}} (U\+I\+N\+T32 $\ast$stream, U\+I\+N\+T32 pos, U\+I\+N\+T32 len)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}{Align\+Word\+Pos}} (U\+I\+N\+T32 pos)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{BitStream_8h_aec0f6865df9443d08000c0fe4d446031}{Number\+Of\+Words}} (U\+I\+N\+T32 pos)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const U\+I\+N\+T32 \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} = 0x\+F\+F\+F\+F\+F\+F\+FF
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{BitStream_8h_ac84b4ebee770a8dc0a8471a3cdaf05af}\label{BitStream_8h_ac84b4ebee770a8dc0a8471a3cdaf05af}} 
+\index{BitStream.h@{BitStream.h}!MAKEU64@{MAKEU64}}
+\index{MAKEU64@{MAKEU64}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{MAKEU64}{MAKEU64}}
+{\footnotesize\ttfamily \#define M\+A\+K\+E\+U64(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((U\+I\+N\+T64) (((U\+I\+N\+T32) (a)) $\vert$ ((U\+I\+N\+T64) ((U\+I\+N\+T32) (b))) $<$$<$ 32))}
+
+
+
+Make 64 bit unsigned integer from two 32 bit unsigned integers. 
+
+
+
+Definition at line 41 of file Bit\+Stream.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}\label{BitStream_8h_a02bb2289d37f806f66c6ba6fd51977a4}} 
+\index{BitStream.h@{BitStream.h}!AlignWordPos@{AlignWordPos}}
+\index{AlignWordPos@{AlignWordPos}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{AlignWordPos()}{AlignWordPos()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 Align\+Word\+Pos (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute bit position of the next 32-\/bit word 
+\begin{DoxyParams}{Parameters}
+{\em pos} & current bit stream position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bit position of next 32-\/bit word 
+\end{DoxyReturn}
+
+
+Definition at line 328 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{328                                        \{}
+\DoxyCodeLine{329 \textcolor{comment}{//      return ((pos + WordWidth - 1) >> WordWidthLog) << WordWidthLog;}}
+\DoxyCodeLine{330         \textcolor{keywordflow}{return} \mbox{\hyperlink{PGFplatform_8h_a5e4b038d49a5b8169c4af56c80ee5ac2}{DWWIDTHBITS}}(pos);}
+\DoxyCodeLine{331 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a3f00211230dd7a9469f3b9062567d4f7}\label{BitStream_8h_a3f00211230dd7a9469f3b9062567d4f7}} 
+\index{BitStream.h@{BitStream.h}!ClearBit@{ClearBit}}
+\index{ClearBit@{ClearBit}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{ClearBit()}{ClearBit()}}
+{\footnotesize\ttfamily void Clear\+Bit (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set one bit of a bit stream to 0 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70                                                  \{}
+\DoxyCodeLine{71         stream[pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}] \&= ~(1 << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}})); }
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a9fafb3007c9cb8188140b21ffe4ef2fa}\label{BitStream_8h_a9fafb3007c9cb8188140b21ffe4ef2fa}} 
+\index{BitStream.h@{BitStream.h}!ClearBitBlock@{ClearBitBlock}}
+\index{ClearBitBlock@{ClearBitBlock}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{ClearBitBlock()}{ClearBitBlock()}}
+{\footnotesize\ttfamily void Clear\+Bit\+Block (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos,  }\item[{U\+I\+N\+T32}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear block of size at least len at position pos in stream 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+{\em len} & Number of bits set to 0 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 169 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169                                                                   \{}
+\DoxyCodeLine{170         ASSERT(len > 0);}
+\DoxyCodeLine{171         \textcolor{keyword}{const} UINT32 iFirstInt = pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{172         \textcolor{keyword}{const} UINT32 iLastInt = (pos + len - 1) >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174         \textcolor{keyword}{const} UINT32 startMask = \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{175 \textcolor{comment}{//      const UINT32 endMask=Filled>>(WordWidth-1-((pos+len-1)\%WordWidth));}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177         \textcolor{keywordflow}{if} (iFirstInt == iLastInt) \{}
+\DoxyCodeLine{178                 stream[iFirstInt] \&= ~(startMask \textcolor{comment}{/*\& endMask*/});}
+\DoxyCodeLine{179         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{180                 stream[iFirstInt] \&= ~startMask;}
+\DoxyCodeLine{181                 \textcolor{keywordflow}{for} (UINT32 i = iFirstInt + 1; i <= iLastInt; i++) \{ \textcolor{comment}{// changed <=}}
+\DoxyCodeLine{182                         stream[i] = 0;}
+\DoxyCodeLine{183                 \}}
+\DoxyCodeLine{184                 \textcolor{comment}{//stream[iLastInt] \&= ~endMask;}}
+\DoxyCodeLine{185         \}}
+\DoxyCodeLine{186 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a1c392db19c501c273b12cc21eec4e3cd}\label{BitStream_8h_a1c392db19c501c273b12cc21eec4e3cd}} 
+\index{BitStream.h@{BitStream.h}!CompareBitBlock@{CompareBitBlock}}
+\index{CompareBitBlock@{CompareBitBlock}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{CompareBitBlock()}{CompareBitBlock()}}
+{\footnotesize\ttfamily bool Compare\+Bit\+Block (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos,  }\item[{U\+I\+N\+T32}]{k,  }\item[{U\+I\+N\+T32}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compare k-\/bit binary representation of stream at position pos with val 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+{\em k} & Number of bits to compare \\
+\hline
+{\em val} & Value to compare with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91                                                                               \{}
+\DoxyCodeLine{92         \textcolor{keyword}{const} UINT32 iLoInt = pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{93         \textcolor{keyword}{const} UINT32 iHiInt = (pos + k - 1) >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{94         ASSERT(iLoInt <= iHiInt);}
+\DoxyCodeLine{95         \textcolor{keyword}{const} UINT32 mask = (\mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} >> (\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} - k));}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{keywordflow}{if} (iLoInt == iHiInt) \{}
+\DoxyCodeLine{98                 \textcolor{comment}{// fits into one integer}}
+\DoxyCodeLine{99                 val \&= mask;}
+\DoxyCodeLine{100                 val <<= (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{return} (stream[iLoInt] \& val) == val;}
+\DoxyCodeLine{102         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{103                 \textcolor{comment}{// must be splitted over integer boundary}}
+\DoxyCodeLine{104                 UINT64 v1 = \mbox{\hyperlink{BitStream_8h_ac84b4ebee770a8dc0a8471a3cdaf05af}{MAKEU64}}(stream[iLoInt], stream[iHiInt]);}
+\DoxyCodeLine{105                 UINT64 v2 = UINT64(val \& mask) << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{106                 \textcolor{keywordflow}{return} (v1 \& v2) == v2;}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}\label{BitStream_8h_a69b4aa39485781bde435f86fd4851c0e}} 
+\index{BitStream.h@{BitStream.h}!GetBit@{GetBit}}
+\index{GetBit@{GetBit}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{GetBit()}{GetBit()}}
+{\footnotesize\ttfamily bool Get\+Bit (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return one bit of a bit stream 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bit at position pos of bit stream stream 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{79                                                 \{}
+\DoxyCodeLine{80         \textcolor{keywordflow}{return} (stream[pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}] \& (1 << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}}))) > 0;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}\label{BitStream_8h_a9ce8e37cd9f9d07d4a91094472a0fc5a}} 
+\index{BitStream.h@{BitStream.h}!GetValueBlock@{GetValueBlock}}
+\index{GetValueBlock@{GetValueBlock}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{GetValueBlock()}{GetValueBlock()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 Get\+Value\+Block (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos,  }\item[{U\+I\+N\+T32}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Read k-\/bit number from stream at position pos 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+{\em k} & Number of bits to read\+: 1 $<$= k $<$= 32 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{142                                                                   \{}
+\DoxyCodeLine{143         UINT32 count, hiCount;}
+\DoxyCodeLine{144         \textcolor{keyword}{const} UINT32 iLoInt = pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};                          \textcolor{comment}{// integer of first bit}}
+\DoxyCodeLine{145         \textcolor{keyword}{const} UINT32 iHiInt = (pos + k - 1) >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};                \textcolor{comment}{// integer of last bit}}
+\DoxyCodeLine{146         \textcolor{keyword}{const} UINT32 loMask = \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{147         \textcolor{keyword}{const} UINT32 hiMask = \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} >> (\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} - 1 - ((pos + k - 1)\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}}));}
+\DoxyCodeLine{148         }
+\DoxyCodeLine{149         \textcolor{keywordflow}{if} (iLoInt == iHiInt) \{}
+\DoxyCodeLine{150                 \textcolor{comment}{// inside integer boundary}}
+\DoxyCodeLine{151                 count = stream[iLoInt] \& (loMask \& hiMask);}
+\DoxyCodeLine{152                 count >>= pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}};}
+\DoxyCodeLine{153         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{154                 \textcolor{comment}{// overlapping integer boundary}}
+\DoxyCodeLine{155                 count = stream[iLoInt] \& loMask;}
+\DoxyCodeLine{156                 count >>= pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}};}
+\DoxyCodeLine{157                 hiCount = stream[iHiInt] \& hiMask;}
+\DoxyCodeLine{158                 hiCount <<= \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} - (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{159                 count |= hiCount;}
+\DoxyCodeLine{160         \}}
+\DoxyCodeLine{161         \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{162 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_aec0f6865df9443d08000c0fe4d446031}\label{BitStream_8h_aec0f6865df9443d08000c0fe4d446031}} 
+\index{BitStream.h@{BitStream.h}!NumberOfWords@{NumberOfWords}}
+\index{NumberOfWords@{NumberOfWords}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{NumberOfWords()}{NumberOfWords()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 Number\+Of\+Words (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compute number of the 32-\/bit words 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Current bit stream position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of 32-\/bit words 
+\end{DoxyReturn}
+
+
+Definition at line 337 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{337                                         \{}
+\DoxyCodeLine{338         \textcolor{keywordflow}{return} (pos + \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} - 1) >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{339 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_ac122c22b2c0f08c3caeeb19ffb57478e}\label{BitStream_8h_ac122c22b2c0f08c3caeeb19ffb57478e}} 
+\index{BitStream.h@{BitStream.h}!SeekBit1Range@{SeekBit1Range}}
+\index{SeekBit1Range@{SeekBit1Range}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{SeekBit1Range()}{SeekBit1Range()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 Seek\+Bit1\+Range (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos,  }\item[{U\+I\+N\+T32}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the distance to the next 0 in stream at position pos. If no 0 is found within len bits, then len is returned. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+{\em len} & size of search area (in bits) return The distance to the next 0 in stream at position pos \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 249 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{249                                                                     \{}
+\DoxyCodeLine{250         UINT32 count = 0;}
+\DoxyCodeLine{251         UINT32 testMask = 1 << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{252         UINT32* word = stream + (pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}});}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254         \textcolor{keywordflow}{while} (((*word \& testMask) != 0) \&\& (count < len)) \{}
+\DoxyCodeLine{255                 count++; }
+\DoxyCodeLine{256                 testMask <<= 1;}
+\DoxyCodeLine{257                 \textcolor{keywordflow}{if} (!testMask) \{}
+\DoxyCodeLine{258                         word++; testMask = 1;}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260                         \textcolor{comment}{// fast steps if all bits in a word are one}}
+\DoxyCodeLine{261                         \textcolor{keywordflow}{while} ((count + \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} <= len) \&\& (*word == \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}})) \{}
+\DoxyCodeLine{262                                 word++; }
+\DoxyCodeLine{263                                 count += \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}};}
+\DoxyCodeLine{264                         \}}
+\DoxyCodeLine{265                 \}}
+\DoxyCodeLine{266         \}}
+\DoxyCodeLine{267         \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{268 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_ae36276982f7302d827c1345dd6440a8c}\label{BitStream_8h_ae36276982f7302d827c1345dd6440a8c}} 
+\index{BitStream.h@{BitStream.h}!SeekBitRange@{SeekBitRange}}
+\index{SeekBitRange@{SeekBitRange}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{SeekBitRange()}{SeekBitRange()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 Seek\+Bit\+Range (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos,  }\item[{U\+I\+N\+T32}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the distance to the next 1 in stream at position pos. If no 1 is found within len bits, then len is returned. 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+{\em len} & size of search area (in bits) return The distance to the next 1 in stream at position pos \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 220 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{220                                                                    \{}
+\DoxyCodeLine{221         UINT32 count = 0;}
+\DoxyCodeLine{222         UINT32 testMask = 1 << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{223         UINT32* word = stream + (pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}});}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225         \textcolor{keywordflow}{while} (((*word \& testMask) == 0) \&\& (count < len)) \{}
+\DoxyCodeLine{226                 count++; }
+\DoxyCodeLine{227                 testMask <<= 1;}
+\DoxyCodeLine{228                 \textcolor{keywordflow}{if} (!testMask) \{}
+\DoxyCodeLine{229                         word++; testMask = 1;}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231                         \textcolor{comment}{// fast steps if all bits in a word are zero}}
+\DoxyCodeLine{232                         \textcolor{keywordflow}{while} ((count + \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} <= len) \&\& (*word == 0)) \{}
+\DoxyCodeLine{233                                 word++; }
+\DoxyCodeLine{234                                 count += \mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}};}
+\DoxyCodeLine{235                         \}}
+\DoxyCodeLine{236                 \}}
+\DoxyCodeLine{237         \}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239         \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{240 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a0cfbc258d5f10464b6046e700e2311a1}\label{BitStream_8h_a0cfbc258d5f10464b6046e700e2311a1}} 
+\index{BitStream.h@{BitStream.h}!SetBit@{SetBit}}
+\index{SetBit@{SetBit}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{SetBit()}{SetBit()}}
+{\footnotesize\ttfamily void Set\+Bit (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set one bit of a bit stream to 1 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62                                                \{}
+\DoxyCodeLine{63         stream[pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}}] |= (1 << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}}));}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a777d895711c75b4cd4ead3b67fc13e48}\label{BitStream_8h_a777d895711c75b4cd4ead3b67fc13e48}} 
+\index{BitStream.h@{BitStream.h}!SetBitBlock@{SetBitBlock}}
+\index{SetBitBlock@{SetBitBlock}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{SetBitBlock()}{SetBitBlock()}}
+{\footnotesize\ttfamily void Set\+Bit\+Block (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos,  }\item[{U\+I\+N\+T32}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set block of size at least len at position pos in stream 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+{\em len} & Number of bits set to 1 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{193                                                                 \{}
+\DoxyCodeLine{194         ASSERT(len > 0);}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196         \textcolor{keyword}{const} UINT32 iFirstInt = pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{197         \textcolor{keyword}{const} UINT32 iLastInt = (pos + len - 1) >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199         \textcolor{keyword}{const} UINT32 startMask = \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} << (pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}});}
+\DoxyCodeLine{200 \textcolor{comment}{//      const UINT32 endMask=Filled>>(WordWidth-1-((pos+len-1)\%WordWidth));}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202         \textcolor{keywordflow}{if} (iFirstInt == iLastInt) \{}
+\DoxyCodeLine{203                 stream[iFirstInt] |= (startMask \textcolor{comment}{/*\& endMask*/});}
+\DoxyCodeLine{204         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{205                 stream[iFirstInt] |= startMask;}
+\DoxyCodeLine{206                 \textcolor{keywordflow}{for} (UINT32 i = iFirstInt + 1; i <= iLastInt; i++) \{ \textcolor{comment}{// changed <=}}
+\DoxyCodeLine{207                         stream[i] = \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}};}
+\DoxyCodeLine{208                 \}}
+\DoxyCodeLine{209                 \textcolor{comment}{//stream[iLastInt] \&= ~endMask;}}
+\DoxyCodeLine{210         \}}
+\DoxyCodeLine{211 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{BitStream_8h_a0e3b853e6738b0af470d485c46a8be5e}\label{BitStream_8h_a0e3b853e6738b0af470d485c46a8be5e}} 
+\index{BitStream.h@{BitStream.h}!SetValueBlock@{SetValueBlock}}
+\index{SetValueBlock@{SetValueBlock}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{SetValueBlock()}{SetValueBlock()}}
+{\footnotesize\ttfamily void Set\+Value\+Block (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32 $\ast$}]{stream,  }\item[{U\+I\+N\+T32}]{pos,  }\item[{U\+I\+N\+T32}]{val,  }\item[{U\+I\+N\+T32}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Store k-\/bit binary representation of val in stream at position pos 
+\begin{DoxyParams}{Parameters}
+{\em stream} & A bit stream stored in array of unsigned integers \\
+\hline
+{\em pos} & A valid zero-\/based position in the bit stream \\
+\hline
+{\em val} & Value to store in stream at position pos \\
+\hline
+{\em k} & Number of bits of integer representation of val \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file Bit\+Stream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{116                                                                             \{}
+\DoxyCodeLine{117         \textcolor{keyword}{const} UINT32 offset = pos\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}};}
+\DoxyCodeLine{118         \textcolor{keyword}{const} UINT32 iLoInt = pos >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{119         \textcolor{keyword}{const} UINT32 iHiInt = (pos + k - 1) >> \mbox{\hyperlink{PGFplatform_8h_a5e75d7d14aaea5860c612758ef77b687}{WordWidthLog}};}
+\DoxyCodeLine{120         ASSERT(iLoInt <= iHiInt);}
+\DoxyCodeLine{121         \textcolor{keyword}{const} UINT32 loMask = \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} << offset;}
+\DoxyCodeLine{122         \textcolor{keyword}{const} UINT32 hiMask = \mbox{\hyperlink{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}{Filled}} >> (\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} - 1 - ((pos + k - 1)\%\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}}));}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \textcolor{keywordflow}{if} (iLoInt == iHiInt) \{}
+\DoxyCodeLine{125                 \textcolor{comment}{// fits into one integer}}
+\DoxyCodeLine{126                 stream[iLoInt] \&= ~(loMask \& hiMask); \textcolor{comment}{// clear bits}}
+\DoxyCodeLine{127                 stream[iLoInt] |= val << offset; \textcolor{comment}{// write value}}
+\DoxyCodeLine{128         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{129                 \textcolor{comment}{// must be splitted over integer boundary}}
+\DoxyCodeLine{130                 stream[iLoInt] \&= ~loMask; \textcolor{comment}{// clear bits}}
+\DoxyCodeLine{131                 stream[iLoInt] |= val << offset; \textcolor{comment}{// write lower part of value}}
+\DoxyCodeLine{132                 stream[iHiInt] \&= ~hiMask; \textcolor{comment}{// clear bits}}
+\DoxyCodeLine{133                 stream[iHiInt] |= val >> (\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{WordWidth}} - offset); \textcolor{comment}{// write higher part of value}}
+\DoxyCodeLine{134         \}}
+\DoxyCodeLine{135 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}\label{BitStream_8h_a0c20c05e88bd7561c0ba8f01f32a8988}} 
+\index{BitStream.h@{BitStream.h}!Filled@{Filled}}
+\index{Filled@{Filled}!BitStream.h@{BitStream.h}}
+\subsubsection{\texorpdfstring{Filled}{Filled}}
+{\footnotesize\ttfamily const U\+I\+N\+T32 Filled = 0x\+F\+F\+F\+F\+F\+F\+FF\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 38 of file Bit\+Stream.\+h.
+

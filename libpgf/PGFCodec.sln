@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PGFCodec", "PGFCodec.vcxproj", "{5B490780-D7B3-4997-95E3-E9617E474649}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug16|x64 = Debug16|x64
+		Debug16OMP|x64 = Debug16OMP|x64
+		DebugOMP|x64 = DebugOMP|x64
+		Release|x64 = Release|x64
+		Release16|x64 = Release16|x64
+		Release16OMP|x64 = Release16OMP|x64
+		ReleaseNROI|x64 = ReleaseNROI|x64
+		ReleaseOMP|x64 = ReleaseOMP|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Debug|x64.ActiveCfg = Debug|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Debug|x64.Build.0 = Debug|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Debug16|x64.ActiveCfg = Debug16|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Debug16|x64.Build.0 = Debug16|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Debug16OMP|x64.ActiveCfg = Debug16OMP|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Debug16OMP|x64.Build.0 = Debug16OMP|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.DebugOMP|x64.ActiveCfg = DebugOMP|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.DebugOMP|x64.Build.0 = DebugOMP|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Release|x64.ActiveCfg = Release|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Release|x64.Build.0 = Release|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Release16|x64.ActiveCfg = Release16|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Release16|x64.Build.0 = Release16|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Release16OMP|x64.ActiveCfg = Release16OMP|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.Release16OMP|x64.Build.0 = Release16OMP|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.ReleaseNROI|x64.ActiveCfg = ReleaseNROI|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.ReleaseNROI|x64.Build.0 = ReleaseNROI|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.ReleaseOMP|x64.ActiveCfg = ReleaseOMP|x64
+		{5B490780-D7B3-4997-95E3-E9617E474649}.ReleaseOMP|x64.Build.0 = ReleaseOMP|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F950987-3FE4-4A38-9FCB-5D01056D3A33}
+	EndGlobalSection
+EndGlobal

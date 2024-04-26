@@ -1,0 +1,64 @@
+\hypertarget{Encoder_8h}{}\section{Encoder.\+h File Reference}
+\label{Encoder_8h}\index{Encoder.h@{Encoder.h}}
+
+
+P\+GF encoder class.  
+
+
+{\ttfamily \#include \char`\"{}P\+G\+Fstream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Bit\+Stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Subband.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wavelet\+Transform.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCEncoder}{C\+Encoder}}
+\begin{DoxyCompactList}\small\item\em P\+GF encoder. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCEncoder_1_1CMacroBlock}{C\+Encoder\+::\+C\+Macro\+Block}}
+\begin{DoxyCompactList}\small\item\em A macro block is an encoding unit of fixed size (uncoded) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Encoder_8h_a309eafbca7ed5953ef9102861479f4ed}{Buffer\+Len}}~(\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}/\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{Word\+Width}})
+\begin{DoxyCompactList}\small\item\em number of words per buffer \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Encoder_8h_a05a74e73e6c734fcad194efbca053ed5}{Code\+Buffer\+Len}}~\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}
+\begin{DoxyCompactList}\small\item\em number of words in code buffer (Code\+Buffer\+Len $>$ Buffer\+Len) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+GF encoder class. 
+
+\begin{DoxyAuthor}{Author}
+C. Stamm, R. Spuler 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Encoder_8h_a309eafbca7ed5953ef9102861479f4ed}\label{Encoder_8h_a309eafbca7ed5953ef9102861479f4ed}} 
+\index{Encoder.h@{Encoder.h}!BufferLen@{BufferLen}}
+\index{BufferLen@{BufferLen}!Encoder.h@{Encoder.h}}
+\subsubsection{\texorpdfstring{BufferLen}{BufferLen}}
+{\footnotesize\ttfamily \#define Buffer\+Len~(\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}/\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{Word\+Width}})}
+
+
+
+number of words per buffer 
+
+
+
+Definition at line 39 of file Encoder.\+h.
+
+\mbox{\Hypertarget{Encoder_8h_a05a74e73e6c734fcad194efbca053ed5}\label{Encoder_8h_a05a74e73e6c734fcad194efbca053ed5}} 
+\index{Encoder.h@{Encoder.h}!CodeBufferLen@{CodeBufferLen}}
+\index{CodeBufferLen@{CodeBufferLen}!Encoder.h@{Encoder.h}}
+\subsubsection{\texorpdfstring{CodeBufferLen}{CodeBufferLen}}
+{\footnotesize\ttfamily \#define Code\+Buffer\+Len~\mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}}
+
+
+
+number of words in code buffer (Code\+Buffer\+Len $>$ Buffer\+Len) 
+
+
+
+Definition at line 40 of file Encoder.\+h.
+

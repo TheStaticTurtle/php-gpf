@@ -1,0 +1,757 @@
+\hypertarget{classCWaveletTransform}{}\section{C\+Wavelet\+Transform Class Reference}
+\label{classCWaveletTransform}\index{CWaveletTransform@{CWaveletTransform}}
+
+
+P\+GF wavelet transform.  
+
+
+
+
+{\ttfamily \#include $<$Wavelet\+Transform.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCWaveletTransform_aaa781fda53530e8c4d4057335ef320cb}{C\+Wavelet\+Transform}} (U\+I\+N\+T32 width, U\+I\+N\+T32 height, int levels, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$data=nullptr)
+\item 
+\mbox{\hyperlink{classCWaveletTransform_a222dd983545e969ed5faf32448020f1f}{$\sim$\+C\+Wavelet\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+O\+S\+Error \mbox{\hyperlink{classCWaveletTransform_a7278418accd9329b9264ebe5f584001f}{Forward\+Transform}} (int level, int quant)
+\item 
+O\+S\+Error \mbox{\hyperlink{classCWaveletTransform_a26a70797c2a0db893876b75d131f420c}{Inverse\+Transform}} (int level, U\+I\+N\+T32 $\ast$width, U\+I\+N\+T32 $\ast$height, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$$\ast$data)
+\item 
+\mbox{\hyperlink{classCSubband}{C\+Subband}} $\ast$ \mbox{\hyperlink{classCWaveletTransform_a347b59b1d7bc18de9294c714afac7ddf}{Get\+Subband}} (int level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}} orientation)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCWaveletTransform_a72c1bc79111534886187fcf2ac4cebea}{Destroy}} ()
+\item 
+void \mbox{\hyperlink{classCWaveletTransform_a4d03868a4bb8688235d41d6b1d7a97de}{Init\+Subbands}} (U\+I\+N\+T32 width, U\+I\+N\+T32 height, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$data)
+\item 
+void \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{Forward\+Row}} (\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$buff, U\+I\+N\+T32 width)
+\item 
+void \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{Inverse\+Row}} (\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$buff, U\+I\+N\+T32 width)
+\item 
+void \mbox{\hyperlink{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}{Interleaved\+To\+Subbands}} (int dest\+Level, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$lo\+Row, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$hi\+Row, U\+I\+N\+T32 width)
+\item 
+void \mbox{\hyperlink{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}{Subbands\+To\+Interleaved}} (int src\+Level, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$lo\+Row, \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$hi\+Row, U\+I\+N\+T32 width)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\+\_\+n\+Levels}}
+\begin{DoxyCompactList}\small\item\em number of LL levels\+: one more than header.\+n\+Levels in P\+G\+Fimage \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCSubband}{C\+Subband}}($\ast$ \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\+\_\+subband}} )\mbox{[}\mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{N\+Subbands}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em quadtree of subbands\+: LL HL LH HH \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCWaveletTransform_abdf6119f0e2b50fd156b12b231e929e7}{C\+Subband}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+GF wavelet transform. 
+
+P\+GF wavelet transform class. \begin{DoxyAuthor}{Author}
+C. Stamm, R. Spuler 
+\end{DoxyAuthor}
+
+
+Definition at line 55 of file Wavelet\+Transform.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCWaveletTransform_aaa781fda53530e8c4d4057335ef320cb}\label{classCWaveletTransform_aaa781fda53530e8c4d4057335ef320cb}} 
+\index{CWaveletTransform@{CWaveletTransform}!CWaveletTransform@{CWaveletTransform}}
+\index{CWaveletTransform@{CWaveletTransform}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{CWaveletTransform()}{CWaveletTransform()}}
+{\footnotesize\ttfamily C\+Wavelet\+Transform\+::\+C\+Wavelet\+Transform (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{width,  }\item[{U\+I\+N\+T32}]{height,  }\item[{int}]{levels,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{data = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor\+: Constructs a wavelet transform pyramid of given size and levels. 
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the original image (at level 0) in pixels \\
+\hline
+{\em height} & The height of the original image (at level 0) in pixels \\
+\hline
+{\em levels} & The number of levels ($>$= 0) \\
+\hline
+{\em data} & Input data of subband LL at level 0 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41 : \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}}(levels + 1) \textcolor{comment}{// m\_nLevels in CPGFImage determines the number of FWT steps; this.m\_nLevels determines the number subband-planes}}
+\DoxyCodeLine{42 , \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}(\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{44 , m\_indices(\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47         ASSERT(\mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}} > 0 \&\& \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}} <= \mbox{\hyperlink{PGFtypes_8h_a2468e509eae9683e25af403249b743a3}{MaxLevel}} + 1);}
+\DoxyCodeLine{48         \mbox{\hyperlink{classCWaveletTransform_a4d03868a4bb8688235d41d6b1d7a97de}{InitSubbands}}(width, height, data);}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a222dd983545e969ed5faf32448020f1f}\label{classCWaveletTransform_a222dd983545e969ed5faf32448020f1f}} 
+\index{CWaveletTransform@{CWaveletTransform}!````~CWaveletTransform@{$\sim$CWaveletTransform}}
+\index{````~CWaveletTransform@{$\sim$CWaveletTransform}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{$\sim$CWaveletTransform()}{~CWaveletTransform()}}
+{\footnotesize\ttfamily C\+Wavelet\+Transform\+::$\sim$\+C\+Wavelet\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line 69 of file Wavelet\+Transform.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \{ \mbox{\hyperlink{classCWaveletTransform_a72c1bc79111534886187fcf2ac4cebea}{Destroy}}(); \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCWaveletTransform_a72c1bc79111534886187fcf2ac4cebea}\label{classCWaveletTransform_a72c1bc79111534886187fcf2ac4cebea}} 
+\index{CWaveletTransform@{CWaveletTransform}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void C\+Wavelet\+Transform\+::\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 125 of file Wavelet\+Transform.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125                        \{ }
+\DoxyCodeLine{126                 \textcolor{keyword}{delete}[] \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}; \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{127 \textcolor{preprocessor}{        \#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{128                 \textcolor{keyword}{delete}[] m\_indices; m\_indices = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{129 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{130         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}\label{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}} 
+\index{CWaveletTransform@{CWaveletTransform}!ForwardRow@{ForwardRow}}
+\index{ForwardRow@{ForwardRow}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{ForwardRow()}{ForwardRow()}}
+{\footnotesize\ttfamily void C\+Wavelet\+Transform\+::\+Forward\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{buff,  }\item[{U\+I\+N\+T32}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 180 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{180                                                            \{}
+\DoxyCodeLine{181         \textcolor{keywordflow}{if} (width >= \mbox{\hyperlink{WaveletTransform_8h_a93633fc816f186e990eabf5e8f20a40f}{FilterSize}}) \{}
+\DoxyCodeLine{182                 UINT32 i = 3;}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184                 \textcolor{comment}{// left border handling}}
+\DoxyCodeLine{185                 src[1] -= ((src[0] + src[2] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// high pass}}
+\DoxyCodeLine{186                 src[0] += ((src[1] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// low pass}}
+\DoxyCodeLine{187                 }
+\DoxyCodeLine{188                 \textcolor{comment}{// middle part}}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{for} (; i < width-1; i += 2) \{}
+\DoxyCodeLine{190                         src[i] -= ((src[i-1] + src[i+1] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// high pass}}
+\DoxyCodeLine{191                         src[i-1] += ((src[i-2] + src[i] + \mbox{\hyperlink{WaveletTransform_8cpp_a029b8c811cc05eaa3f86df139d8fe4e5}{c2}}) >> 2); \textcolor{comment}{// low pass}}
+\DoxyCodeLine{192                 \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194                 \textcolor{comment}{// right border handling}}
+\DoxyCodeLine{195                 \textcolor{keywordflow}{if} (width \& 1) \{}
+\DoxyCodeLine{196                         src[i-1] += ((src[i-2] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// low pass}}
+\DoxyCodeLine{197                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{198                         src[i] -= src[i-1]; \textcolor{comment}{// high pass}}
+\DoxyCodeLine{199                         src[i-1] += ((src[i-2] + src[i] + \mbox{\hyperlink{WaveletTransform_8cpp_a029b8c811cc05eaa3f86df139d8fe4e5}{c2}}) >> 2); \textcolor{comment}{// low pass}}
+\DoxyCodeLine{200                 \}}
+\DoxyCodeLine{201         \}}
+\DoxyCodeLine{202 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a7278418accd9329b9264ebe5f584001f}\label{classCWaveletTransform_a7278418accd9329b9264ebe5f584001f}} 
+\index{CWaveletTransform@{CWaveletTransform}!ForwardTransform@{ForwardTransform}}
+\index{ForwardTransform@{ForwardTransform}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{ForwardTransform()}{ForwardTransform()}}
+{\footnotesize\ttfamily O\+S\+Error C\+Wavelet\+Transform\+::\+Forward\+Transform (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{int}]{quant }\end{DoxyParamCaption})}
+
+Compute fast forward wavelet transform of LL subband at given level and stores result in all 4 subbands of level + 1. 
+\begin{DoxyParams}{Parameters}
+{\em level} & A wavelet transform pyramid level ($>$= 0 \&\& $<$ Levels()) \\
+\hline
+{\em quant} & A quantization value (linear scalar quantization) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error in case of a memory allocation problem 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{88                                                                 \{}
+\DoxyCodeLine{89         ASSERT(level >= 0 \&\& level < \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}} - 1);}
+\DoxyCodeLine{90         \textcolor{keyword}{const} \textcolor{keywordtype}{int} destLevel = level + 1;}
+\DoxyCodeLine{91         ASSERT(\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel]);}
+\DoxyCodeLine{92         \mbox{\hyperlink{classCSubband}{CSubband}}* srcBand = \&\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[level][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}]; ASSERT(srcBand);}
+\DoxyCodeLine{93         \textcolor{keyword}{const} UINT32 width = srcBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}();}
+\DoxyCodeLine{94         \textcolor{keyword}{const} UINT32 height = srcBand->\mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{GetHeight}}();}
+\DoxyCodeLine{95         \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}* src = srcBand->\mbox{\hyperlink{classCSubband_aa4a60fd0c2e3ad2742bca6b8e819d5c5}{GetBuffer}}(); ASSERT(src);}
+\DoxyCodeLine{96         \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} *row0, *row1, *row2, *row3;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{comment}{// Allocate memory for next transform level}}
+\DoxyCodeLine{99         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{NSubbands}}; i++) \{}
+\DoxyCodeLine{100                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][i].\mbox{\hyperlink{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}{AllocMemory}}()) \textcolor{keywordflow}{return} InsufficientMemory;}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{keywordflow}{if} (height >= \mbox{\hyperlink{WaveletTransform_8h_a93633fc816f186e990eabf5e8f20a40f}{FilterSize}}) \{ \textcolor{comment}{// changed from FilterSizeH to FilterSize}}
+\DoxyCodeLine{104                 \textcolor{comment}{// top border handling}}
+\DoxyCodeLine{105                 row0 = src; row1 = row0 + width; row2 = row1 + width;}
+\DoxyCodeLine{106                 \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row0, width);}
+\DoxyCodeLine{107                 \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row1, width);}
+\DoxyCodeLine{108                 \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row2, width);}
+\DoxyCodeLine{109                 \textcolor{keywordflow}{for} (UINT32 k=0; k < width; k++) \{}
+\DoxyCodeLine{110                         row1[k] -= ((row0[k] + row2[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// high pass}}
+\DoxyCodeLine{111                         row0[k] += ((row1[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// low pass}}
+\DoxyCodeLine{112                 \}}
+\DoxyCodeLine{113                 \mbox{\hyperlink{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}{InterleavedToSubbands}}(destLevel, row0, row1, width);}
+\DoxyCodeLine{114                 row0 = row1; row1 = row2; row2 += width; row3 = row2 + width;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116                 \textcolor{comment}{// middle part}}
+\DoxyCodeLine{117                 \textcolor{keywordflow}{for} (UINT32 i=3; i < height-1; i += 2) \{}
+\DoxyCodeLine{118                         \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row2, width);}
+\DoxyCodeLine{119                         \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row3, width);}
+\DoxyCodeLine{120                         \textcolor{keywordflow}{for} (UINT32 k=0; k < width; k++) \{}
+\DoxyCodeLine{121                                 row2[k] -= ((row1[k] + row3[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// high pass filter}}
+\DoxyCodeLine{122                                 row1[k] += ((row0[k] + row2[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a029b8c811cc05eaa3f86df139d8fe4e5}{c2}}) >> 2); \textcolor{comment}{// low pass filter}}
+\DoxyCodeLine{123                         \}}
+\DoxyCodeLine{124                         \mbox{\hyperlink{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}{InterleavedToSubbands}}(destLevel, row1, row2, width);}
+\DoxyCodeLine{125                         row0 = row2; row1 = row3; row2 = row3 + width; row3 = row2 + width;}
+\DoxyCodeLine{126                 \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128                 \textcolor{comment}{// bottom border handling}}
+\DoxyCodeLine{129                 \textcolor{keywordflow}{if} (height \& 1) \{}
+\DoxyCodeLine{130                         \textcolor{keywordflow}{for} (UINT32 k=0; k < width; k++) \{}
+\DoxyCodeLine{131                                 row1[k] += ((row0[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// low pass}}
+\DoxyCodeLine{132                         \}}
+\DoxyCodeLine{133                         \mbox{\hyperlink{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}{InterleavedToSubbands}}(destLevel, row1, \textcolor{keyword}{nullptr}, width);}
+\DoxyCodeLine{134                         row0 = row1; row1 += width;}
+\DoxyCodeLine{135                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{136                         \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row2, width);}
+\DoxyCodeLine{137                         \textcolor{keywordflow}{for} (UINT32 k=0; k < width; k++) \{}
+\DoxyCodeLine{138                                 row2[k] -= row1[k]; \textcolor{comment}{// high pass}}
+\DoxyCodeLine{139                                 row1[k] += ((row0[k] + row2[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a029b8c811cc05eaa3f86df139d8fe4e5}{c2}}) >> 2); \textcolor{comment}{// low pass}}
+\DoxyCodeLine{140                         \}}
+\DoxyCodeLine{141                         \mbox{\hyperlink{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}{InterleavedToSubbands}}(destLevel, row1, row2, width);}
+\DoxyCodeLine{142                         row0 = row1; row1 = row2; row2 += width;}
+\DoxyCodeLine{143                 \}}
+\DoxyCodeLine{144         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{145                 \textcolor{comment}{// if height is too small}}
+\DoxyCodeLine{146                 row0 = src; row1 = row0 + width;}
+\DoxyCodeLine{147                 \textcolor{comment}{// first part}}
+\DoxyCodeLine{148                 \textcolor{keywordflow}{for} (UINT32 k=0; k < height; k += 2) \{}
+\DoxyCodeLine{149                         \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row0, width);}
+\DoxyCodeLine{150                         \mbox{\hyperlink{classCWaveletTransform_a7c82d85117e367c8302b2e4681db138d}{ForwardRow}}(row1, width);}
+\DoxyCodeLine{151                         \mbox{\hyperlink{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}{InterleavedToSubbands}}(destLevel, row0, row1, width);}
+\DoxyCodeLine{152                         row0 += width << 1; row1 += width << 1;}
+\DoxyCodeLine{153                 \}}
+\DoxyCodeLine{154                 \textcolor{comment}{// bottom}}
+\DoxyCodeLine{155                 \textcolor{keywordflow}{if} (height \& 1) \{}
+\DoxyCodeLine{156                         \mbox{\hyperlink{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}{InterleavedToSubbands}}(destLevel, row0, \textcolor{keyword}{nullptr}, width);}
+\DoxyCodeLine{157                 \}}
+\DoxyCodeLine{158         \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160         \textcolor{keywordflow}{if} (quant > 0) \{}
+\DoxyCodeLine{161                 \textcolor{comment}{// subband quantization (without LL)}}
+\DoxyCodeLine{162                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=1; i < \mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{NSubbands}}; i++) \{}
+\DoxyCodeLine{163                         \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][i].\mbox{\hyperlink{classCSubband_a5de71c37eb00e5e5dad3fe5e38b81ced}{Quantize}}(quant);}
+\DoxyCodeLine{164                 \}}
+\DoxyCodeLine{165                 \textcolor{comment}{// LL subband quantization}}
+\DoxyCodeLine{166                 \textcolor{keywordflow}{if} (destLevel == \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}} - 1) \{}
+\DoxyCodeLine{167                         \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}].\mbox{\hyperlink{classCSubband_a5de71c37eb00e5e5dad3fe5e38b81ced}{Quantize}}(quant);}
+\DoxyCodeLine{168                 \}}
+\DoxyCodeLine{169         \}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171         \textcolor{comment}{// free source band}}
+\DoxyCodeLine{172         srcBand->\mbox{\hyperlink{classCSubband_a62f1ed27fe4771e2f10f58a0eeafd7b1}{FreeMemory}}();}
+\DoxyCodeLine{173         \textcolor{keywordflow}{return} NoError;}
+\DoxyCodeLine{174 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a347b59b1d7bc18de9294c714afac7ddf}\label{classCWaveletTransform_a347b59b1d7bc18de9294c714afac7ddf}} 
+\index{CWaveletTransform@{CWaveletTransform}!GetSubband@{GetSubband}}
+\index{GetSubband@{GetSubband}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{GetSubband()}{GetSubband()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCSubband}{C\+Subband}}$\ast$ C\+Wavelet\+Transform\+::\+Get\+Subband (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}}}]{orientation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get pointer to one of the 4 subband at a given level. 
+\begin{DoxyParams}{Parameters}
+{\em level} & A wavelet transform pyramid level ($>$= 0 \&\& $<$= Levels()) \\
+\hline
+{\em orientation} & A quarter of the subband (LL, LH, HL, HH) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file Wavelet\+Transform.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93                                                                  \{}
+\DoxyCodeLine{94                 ASSERT(level >= 0 \&\& level < \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}});}
+\DoxyCodeLine{95                 \textcolor{keywordflow}{return} \&\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[level][orientation];}
+\DoxyCodeLine{96         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a4d03868a4bb8688235d41d6b1d7a97de}\label{classCWaveletTransform_a4d03868a4bb8688235d41d6b1d7a97de}} 
+\index{CWaveletTransform@{CWaveletTransform}!InitSubbands@{InitSubbands}}
+\index{InitSubbands@{InitSubbands}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{InitSubbands()}{InitSubbands()}}
+{\footnotesize\ttfamily void C\+Wavelet\+Transform\+::\+Init\+Subbands (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{width,  }\item[{U\+I\+N\+T32}]{height,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53                                                                              \{}
+\DoxyCodeLine{54         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}) \mbox{\hyperlink{classCWaveletTransform_a72c1bc79111534886187fcf2ac4cebea}{Destroy}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{comment}{// create subbands}}
+\DoxyCodeLine{57         \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}} = \textcolor{keyword}{new} \mbox{\hyperlink{classCSubband}{CSubband}}[\mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}}][\mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{NSubbands}}];}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{comment}{// init subbands}}
+\DoxyCodeLine{60         UINT32 loWidth = width;}
+\DoxyCodeLine{61         UINT32 hiWidth = width;}
+\DoxyCodeLine{62         UINT32 loHeight = height;}
+\DoxyCodeLine{63         UINT32 hiHeight = height;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} level = 0; level < \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}}; level++) \{}
+\DoxyCodeLine{66                 \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[level][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}].\mbox{\hyperlink{classCSubband_a5bdfe417903304a7b7348feb65904839}{Initialize}}(loWidth, loHeight, level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}});   \textcolor{comment}{// LL}}
+\DoxyCodeLine{67                 \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[level][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}}].\mbox{\hyperlink{classCSubband_a5bdfe417903304a7b7348feb65904839}{Initialize}}(hiWidth, loHeight, level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}});   \textcolor{comment}{//    HL}}
+\DoxyCodeLine{68                 \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[level][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}}].\mbox{\hyperlink{classCSubband_a5bdfe417903304a7b7348feb65904839}{Initialize}}(loWidth, hiHeight, level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}});   \textcolor{comment}{// LH}}
+\DoxyCodeLine{69                 \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[level][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}].\mbox{\hyperlink{classCSubband_a5bdfe417903304a7b7348feb65904839}{Initialize}}(hiWidth, hiHeight, level, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}});   \textcolor{comment}{//    HH}}
+\DoxyCodeLine{70                 hiWidth = loWidth >> 1;                 hiHeight = loHeight >> 1;}
+\DoxyCodeLine{71                 loWidth = (loWidth + 1) >> 1;   loHeight = (loHeight + 1) >> 1;}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} (data) \{}
+\DoxyCodeLine{74                 \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[0][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}].\mbox{\hyperlink{classCSubband_a2da2078e1050116b47760ede30e4e503}{SetBuffer}}(data);}
+\DoxyCodeLine{75         \}}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}\label{classCWaveletTransform_a7e926fe30c00e2bfa23f00a28a393f43}} 
+\index{CWaveletTransform@{CWaveletTransform}!InterleavedToSubbands@{InterleavedToSubbands}}
+\index{InterleavedToSubbands@{InterleavedToSubbands}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{InterleavedToSubbands()}{InterleavedToSubbands()}}
+{\footnotesize\ttfamily void C\+Wavelet\+Transform\+::\+Interleaved\+To\+Subbands (\begin{DoxyParamCaption}\item[{int}]{dest\+Level,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{lo\+Row,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{hi\+Row,  }\item[{U\+I\+N\+T32}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 206 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{206                                                                                                      \{}
+\DoxyCodeLine{207         \textcolor{keyword}{const} UINT32 wquot = width >> 1;}
+\DoxyCodeLine{208         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} wrem = (width \& 1);}
+\DoxyCodeLine{209         \mbox{\hyperlink{classCSubband}{CSubband}} \&ll = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}], \&hl = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}}];}
+\DoxyCodeLine{210         \mbox{\hyperlink{classCSubband}{CSubband}} \&lh = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}}], \&hh = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}];}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212         \textcolor{keywordflow}{if} (hiRow) \{}
+\DoxyCodeLine{213                 \textcolor{keywordflow}{for} (UINT32 i=0; i < wquot; i++) \{}
+\DoxyCodeLine{214                         ll.\mbox{\hyperlink{classCSubband_a3bebc017649e7dbef182efe3cbe17965}{WriteBuffer}}(*loRow++);    \textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{215                         hl.WriteBuffer(*loRow++);}
+\DoxyCodeLine{216                         lh.\mbox{\hyperlink{classCSubband_a3bebc017649e7dbef182efe3cbe17965}{WriteBuffer}}(*hiRow++);    \textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{217                         hh.WriteBuffer(*hiRow++);}
+\DoxyCodeLine{218                 \}}
+\DoxyCodeLine{219                 \textcolor{keywordflow}{if} (wrem) \{}
+\DoxyCodeLine{220                         ll.\mbox{\hyperlink{classCSubband_a3bebc017649e7dbef182efe3cbe17965}{WriteBuffer}}(*loRow);}
+\DoxyCodeLine{221                         lh.\mbox{\hyperlink{classCSubband_a3bebc017649e7dbef182efe3cbe17965}{WriteBuffer}}(*hiRow);}
+\DoxyCodeLine{222                 \}}
+\DoxyCodeLine{223         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{224                 \textcolor{keywordflow}{for} (UINT32 i=0; i < wquot; i++) \{}
+\DoxyCodeLine{225                         ll.\mbox{\hyperlink{classCSubband_a3bebc017649e7dbef182efe3cbe17965}{WriteBuffer}}(*loRow++);    \textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{226                         hl.WriteBuffer(*loRow++);}
+\DoxyCodeLine{227                 \}}
+\DoxyCodeLine{228                 \textcolor{keywordflow}{if} (wrem) ll.\mbox{\hyperlink{classCSubband_a3bebc017649e7dbef182efe3cbe17965}{WriteBuffer}}(*loRow);}
+\DoxyCodeLine{229         \}}
+\DoxyCodeLine{230 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}\label{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}} 
+\index{CWaveletTransform@{CWaveletTransform}!InverseRow@{InverseRow}}
+\index{InverseRow@{InverseRow}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{InverseRow()}{InverseRow()}}
+{\footnotesize\ttfamily void C\+Wavelet\+Transform\+::\+Inverse\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{buff,  }\item[{U\+I\+N\+T32}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 419 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{419                                                             \{}
+\DoxyCodeLine{420         \textcolor{keywordflow}{if} (width >= \mbox{\hyperlink{WaveletTransform_8h_a93633fc816f186e990eabf5e8f20a40f}{FilterSize}}) \{}
+\DoxyCodeLine{421                 UINT32 i = 2;}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423                 \textcolor{comment}{// left border handling}}
+\DoxyCodeLine{424                 dest[0] -= ((dest[1] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// even}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426                 \textcolor{comment}{// middle part}}
+\DoxyCodeLine{427                 \textcolor{keywordflow}{for} (; i < width - 1; i += 2) \{}
+\DoxyCodeLine{428                         dest[i] -= ((dest[i-1] + dest[i+1] + \mbox{\hyperlink{WaveletTransform_8cpp_a029b8c811cc05eaa3f86df139d8fe4e5}{c2}}) >> 2); \textcolor{comment}{// even}}
+\DoxyCodeLine{429                         dest[i-1] += ((dest[i-2] + dest[i] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// odd}}
+\DoxyCodeLine{430                 \}}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432                 \textcolor{comment}{// right border handling}}
+\DoxyCodeLine{433                 \textcolor{keywordflow}{if} (width \& 1) \{}
+\DoxyCodeLine{434                         dest[i] -= ((dest[i-1] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// even}}
+\DoxyCodeLine{435                         dest[i-1] += ((dest[i-2] + dest[i] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// odd}}
+\DoxyCodeLine{436                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{437                         dest[i-1] += dest[i-2]; \textcolor{comment}{// odd}}
+\DoxyCodeLine{438                 \}}
+\DoxyCodeLine{439         \}}
+\DoxyCodeLine{440 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a26a70797c2a0db893876b75d131f420c}\label{classCWaveletTransform_a26a70797c2a0db893876b75d131f420c}} 
+\index{CWaveletTransform@{CWaveletTransform}!InverseTransform@{InverseTransform}}
+\index{InverseTransform@{InverseTransform}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{InverseTransform()}{InverseTransform()}}
+{\footnotesize\ttfamily O\+S\+Error C\+Wavelet\+Transform\+::\+Inverse\+Transform (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{U\+I\+N\+T32 $\ast$}]{width,  }\item[{U\+I\+N\+T32 $\ast$}]{height,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$$\ast$}]{data }\end{DoxyParamCaption})}
+
+Compute fast inverse wavelet transform of all 4 subbands of given level and stores result in LL subband of level -\/ 1. 
+\begin{DoxyParams}{Parameters}
+{\em level} & A wavelet transform pyramid level ($>$ 0 \&\& $<$= Levels()) \\
+\hline
+{\em width} & A pointer to the returned width of subband LL (in pixels) \\
+\hline
+{\em height} & A pointer to the returned height of subband LL (in pixels) \\
+\hline
+{\em data} & A pointer to the returned array of image data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error in case of a memory allocation problem 
+\end{DoxyReturn}
+
+
+Definition at line 245 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{245                                                                                             \{}
+\DoxyCodeLine{246         ASSERT(srcLevel > 0 \&\& srcLevel < \mbox{\hyperlink{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}{m\_nLevels}});}
+\DoxyCodeLine{247         \textcolor{keyword}{const} \textcolor{keywordtype}{int} destLevel = srcLevel - 1;}
+\DoxyCodeLine{248         ASSERT(\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel]);}
+\DoxyCodeLine{249         \mbox{\hyperlink{classCSubband}{CSubband}}* destBand = \&\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[destLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}];}
+\DoxyCodeLine{250         UINT32 width, height;}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252         \textcolor{comment}{// allocate memory for the results of the inverse transform }}
+\DoxyCodeLine{253         \textcolor{keywordflow}{if} (!destBand->\mbox{\hyperlink{classCSubband_a2c98d1e4d2586adcda289c6e358b94f6}{AllocMemory}}()) \textcolor{keywordflow}{return} InsufficientMemory;}
+\DoxyCodeLine{254         \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} *origin = destBand->\mbox{\hyperlink{classCSubband_aa4a60fd0c2e3ad2742bca6b8e819d5c5}{GetBuffer}}(), *row0, *row1, *row2, *row3;}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{257         \mbox{\hyperlink{structPGFRect}{PGFRect}} destROI = destBand->GetAlignedROI();     }
+\DoxyCodeLine{258         \textcolor{keyword}{const} UINT32 destWidth  = destROI.\mbox{\hyperlink{structPGFRect_a70d366f5adc104f7037b627f35a18729}{Width}}();  \textcolor{comment}{// destination buffer width}}
+\DoxyCodeLine{259         \textcolor{keyword}{const} UINT32 destHeight = destROI.\mbox{\hyperlink{structPGFRect_a139b8bb60ea476cd14856476b2d37b0f}{Height}}(); \textcolor{comment}{// destination buffer height}}
+\DoxyCodeLine{260         width = destWidth;              \textcolor{comment}{// destination working width}}
+\DoxyCodeLine{261         height = destHeight;    \textcolor{comment}{// destination working height}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263         \textcolor{comment}{// update destination ROI}}
+\DoxyCodeLine{264         \textcolor{keywordflow}{if} (destROI.\mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}} \& 1) \{}
+\DoxyCodeLine{265                 destROI.\mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}}++;}
+\DoxyCodeLine{266                 origin += destWidth;}
+\DoxyCodeLine{267                 height--;}
+\DoxyCodeLine{268         \}}
+\DoxyCodeLine{269         \textcolor{keywordflow}{if} (destROI.\mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}} \& 1) \{}
+\DoxyCodeLine{270                 destROI.\mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}}++;}
+\DoxyCodeLine{271                 origin++;}
+\DoxyCodeLine{272                 width--;}
+\DoxyCodeLine{273         \}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275         \textcolor{comment}{// init source buffer position}}
+\DoxyCodeLine{276         \textcolor{keyword}{const} UINT32 leftD = destROI.\mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}} >> 1;}
+\DoxyCodeLine{277         \textcolor{keyword}{const} UINT32 left0 = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}].GetAlignedROI().left;}
+\DoxyCodeLine{278         \textcolor{keyword}{const} UINT32 left1 = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}}].GetAlignedROI().left;}
+\DoxyCodeLine{279         \textcolor{keyword}{const} UINT32 topD = destROI.\mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}} >> 1;}
+\DoxyCodeLine{280         \textcolor{keyword}{const} UINT32 top0 = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}].GetAlignedROI().top;}
+\DoxyCodeLine{281         \textcolor{keyword}{const} UINT32 top1 = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}}].GetAlignedROI().top;}
+\DoxyCodeLine{282         ASSERT(\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}}].GetAlignedROI().left == left0);}
+\DoxyCodeLine{283         ASSERT(\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}].GetAlignedROI().left == left1);}
+\DoxyCodeLine{284         ASSERT(\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}}].GetAlignedROI().top == top0);}
+\DoxyCodeLine{285         ASSERT(\mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}].GetAlignedROI().top == top1);}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287         UINT32 srcOffsetX[2] = \{ 0, 0 \};}
+\DoxyCodeLine{288         UINT32 srcOffsetY[2] = \{ 0, 0 \};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290         \textcolor{keywordflow}{if} (leftD >= \mbox{\hyperlink{PGFplatform_8h_af643213a7d426b69429d1430cef4ecbb}{\_\_max}}(left0, left1)) \{}
+\DoxyCodeLine{291                 srcOffsetX[0] = leftD - left0;}
+\DoxyCodeLine{292                 srcOffsetX[1] = leftD - left1;}
+\DoxyCodeLine{293         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{294                 \textcolor{keywordflow}{if} (left0 <= left1) \{}
+\DoxyCodeLine{295                         \textcolor{keyword}{const} UINT32 dx = (left1 - leftD) << 1;}
+\DoxyCodeLine{296                         destROI.\mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}} += dx;}
+\DoxyCodeLine{297                         origin += dx;}
+\DoxyCodeLine{298                         width -= dx;}
+\DoxyCodeLine{299                         srcOffsetX[0] = left1 - left0;}
+\DoxyCodeLine{300                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{301                         \textcolor{keyword}{const} UINT32 dx = (left0 - leftD) << 1;}
+\DoxyCodeLine{302                         destROI.\mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}} += dx;}
+\DoxyCodeLine{303                         origin += dx;}
+\DoxyCodeLine{304                         width -= dx;}
+\DoxyCodeLine{305                         srcOffsetX[1] = left0 - left1;}
+\DoxyCodeLine{306                 \}}
+\DoxyCodeLine{307         \}}
+\DoxyCodeLine{308         \textcolor{keywordflow}{if} (topD >= \mbox{\hyperlink{PGFplatform_8h_af643213a7d426b69429d1430cef4ecbb}{\_\_max}}(top0, top1)) \{}
+\DoxyCodeLine{309                 srcOffsetY[0] = topD - top0;}
+\DoxyCodeLine{310                 srcOffsetY[1] = topD - top1;}
+\DoxyCodeLine{311         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{312                 \textcolor{keywordflow}{if} (top0 <= top1) \{}
+\DoxyCodeLine{313                         \textcolor{keyword}{const} UINT32 dy = (top1 - topD) << 1;}
+\DoxyCodeLine{314                         destROI.\mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}} += dy;}
+\DoxyCodeLine{315                         origin += dy*destWidth;}
+\DoxyCodeLine{316                         height -= dy;}
+\DoxyCodeLine{317                         srcOffsetY[0] = top1 - top0;}
+\DoxyCodeLine{318                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{319                         \textcolor{keyword}{const} UINT32 dy = (top0 - topD) << 1;}
+\DoxyCodeLine{320                         destROI.\mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}} += dy;}
+\DoxyCodeLine{321                         origin += dy*destWidth;}
+\DoxyCodeLine{322                         height -= dy;}
+\DoxyCodeLine{323                         srcOffsetY[1] = top0 - top1;}
+\DoxyCodeLine{324                 \}}
+\DoxyCodeLine{325         \}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327         \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}].\mbox{\hyperlink{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}{InitBuffPos}}(srcOffsetX[0], srcOffsetY[0]);}
+\DoxyCodeLine{328         \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}}].\mbox{\hyperlink{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}{InitBuffPos}}(srcOffsetX[1], srcOffsetY[0]);}
+\DoxyCodeLine{329         \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}}].\mbox{\hyperlink{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}{InitBuffPos}}(srcOffsetX[0], srcOffsetY[1]);}
+\DoxyCodeLine{330         \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}].\mbox{\hyperlink{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}{InitBuffPos}}(srcOffsetX[1], srcOffsetY[1]);}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{333         width = destBand->\mbox{\hyperlink{classCSubband_a3f53e4fc362e02aa0ff3121485a6c760}{GetWidth}}();}
+\DoxyCodeLine{334         height = destBand->\mbox{\hyperlink{classCSubband_ab318beb155b4526adf67f91ea1c4b930}{GetHeight}}();}
+\DoxyCodeLine{335         \mbox{\hyperlink{structPGFRect}{PGFRect}} destROI(0, 0, width, height);}
+\DoxyCodeLine{336         \textcolor{keyword}{const} UINT32 destWidth = width; \textcolor{comment}{// destination buffer width}}
+\DoxyCodeLine{337         \textcolor{keyword}{const} UINT32 destHeight = height; \textcolor{comment}{// destination buffer height}}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339         \textcolor{comment}{// init source buffer position}}
+\DoxyCodeLine{340         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{NSubbands}}; i++) \{}
+\DoxyCodeLine{341                 \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][i].\mbox{\hyperlink{classCSubband_a1a5bca84a7ceb1ed6dbe417f8d6836ba}{InitBuffPos}}();}
+\DoxyCodeLine{342         \}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345         \textcolor{keywordflow}{if} (destHeight >= \mbox{\hyperlink{WaveletTransform_8h_a93633fc816f186e990eabf5e8f20a40f}{FilterSize}}) \{ \textcolor{comment}{// changed from FilterSizeH to FilterSize}}
+\DoxyCodeLine{346                 \textcolor{comment}{// top border handling}}
+\DoxyCodeLine{347                 row0 = origin; row1 = row0 + destWidth;}
+\DoxyCodeLine{348                 \mbox{\hyperlink{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}{SubbandsToInterleaved}}(srcLevel, row0, row1, width);}
+\DoxyCodeLine{349                 \textcolor{keywordflow}{for} (UINT32 k = 0; k < width; k++) \{}
+\DoxyCodeLine{350                         row0[k] -= ((row1[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// even}}
+\DoxyCodeLine{351                 \}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353                 \textcolor{comment}{// middle part}}
+\DoxyCodeLine{354                 row2 = row1 + destWidth; row3 = row2 + destWidth;}
+\DoxyCodeLine{355                 \textcolor{keywordflow}{for} (UINT32 i = destROI.\mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}} + 2; i < destROI.\mbox{\hyperlink{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}{bottom}} - 1; i += 2) \{}
+\DoxyCodeLine{356                         \mbox{\hyperlink{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}{SubbandsToInterleaved}}(srcLevel, row2, row3, width);}
+\DoxyCodeLine{357                         \textcolor{keywordflow}{for} (UINT32 k = 0; k < width; k++) \{}
+\DoxyCodeLine{358                                 row2[k] -= ((row1[k] + row3[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a029b8c811cc05eaa3f86df139d8fe4e5}{c2}}) >> 2); \textcolor{comment}{// even}}
+\DoxyCodeLine{359                                 row1[k] += ((row0[k] + row2[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// odd}}
+\DoxyCodeLine{360                         \}}
+\DoxyCodeLine{361                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row0, width);}
+\DoxyCodeLine{362                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row1, width);}
+\DoxyCodeLine{363                         row0 = row2; row1 = row3; row2 = row1 + destWidth; row3 = row2 + destWidth;}
+\DoxyCodeLine{364                 \}}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366                 \textcolor{comment}{// bottom border handling}}
+\DoxyCodeLine{367                 \textcolor{keywordflow}{if} (height \& 1) \{}
+\DoxyCodeLine{368                         \mbox{\hyperlink{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}{SubbandsToInterleaved}}(srcLevel, row2, \textcolor{keyword}{nullptr}, width);}
+\DoxyCodeLine{369                         \textcolor{keywordflow}{for} (UINT32 k = 0; k < width; k++) \{}
+\DoxyCodeLine{370                                 row2[k] -= ((row1[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// even}}
+\DoxyCodeLine{371                                 row1[k] += ((row0[k] + row2[k] + \mbox{\hyperlink{WaveletTransform_8cpp_a8f9aca421a560153a31ebb326da34216}{c1}}) >> 1); \textcolor{comment}{// odd}}
+\DoxyCodeLine{372                         \}}
+\DoxyCodeLine{373                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row0, width);}
+\DoxyCodeLine{374                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row1, width);}
+\DoxyCodeLine{375                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row2, width);}
+\DoxyCodeLine{376                         row0 = row1; row1 = row2; row2 += destWidth;}
+\DoxyCodeLine{377                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{378                         \textcolor{keywordflow}{for} (UINT32 k = 0; k < width; k++) \{}
+\DoxyCodeLine{379                                 row1[k] += row0[k];}
+\DoxyCodeLine{380                         \}}
+\DoxyCodeLine{381                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row0, width);}
+\DoxyCodeLine{382                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row1, width);}
+\DoxyCodeLine{383                         row0 = row1; row1 += destWidth;}
+\DoxyCodeLine{384                 \}}
+\DoxyCodeLine{385         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{386                 \textcolor{comment}{// height is too small}}
+\DoxyCodeLine{387                 row0 = origin; row1 = row0 + destWidth;}
+\DoxyCodeLine{388                 \textcolor{comment}{// first part}}
+\DoxyCodeLine{389                 \textcolor{keywordflow}{for} (UINT32 k = 0; k < height; k += 2) \{}
+\DoxyCodeLine{390                         \mbox{\hyperlink{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}{SubbandsToInterleaved}}(srcLevel, row0, row1, width);}
+\DoxyCodeLine{391                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row0, width);}
+\DoxyCodeLine{392                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row1, width);}
+\DoxyCodeLine{393                         row0 += destWidth << 1; row1 += destWidth << 1;}
+\DoxyCodeLine{394                 \}}
+\DoxyCodeLine{395                 \textcolor{comment}{// bottom}}
+\DoxyCodeLine{396                 \textcolor{keywordflow}{if} (height \& 1) \{}
+\DoxyCodeLine{397                         \mbox{\hyperlink{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}{SubbandsToInterleaved}}(srcLevel, row0, \textcolor{keyword}{nullptr}, width);}
+\DoxyCodeLine{398                         \mbox{\hyperlink{classCWaveletTransform_a1a39a469fd695c50efc42d744689982d}{InverseRow}}(row0, width);}
+\DoxyCodeLine{399                 \}}
+\DoxyCodeLine{400         \}}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402         \textcolor{comment}{// free memory of the current srcLevel}}
+\DoxyCodeLine{403         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{NSubbands}}; i++) \{}
+\DoxyCodeLine{404                 \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][i].\mbox{\hyperlink{classCSubband_a62f1ed27fe4771e2f10f58a0eeafd7b1}{FreeMemory}}();}
+\DoxyCodeLine{405         \}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407         \textcolor{comment}{// return info}}
+\DoxyCodeLine{408         *w = destWidth;}
+\DoxyCodeLine{409         *h = destHeight;}
+\DoxyCodeLine{410         *data = destBand->\mbox{\hyperlink{classCSubband_aa4a60fd0c2e3ad2742bca6b8e819d5c5}{GetBuffer}}();}
+\DoxyCodeLine{411         \textcolor{keywordflow}{return} NoError;}
+\DoxyCodeLine{412 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}\label{classCWaveletTransform_a415837709c90ed360a8415a6463a3e29}} 
+\index{CWaveletTransform@{CWaveletTransform}!SubbandsToInterleaved@{SubbandsToInterleaved}}
+\index{SubbandsToInterleaved@{SubbandsToInterleaved}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{SubbandsToInterleaved()}{SubbandsToInterleaved()}}
+{\footnotesize\ttfamily void C\+Wavelet\+Transform\+::\+Subbands\+To\+Interleaved (\begin{DoxyParamCaption}\item[{int}]{src\+Level,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{lo\+Row,  }\item[{\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}} $\ast$}]{hi\+Row,  }\item[{U\+I\+N\+T32}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 444 of file Wavelet\+Transform.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{444                                                                                                     \{}
+\DoxyCodeLine{445         \textcolor{keyword}{const} UINT32 wquot = width >> 1;}
+\DoxyCodeLine{446         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} wrem = (width \& 1);}
+\DoxyCodeLine{447         \mbox{\hyperlink{classCSubband}{CSubband}} \&ll = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}}], \&hl = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}}];}
+\DoxyCodeLine{448         \mbox{\hyperlink{classCSubband}{CSubband}} \&lh = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}}], \&hh = \mbox{\hyperlink{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}{m\_subband}}[srcLevel][\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}}];}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450         \textcolor{keywordflow}{if} (hiRow) \{}
+\DoxyCodeLine{451 \textcolor{preprocessor}{        \#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{452                 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} storePos = wquot < ll.BufferWidth();}
+\DoxyCodeLine{453                 UINT32 llPos = 0, hlPos = 0, lhPos = 0, hhPos = 0;}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455                 \textcolor{keywordflow}{if} (storePos) \{}
+\DoxyCodeLine{456                         \textcolor{comment}{// save current src buffer positions}}
+\DoxyCodeLine{457                         llPos = ll.\mbox{\hyperlink{classCSubband_a682074175296debbf4ca81a24cba0268}{GetBuffPos}}(); }
+\DoxyCodeLine{458                         hlPos = hl.GetBuffPos(); }
+\DoxyCodeLine{459                         lhPos = lh.\mbox{\hyperlink{classCSubband_a682074175296debbf4ca81a24cba0268}{GetBuffPos}}(); }
+\DoxyCodeLine{460                         hhPos = hh.GetBuffPos(); }
+\DoxyCodeLine{461                 \}}
+\DoxyCodeLine{462 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464                 \textcolor{keywordflow}{for} (UINT32 i=0; i < wquot; i++) \{}
+\DoxyCodeLine{465                         *loRow++ = ll.\mbox{\hyperlink{classCSubband_ad32cf00a5ee6a65573bcacd440308673}{ReadBuffer}}();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{466                         *loRow++ = hl.ReadBuffer();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{467                         *hiRow++ = lh.\mbox{\hyperlink{classCSubband_ad32cf00a5ee6a65573bcacd440308673}{ReadBuffer}}();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{468                         *hiRow++ = hh.ReadBuffer();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{469                 \}}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471                 \textcolor{keywordflow}{if} (wrem) \{}
+\DoxyCodeLine{472                         *loRow++ = ll.\mbox{\hyperlink{classCSubband_ad32cf00a5ee6a65573bcacd440308673}{ReadBuffer}}();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{473                         *hiRow++ = lh.\mbox{\hyperlink{classCSubband_ad32cf00a5ee6a65573bcacd440308673}{ReadBuffer}}();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{474                 \}}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \textcolor{preprocessor}{        \#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{477                 \textcolor{keywordflow}{if} (storePos) \{}
+\DoxyCodeLine{478                         \textcolor{comment}{// increment src buffer positions}}
+\DoxyCodeLine{479                         ll.IncBuffRow(llPos); }
+\DoxyCodeLine{480                         hl.IncBuffRow(hlPos); }
+\DoxyCodeLine{481                         lh.IncBuffRow(lhPos); }
+\DoxyCodeLine{482                         hh.IncBuffRow(hhPos); }
+\DoxyCodeLine{483                 \}}
+\DoxyCodeLine{484 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{487 \textcolor{preprocessor}{        \#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{488                 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} storePos = wquot < ll.BufferWidth();}
+\DoxyCodeLine{489                 UINT32 llPos = 0, hlPos = 0;}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491                 \textcolor{keywordflow}{if} (storePos) \{}
+\DoxyCodeLine{492                         \textcolor{comment}{// save current src buffer positions}}
+\DoxyCodeLine{493                         llPos = ll.\mbox{\hyperlink{classCSubband_a682074175296debbf4ca81a24cba0268}{GetBuffPos}}(); }
+\DoxyCodeLine{494                         hlPos = hl.GetBuffPos(); }
+\DoxyCodeLine{495                 \}}
+\DoxyCodeLine{496 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498                 \textcolor{keywordflow}{for} (UINT32 i=0; i < wquot; i++) \{}
+\DoxyCodeLine{499                         *loRow++ = ll.\mbox{\hyperlink{classCSubband_ad32cf00a5ee6a65573bcacd440308673}{ReadBuffer}}();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{500                         *loRow++ = hl.ReadBuffer();\textcolor{comment}{// first access, than increment}}
+\DoxyCodeLine{501                 \}}
+\DoxyCodeLine{502                 \textcolor{keywordflow}{if} (wrem) *loRow++ = ll.\mbox{\hyperlink{classCSubband_ad32cf00a5ee6a65573bcacd440308673}{ReadBuffer}}();}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{preprocessor}{        \#ifdef \_\_PGFROISUPPORT\_\_}}
+\DoxyCodeLine{505                 \textcolor{keywordflow}{if} (storePos) \{}
+\DoxyCodeLine{506                         \textcolor{comment}{// increment src buffer positions}}
+\DoxyCodeLine{507                         ll.IncBuffRow(llPos); }
+\DoxyCodeLine{508                         hl.IncBuffRow(hlPos); }
+\DoxyCodeLine{509                 \}}
+\DoxyCodeLine{510 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{511         \}}
+\DoxyCodeLine{512 \}}
+
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCWaveletTransform_abdf6119f0e2b50fd156b12b231e929e7}\label{classCWaveletTransform_abdf6119f0e2b50fd156b12b231e929e7}} 
+\index{CWaveletTransform@{CWaveletTransform}!CSubband@{CSubband}}
+\index{CSubband@{CSubband}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{CSubband}{CSubband}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classCSubband}{C\+Subband}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 56 of file Wavelet\+Transform.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}\label{classCWaveletTransform_ad8c2d96ff3e7125da10de8785631460a}} 
+\index{CWaveletTransform@{CWaveletTransform}!m\_nLevels@{m\_nLevels}}
+\index{m\_nLevels@{m\_nLevels}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{m\_nLevels}{m\_nLevels}}
+{\footnotesize\ttfamily int C\+Wavelet\+Transform\+::m\+\_\+n\+Levels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of LL levels\+: one more than header.\+n\+Levels in P\+G\+Fimage 
+
+
+
+Definition at line 141 of file Wavelet\+Transform.\+h.
+
+\mbox{\Hypertarget{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}\label{classCWaveletTransform_a0116d5d57b09e2c9f19776531dbc20f7}} 
+\index{CWaveletTransform@{CWaveletTransform}!m\_subband@{m\_subband}}
+\index{m\_subband@{m\_subband}!CWaveletTransform@{CWaveletTransform}}
+\subsubsection{\texorpdfstring{m\_subband}{m\_subband}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCSubband}{C\+Subband}}($\ast$ C\+Wavelet\+Transform\+::m\+\_\+subband)\mbox{[}\mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{N\+Subbands}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+quadtree of subbands\+: LL HL LH HH 
+
+
+
+Definition at line 142 of file Wavelet\+Transform.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WaveletTransform_8h}{Wavelet\+Transform.\+h}}\item 
+\mbox{\hyperlink{WaveletTransform_8cpp}{Wavelet\+Transform.\+cpp}}\end{DoxyCompactItemize}

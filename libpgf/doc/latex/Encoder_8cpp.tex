@@ -1,0 +1,54 @@
+\hypertarget{Encoder_8cpp}{}\section{Encoder.\+cpp File Reference}
+\label{Encoder_8cpp}\index{Encoder.cpp@{Encoder.cpp}}
+
+
+P\+GF encoder class implementation.  
+
+
+{\ttfamily \#include \char`\"{}Encoder.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Encoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}{Code\+Buffer\+Bit\+Len}}~(\mbox{\hyperlink{Encoder_8h_a05a74e73e6c734fcad194efbca053ed5}{Code\+Buffer\+Len}}$\ast$\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{Word\+Width}})
+\begin{DoxyCompactList}\small\item\em max number of bits in m\+\_\+code\+Buffer \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{Encoder_8cpp_add8bd7fd3fbb318e2f76b4ae33cf6020}{Max\+Code\+Len}}~((1 $<$$<$ \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{R\+Lblock\+Size\+Len}}) -\/ 1)
+\begin{DoxyCompactList}\small\item\em max length of RL encoded block \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+GF encoder class implementation. 
+
+\begin{DoxyAuthor}{Author}
+C. Stamm, R. Spuler 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Encoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}\label{Encoder_8cpp_abc1529b42b4ec49f6674b24b5b0d0a45}} 
+\index{Encoder.cpp@{Encoder.cpp}!CodeBufferBitLen@{CodeBufferBitLen}}
+\index{CodeBufferBitLen@{CodeBufferBitLen}!Encoder.cpp@{Encoder.cpp}}
+\subsubsection{\texorpdfstring{CodeBufferBitLen}{CodeBufferBitLen}}
+{\footnotesize\ttfamily \#define Code\+Buffer\+Bit\+Len~(\mbox{\hyperlink{Encoder_8h_a05a74e73e6c734fcad194efbca053ed5}{Code\+Buffer\+Len}}$\ast$\mbox{\hyperlink{PGFplatform_8h_abeb69f096b599bae58cbc58ba48250a5}{Word\+Width}})}
+
+
+
+max number of bits in m\+\_\+code\+Buffer 
+
+
+
+Definition at line 58 of file Encoder.\+cpp.
+
+\mbox{\Hypertarget{Encoder_8cpp_add8bd7fd3fbb318e2f76b4ae33cf6020}\label{Encoder_8cpp_add8bd7fd3fbb318e2f76b4ae33cf6020}} 
+\index{Encoder.cpp@{Encoder.cpp}!MaxCodeLen@{MaxCodeLen}}
+\index{MaxCodeLen@{MaxCodeLen}!Encoder.cpp@{Encoder.cpp}}
+\subsubsection{\texorpdfstring{MaxCodeLen}{MaxCodeLen}}
+{\footnotesize\ttfamily \#define Max\+Code\+Len~((1 $<$$<$ \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{R\+Lblock\+Size\+Len}}) -\/ 1)}
+
+
+
+max length of RL encoded block 
+
+
+
+Definition at line 59 of file Encoder.\+cpp.
+

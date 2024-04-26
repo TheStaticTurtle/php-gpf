@@ -1,0 +1,681 @@
+\hypertarget{PGFtypes_8h}{}\section{P\+G\+Ftypes.\+h File Reference}
+\label{PGFtypes_8h}\index{PGFtypes.h@{PGFtypes.h}}
+
+
+P\+GF definitions.  
+
+
+{\ttfamily \#include \char`\"{}P\+G\+Fplatform.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPGFMagicVersion}{P\+G\+F\+Magic\+Version}}
+\begin{DoxyCompactList}\small\item\em P\+GF identification and version. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPGFPreHeader}{P\+G\+F\+Pre\+Header}}
+\begin{DoxyCompactList}\small\item\em P\+GF pre-\/header. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPGFVersionNumber}{P\+G\+F\+Version\+Number}}
+\begin{DoxyCompactList}\small\item\em version number stored in header since major version 7 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}}
+\begin{DoxyCompactList}\small\item\em P\+GF header. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPGFPostHeader}{P\+G\+F\+Post\+Header}}
+\begin{DoxyCompactList}\small\item\em Optional P\+GF post-\/header. \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{unionROIBlockHeader}{R\+O\+I\+Block\+Header}}
+\begin{DoxyCompactList}\small\item\em Block header used with R\+OI coding scheme. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structROIBlockHeader_1_1RBH}{R\+O\+I\+Block\+Header\+::\+R\+BH}}
+\begin{DoxyCompactList}\small\item\em Named R\+OI block header (part of the union) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structIOException}{I\+O\+Exception}}
+\begin{DoxyCompactList}\small\item\em P\+GF exception. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPGFRect}{P\+G\+F\+Rect}}
+\begin{DoxyCompactList}\small\item\em Rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_adec7594db053d6c7c8c067862d71da5f}{P\+G\+F\+Major\+Number}}~7
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_aa53f29ff00b39013ff71bf521177b9de}{P\+G\+F\+Year}}~21
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a55d535a2534a87009e7aea0543744e07}{P\+G\+F\+Week}}~2
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a8287c9da589774d883bffb983070fc1d}{P\+P\+C\+A\+T\+\_\+\+NX}}(A,  B)~A \#\# B
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(A,  B)~\mbox{\hyperlink{PGFtypes_8h_a8287c9da589774d883bffb983070fc1d}{P\+P\+C\+A\+T\+\_\+\+NX}}(A, B)
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_af90e7cb64f23452c7c57b9b231bace78}{S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+\+NX}}(A)~\#A
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a9301916f6c8ae438b0cf7c6769b34128}{S\+T\+R\+I\+N\+G\+I\+ZE}}(A)~\mbox{\hyperlink{PGFtypes_8h_af90e7cb64f23452c7c57b9b231bace78}{S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+\+NX}}(A)
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a3dec2c6efb1ee2ad5ce193075e79b12d}{P\+G\+F\+Codec\+Version\+ID}}~\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(0x0, P\+G\+F\+Major\+Number), P\+G\+F\+Year), P\+G\+F\+Week)
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a6811309305376530bc7a5a5bc16df85c}{P\+G\+F\+Codec\+Version}}~\mbox{\hyperlink{PGFtypes_8h_a9301916f6c8ae438b0cf7c6769b34128}{S\+T\+R\+I\+N\+G\+I\+ZE}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_adec7594db053d6c7c8c067862d71da5f}{P\+G\+F\+Major\+Number}}, .), \mbox{\hyperlink{PGFtypes_8h_aa53f29ff00b39013ff71bf521177b9de}{P\+G\+F\+Year}}), .), \mbox{\hyperlink{PGFtypes_8h_a55d535a2534a87009e7aea0543744e07}{P\+G\+F\+Week}}))
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a6af5fdbb431a51fc87698ac0b2da8e34}{P\+G\+F\+Magic}}~\char`\"{}P\+GF\char`\"{}
+\begin{DoxyCompactList}\small\item\em P\+GF identification. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a2468e509eae9683e25af403249b743a3}{Max\+Level}}~30
+\begin{DoxyCompactList}\small\item\em maximum number of transform levels \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}{N\+Subbands}}~4
+\begin{DoxyCompactList}\small\item\em number of subbands per level \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a94219182f88d4dbed1021ed04db75e41}{Max\+Channels}}~8
+\begin{DoxyCompactList}\small\item\em maximum number of (color) channels \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_ac3fdd6d7d71ed50f3b7365d5bc287cda}{Downsample\+Threshold}}~3
+\begin{DoxyCompactList}\small\item\em if quality is larger than this threshold than downsampling is used \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a9d98169485fbcb79dd2277c567f3f27d}{Color\+Table\+Len}}~256
+\begin{DoxyCompactList}\small\item\em size of color lookup table (clut) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_aa67f9095ea51d6ffdc580497bc70d6ce}{Version2}}~2
+\begin{DoxyCompactList}\small\item\em data structure \mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}} of major version 2 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_aa4ea0b8cc599de9a0f0af11de65b1eb4}{P\+G\+F32}}~4
+\begin{DoxyCompactList}\small\item\em 32 bit values are used -\/$>$ allows at maximum 30 input bits, otherwise 16 bit values are used -\/$>$ allows at maximum 14 input bits \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a0ba6d90f8f69de741164e86a2b4c10af}{P\+G\+F\+R\+OI}}~8
+\begin{DoxyCompactList}\small\item\em supports Regions Of Interest \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a99612b00f7a591c93702520453567913}{Version5}}~16
+\begin{DoxyCompactList}\small\item\em new coding scheme since major version 5 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_ab75c5e81917cb1ee3ec6396af51aff27}{Version6}}~32
+\begin{DoxyCompactList}\small\item\em h\+Size in \mbox{\hyperlink{structPGFPreHeader}{P\+G\+F\+Pre\+Header}} uses 32 bits instead of 16 bits \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a7ec86ea7c424e6e90984fb8ef0e3ada0}{Version7}}~64
+\begin{DoxyCompactList}\small\item\em Codec major and minor version number stored in \mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_aba6dadeb0788b7e02ab3c4425c6ef38a}{P\+G\+F\+Version}}~(\mbox{\hyperlink{PGFtypes_8h_aa67f9095ea51d6ffdc580497bc70d6ce}{Version2}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_aa4ea0b8cc599de9a0f0af11de65b1eb4}{P\+G\+F32}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_a99612b00f7a591c93702520453567913}{Version5}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_ab75c5e81917cb1ee3ec6396af51aff27}{Version6}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_a7ec86ea7c424e6e90984fb8ef0e3ada0}{Version7}})
+\begin{DoxyCompactList}\small\item\em current standard version \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}{Buffer\+Size}}~16384
+\begin{DoxyCompactList}\small\item\em must be a multiple of Word\+Width, Buffer\+Size $<$= U\+I\+N\+T16\+\_\+\+M\+AX \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{R\+Lblock\+Size\+Len}}~15
+\begin{DoxyCompactList}\small\item\em block size length ($<$ 16)\+: ld(\+Buffer\+Size) $<$ R\+Lblock\+Size\+Len $<$= 2$\ast$ld(Buffer\+Size) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}{Lin\+Block\+Size}}~8
+\begin{DoxyCompactList}\small\item\em side length of a coefficient block in a HH or LL subband \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}{Inter\+Block\+Size}}~4
+\begin{DoxyCompactList}\small\item\em side length of a coefficient block in a HL or LH subband \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_ae0625b6a0d1a8187599a680c6b559860}{Max\+Bit\+Planes}}~31
+\begin{DoxyCompactList}\small\item\em maximum number of bit planes of m\+\_\+value\+: 32 minus sign bit \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a0acbc7f581c1eceef6a70713308987d5}{Max\+Bit\+Planes\+Log}}~5
+\begin{DoxyCompactList}\small\item\em number of bits to code the maximum number of bit planes (in 32 or 16 bit mode) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a70d2da7f475eb7f6564e75d64ee77ae4}{Max\+Quality}}~\mbox{\hyperlink{PGFtypes_8h_ae0625b6a0d1a8187599a680c6b559860}{Max\+Bit\+Planes}}
+\begin{DoxyCompactList}\small\item\em maximum quality \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a7b1bd3bd3f41e82f5e4c3f642079c122}{Magic\+Version\+Size}}~sizeof(\mbox{\hyperlink{structPGFMagicVersion}{P\+G\+F\+Magic\+Version}})
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a2d0d92eaf21df36fc0292fc6780dac97}{Pre\+Header\+Size}}~sizeof(\mbox{\hyperlink{structPGFPreHeader}{P\+G\+F\+Pre\+Header}})
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a36882df0caa9057f3144aeb429a2d468}{Header\+Size}}~sizeof(\mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}})
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a50366374d6b8b02c5314f67cdd5aba9b}{Color\+Table\+Size}}~(\mbox{\hyperlink{PGFtypes_8h_a9d98169485fbcb79dd2277c567f3f27d}{Color\+Table\+Len}}$\ast$sizeof(R\+G\+B\+Q\+U\+AD))
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_adbb49c2b6ab931f68f08a8dc1141727d}{Data\+T\+Size}}~sizeof(\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}})
+\item 
+\#define \mbox{\hyperlink{PGFtypes_8h_a513fcd9e30f1a99d382b5c001499cdf5}{Max\+User\+Data\+Size}}~0x7\+F\+F\+F\+F\+F\+FF
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef I\+N\+T32 \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{PGFtypes_8h_a80e898ce785fbd6fb0dfcc5903be79c2}{Refresh\+CB}}) (void $\ast$p)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}} \{ \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}} = 0, 
+\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}} = 1, 
+\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}} = 2, 
+\mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157e}{Progress\+Mode}} \{ \mbox{\hyperlink{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea441b3bb041d0f7715659f45d8b766983}{P\+M\+\_\+\+Relative}}, 
+\mbox{\hyperlink{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea5c4b3258347f3f6ce4dbfb52ccd70e02}{P\+M\+\_\+\+Absolute}}
+ \}
+\item 
+enum \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096}{Userdata\+Policy}} \{ \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a6f539e0d2bcaaa46293243eb2842fd80}{U\+P\+\_\+\+Skip}} = 0, 
+\mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a36fd199cb724d615fbe67a12f7ab69d0}{U\+P\+\_\+\+Cache\+Prefix}} = 1, 
+\mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096ad52de87e33912adabcf1e22f05e38227}{U\+P\+\_\+\+Cache\+All}} = 2
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+GF definitions. 
+
+\begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}\label{PGFtypes_8h_aa362edf6db9662acf6ef958a6db19c35}} 
+\index{PGFtypes.h@{PGFtypes.h}!BufferSize@{BufferSize}}
+\index{BufferSize@{BufferSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{BufferSize}{BufferSize}}
+{\footnotesize\ttfamily \#define Buffer\+Size~16384}
+
+
+
+must be a multiple of Word\+Width, Buffer\+Size $<$= U\+I\+N\+T16\+\_\+\+M\+AX 
+
+
+
+Definition at line 84 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a9d98169485fbcb79dd2277c567f3f27d}\label{PGFtypes_8h_a9d98169485fbcb79dd2277c567f3f27d}} 
+\index{PGFtypes.h@{PGFtypes.h}!ColorTableLen@{ColorTableLen}}
+\index{ColorTableLen@{ColorTableLen}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{ColorTableLen}{ColorTableLen}}
+{\footnotesize\ttfamily \#define Color\+Table\+Len~256}
+
+
+
+size of color lookup table (clut) 
+
+
+
+Definition at line 66 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a50366374d6b8b02c5314f67cdd5aba9b}\label{PGFtypes_8h_a50366374d6b8b02c5314f67cdd5aba9b}} 
+\index{PGFtypes.h@{PGFtypes.h}!ColorTableSize@{ColorTableSize}}
+\index{ColorTableSize@{ColorTableSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{ColorTableSize}{ColorTableSize}}
+{\footnotesize\ttfamily \#define Color\+Table\+Size~(\mbox{\hyperlink{PGFtypes_8h_a9d98169485fbcb79dd2277c567f3f27d}{Color\+Table\+Len}}$\ast$sizeof(R\+G\+B\+Q\+U\+AD))}
+
+
+
+Definition at line 281 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_adbb49c2b6ab931f68f08a8dc1141727d}\label{PGFtypes_8h_adbb49c2b6ab931f68f08a8dc1141727d}} 
+\index{PGFtypes.h@{PGFtypes.h}!DataTSize@{DataTSize}}
+\index{DataTSize@{DataTSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{DataTSize}{DataTSize}}
+{\footnotesize\ttfamily \#define Data\+T\+Size~sizeof(\mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}})}
+
+
+
+Definition at line 282 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_ac3fdd6d7d71ed50f3b7365d5bc287cda}\label{PGFtypes_8h_ac3fdd6d7d71ed50f3b7365d5bc287cda}} 
+\index{PGFtypes.h@{PGFtypes.h}!DownsampleThreshold@{DownsampleThreshold}}
+\index{DownsampleThreshold@{DownsampleThreshold}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{DownsampleThreshold}{DownsampleThreshold}}
+{\footnotesize\ttfamily \#define Downsample\+Threshold~3}
+
+
+
+if quality is larger than this threshold than downsampling is used 
+
+
+
+Definition at line 65 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a36882df0caa9057f3144aeb429a2d468}\label{PGFtypes_8h_a36882df0caa9057f3144aeb429a2d468}} 
+\index{PGFtypes.h@{PGFtypes.h}!HeaderSize@{HeaderSize}}
+\index{HeaderSize@{HeaderSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{HeaderSize}{HeaderSize}}
+{\footnotesize\ttfamily \#define Header\+Size~sizeof(\mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}})}
+
+
+
+Definition at line 280 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}\label{PGFtypes_8h_a2607d05ebbf21c8553d58352c6b19b70}} 
+\index{PGFtypes.h@{PGFtypes.h}!InterBlockSize@{InterBlockSize}}
+\index{InterBlockSize@{InterBlockSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{InterBlockSize}{InterBlockSize}}
+{\footnotesize\ttfamily \#define Inter\+Block\+Size~4}
+
+
+
+side length of a coefficient block in a HL or LH subband 
+
+
+
+Definition at line 87 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}\label{PGFtypes_8h_a61836e33582e5be91af7d9d7004dad7d}} 
+\index{PGFtypes.h@{PGFtypes.h}!LinBlockSize@{LinBlockSize}}
+\index{LinBlockSize@{LinBlockSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{LinBlockSize}{LinBlockSize}}
+{\footnotesize\ttfamily \#define Lin\+Block\+Size~8}
+
+
+
+side length of a coefficient block in a HH or LL subband 
+
+
+
+Definition at line 86 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a7b1bd3bd3f41e82f5e4c3f642079c122}\label{PGFtypes_8h_a7b1bd3bd3f41e82f5e4c3f642079c122}} 
+\index{PGFtypes.h@{PGFtypes.h}!MagicVersionSize@{MagicVersionSize}}
+\index{MagicVersionSize@{MagicVersionSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{MagicVersionSize}{MagicVersionSize}}
+{\footnotesize\ttfamily \#define Magic\+Version\+Size~sizeof(\mbox{\hyperlink{structPGFMagicVersion}{P\+G\+F\+Magic\+Version}})}
+
+
+
+Definition at line 278 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_ae0625b6a0d1a8187599a680c6b559860}\label{PGFtypes_8h_ae0625b6a0d1a8187599a680c6b559860}} 
+\index{PGFtypes.h@{PGFtypes.h}!MaxBitPlanes@{MaxBitPlanes}}
+\index{MaxBitPlanes@{MaxBitPlanes}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{MaxBitPlanes}{MaxBitPlanes}}
+{\footnotesize\ttfamily \#define Max\+Bit\+Planes~31}
+
+
+
+maximum number of bit planes of m\+\_\+value\+: 32 minus sign bit 
+
+
+
+Definition at line 89 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a0acbc7f581c1eceef6a70713308987d5}\label{PGFtypes_8h_a0acbc7f581c1eceef6a70713308987d5}} 
+\index{PGFtypes.h@{PGFtypes.h}!MaxBitPlanesLog@{MaxBitPlanesLog}}
+\index{MaxBitPlanesLog@{MaxBitPlanesLog}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{MaxBitPlanesLog}{MaxBitPlanesLog}}
+{\footnotesize\ttfamily \#define Max\+Bit\+Planes\+Log~5}
+
+
+
+number of bits to code the maximum number of bit planes (in 32 or 16 bit mode) 
+
+
+
+Definition at line 93 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a94219182f88d4dbed1021ed04db75e41}\label{PGFtypes_8h_a94219182f88d4dbed1021ed04db75e41}} 
+\index{PGFtypes.h@{PGFtypes.h}!MaxChannels@{MaxChannels}}
+\index{MaxChannels@{MaxChannels}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{MaxChannels}{MaxChannels}}
+{\footnotesize\ttfamily \#define Max\+Channels~8}
+
+
+
+maximum number of (color) channels 
+
+
+
+Definition at line 64 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a2468e509eae9683e25af403249b743a3}\label{PGFtypes_8h_a2468e509eae9683e25af403249b743a3}} 
+\index{PGFtypes.h@{PGFtypes.h}!MaxLevel@{MaxLevel}}
+\index{MaxLevel@{MaxLevel}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{MaxLevel}{MaxLevel}}
+{\footnotesize\ttfamily \#define Max\+Level~30}
+
+
+
+maximum number of transform levels 
+
+
+
+Definition at line 62 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a70d2da7f475eb7f6564e75d64ee77ae4}\label{PGFtypes_8h_a70d2da7f475eb7f6564e75d64ee77ae4}} 
+\index{PGFtypes.h@{PGFtypes.h}!MaxQuality@{MaxQuality}}
+\index{MaxQuality@{MaxQuality}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{MaxQuality}{MaxQuality}}
+{\footnotesize\ttfamily \#define Max\+Quality~\mbox{\hyperlink{PGFtypes_8h_ae0625b6a0d1a8187599a680c6b559860}{Max\+Bit\+Planes}}}
+
+
+
+maximum quality 
+
+
+
+Definition at line 94 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a513fcd9e30f1a99d382b5c001499cdf5}\label{PGFtypes_8h_a513fcd9e30f1a99d382b5c001499cdf5}} 
+\index{PGFtypes.h@{PGFtypes.h}!MaxUserDataSize@{MaxUserDataSize}}
+\index{MaxUserDataSize@{MaxUserDataSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{MaxUserDataSize}{MaxUserDataSize}}
+{\footnotesize\ttfamily \#define Max\+User\+Data\+Size~0x7\+F\+F\+F\+F\+F\+FF}
+
+
+
+Definition at line 283 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}\label{PGFtypes_8h_a0cf7b93e79e7ebfc148bc9dff30d8cd1}} 
+\index{PGFtypes.h@{PGFtypes.h}!NSubbands@{NSubbands}}
+\index{NSubbands@{NSubbands}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{NSubbands}{NSubbands}}
+{\footnotesize\ttfamily \#define N\+Subbands~4}
+
+
+
+number of subbands per level 
+
+
+
+Definition at line 63 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_aa4ea0b8cc599de9a0f0af11de65b1eb4}\label{PGFtypes_8h_aa4ea0b8cc599de9a0f0af11de65b1eb4}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGF32@{PGF32}}
+\index{PGF32@{PGF32}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGF32}{PGF32}}
+{\footnotesize\ttfamily \#define P\+G\+F32~4}
+
+
+
+32 bit values are used -\/$>$ allows at maximum 30 input bits, otherwise 16 bit values are used -\/$>$ allows at maximum 14 input bits 
+
+
+
+Definition at line 69 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a6811309305376530bc7a5a5bc16df85c}\label{PGFtypes_8h_a6811309305376530bc7a5a5bc16df85c}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFCodecVersion@{PGFCodecVersion}}
+\index{PGFCodecVersion@{PGFCodecVersion}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFCodecVersion}{PGFCodecVersion}}
+{\footnotesize\ttfamily \#define P\+G\+F\+Codec\+Version~\mbox{\hyperlink{PGFtypes_8h_a9301916f6c8ae438b0cf7c6769b34128}{S\+T\+R\+I\+N\+G\+I\+ZE}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_adec7594db053d6c7c8c067862d71da5f}{P\+G\+F\+Major\+Number}}, .), \mbox{\hyperlink{PGFtypes_8h_aa53f29ff00b39013ff71bf521177b9de}{P\+G\+F\+Year}}), .), \mbox{\hyperlink{PGFtypes_8h_a55d535a2534a87009e7aea0543744e07}{P\+G\+F\+Week}}))}
+
+
+
+Definition at line 56 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a3dec2c6efb1ee2ad5ce193075e79b12d}\label{PGFtypes_8h_a3dec2c6efb1ee2ad5ce193075e79b12d}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFCodecVersionID@{PGFCodecVersionID}}
+\index{PGFCodecVersionID@{PGFCodecVersionID}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFCodecVersionID}{PGFCodecVersionID}}
+{\footnotesize\ttfamily \#define P\+G\+F\+Codec\+Version\+ID~\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(\mbox{\hyperlink{PGFtypes_8h_a458aa886688ee82825409e855d418840}{P\+P\+C\+AT}}(0x0, P\+G\+F\+Major\+Number), P\+G\+F\+Year), P\+G\+F\+Week)}
+
+
+
+Definition at line 54 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a6af5fdbb431a51fc87698ac0b2da8e34}\label{PGFtypes_8h_a6af5fdbb431a51fc87698ac0b2da8e34}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFMagic@{PGFMagic}}
+\index{PGFMagic@{PGFMagic}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFMagic}{PGFMagic}}
+{\footnotesize\ttfamily \#define P\+G\+F\+Magic~\char`\"{}P\+GF\char`\"{}}
+
+
+
+P\+GF identification. 
+
+
+
+Definition at line 61 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_adec7594db053d6c7c8c067862d71da5f}\label{PGFtypes_8h_adec7594db053d6c7c8c067862d71da5f}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFMajorNumber@{PGFMajorNumber}}
+\index{PGFMajorNumber@{PGFMajorNumber}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFMajorNumber}{PGFMajorNumber}}
+{\footnotesize\ttfamily \#define P\+G\+F\+Major\+Number~7}
+
+
+
+Definition at line 44 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a0ba6d90f8f69de741164e86a2b4c10af}\label{PGFtypes_8h_a0ba6d90f8f69de741164e86a2b4c10af}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFROI@{PGFROI}}
+\index{PGFROI@{PGFROI}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFROI}{PGFROI}}
+{\footnotesize\ttfamily \#define P\+G\+F\+R\+OI~8}
+
+
+
+supports Regions Of Interest 
+
+
+
+Definition at line 70 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_aba6dadeb0788b7e02ab3c4425c6ef38a}\label{PGFtypes_8h_aba6dadeb0788b7e02ab3c4425c6ef38a}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFVersion@{PGFVersion}}
+\index{PGFVersion@{PGFVersion}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFVersion}{PGFVersion}}
+{\footnotesize\ttfamily \#define P\+G\+F\+Version~(\mbox{\hyperlink{PGFtypes_8h_aa67f9095ea51d6ffdc580497bc70d6ce}{Version2}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_aa4ea0b8cc599de9a0f0af11de65b1eb4}{P\+G\+F32}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_a99612b00f7a591c93702520453567913}{Version5}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_ab75c5e81917cb1ee3ec6396af51aff27}{Version6}} $\vert$ \mbox{\hyperlink{PGFtypes_8h_a7ec86ea7c424e6e90984fb8ef0e3ada0}{Version7}})}
+
+
+
+current standard version 
+
+
+
+Definition at line 76 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a55d535a2534a87009e7aea0543744e07}\label{PGFtypes_8h_a55d535a2534a87009e7aea0543744e07}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFWeek@{PGFWeek}}
+\index{PGFWeek@{PGFWeek}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFWeek}{PGFWeek}}
+{\footnotesize\ttfamily \#define P\+G\+F\+Week~2}
+
+
+
+Definition at line 46 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_aa53f29ff00b39013ff71bf521177b9de}\label{PGFtypes_8h_aa53f29ff00b39013ff71bf521177b9de}} 
+\index{PGFtypes.h@{PGFtypes.h}!PGFYear@{PGFYear}}
+\index{PGFYear@{PGFYear}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PGFYear}{PGFYear}}
+{\footnotesize\ttfamily \#define P\+G\+F\+Year~21}
+
+
+
+Definition at line 45 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a458aa886688ee82825409e855d418840}\label{PGFtypes_8h_a458aa886688ee82825409e855d418840}} 
+\index{PGFtypes.h@{PGFtypes.h}!PPCAT@{PPCAT}}
+\index{PPCAT@{PPCAT}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PPCAT}{PPCAT}}
+{\footnotesize\ttfamily \#define P\+P\+C\+AT(\begin{DoxyParamCaption}\item[{}]{A,  }\item[{}]{B }\end{DoxyParamCaption})~\mbox{\hyperlink{PGFtypes_8h_a8287c9da589774d883bffb983070fc1d}{P\+P\+C\+A\+T\+\_\+\+NX}}(A, B)}
+
+
+
+Definition at line 49 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a8287c9da589774d883bffb983070fc1d}\label{PGFtypes_8h_a8287c9da589774d883bffb983070fc1d}} 
+\index{PGFtypes.h@{PGFtypes.h}!PPCAT\_NX@{PPCAT\_NX}}
+\index{PPCAT\_NX@{PPCAT\_NX}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PPCAT\_NX}{PPCAT\_NX}}
+{\footnotesize\ttfamily \#define P\+P\+C\+A\+T\+\_\+\+NX(\begin{DoxyParamCaption}\item[{}]{A,  }\item[{}]{B }\end{DoxyParamCaption})~A \#\# B}
+
+
+
+Definition at line 48 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a2d0d92eaf21df36fc0292fc6780dac97}\label{PGFtypes_8h_a2d0d92eaf21df36fc0292fc6780dac97}} 
+\index{PGFtypes.h@{PGFtypes.h}!PreHeaderSize@{PreHeaderSize}}
+\index{PreHeaderSize@{PreHeaderSize}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{PreHeaderSize}{PreHeaderSize}}
+{\footnotesize\ttfamily \#define Pre\+Header\+Size~sizeof(\mbox{\hyperlink{structPGFPreHeader}{P\+G\+F\+Pre\+Header}})}
+
+
+
+Definition at line 279 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}\label{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}} 
+\index{PGFtypes.h@{PGFtypes.h}!RLblockSizeLen@{RLblockSizeLen}}
+\index{RLblockSizeLen@{RLblockSizeLen}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{RLblockSizeLen}{RLblockSizeLen}}
+{\footnotesize\ttfamily \#define R\+Lblock\+Size\+Len~15}
+
+
+
+block size length ($<$ 16)\+: ld(\+Buffer\+Size) $<$ R\+Lblock\+Size\+Len $<$= 2$\ast$ld(Buffer\+Size) 
+
+
+
+Definition at line 85 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a9301916f6c8ae438b0cf7c6769b34128}\label{PGFtypes_8h_a9301916f6c8ae438b0cf7c6769b34128}} 
+\index{PGFtypes.h@{PGFtypes.h}!STRINGIZE@{STRINGIZE}}
+\index{STRINGIZE@{STRINGIZE}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{STRINGIZE}{STRINGIZE}}
+{\footnotesize\ttfamily \#define S\+T\+R\+I\+N\+G\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{A }\end{DoxyParamCaption})~\mbox{\hyperlink{PGFtypes_8h_af90e7cb64f23452c7c57b9b231bace78}{S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+\+NX}}(A)}
+
+
+
+Definition at line 51 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_af90e7cb64f23452c7c57b9b231bace78}\label{PGFtypes_8h_af90e7cb64f23452c7c57b9b231bace78}} 
+\index{PGFtypes.h@{PGFtypes.h}!STRINGIZE\_NX@{STRINGIZE\_NX}}
+\index{STRINGIZE\_NX@{STRINGIZE\_NX}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{STRINGIZE\_NX}{STRINGIZE\_NX}}
+{\footnotesize\ttfamily \#define S\+T\+R\+I\+N\+G\+I\+Z\+E\+\_\+\+NX(\begin{DoxyParamCaption}\item[{}]{A }\end{DoxyParamCaption})~\#A}
+
+
+
+Definition at line 50 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_aa67f9095ea51d6ffdc580497bc70d6ce}\label{PGFtypes_8h_aa67f9095ea51d6ffdc580497bc70d6ce}} 
+\index{PGFtypes.h@{PGFtypes.h}!Version2@{Version2}}
+\index{Version2@{Version2}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{Version2}{Version2}}
+{\footnotesize\ttfamily \#define Version2~2}
+
+
+
+data structure \mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}} of major version 2 
+
+
+
+Definition at line 68 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a99612b00f7a591c93702520453567913}\label{PGFtypes_8h_a99612b00f7a591c93702520453567913}} 
+\index{PGFtypes.h@{PGFtypes.h}!Version5@{Version5}}
+\index{Version5@{Version5}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{Version5}{Version5}}
+{\footnotesize\ttfamily \#define Version5~16}
+
+
+
+new coding scheme since major version 5 
+
+
+
+Definition at line 71 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_ab75c5e81917cb1ee3ec6396af51aff27}\label{PGFtypes_8h_ab75c5e81917cb1ee3ec6396af51aff27}} 
+\index{PGFtypes.h@{PGFtypes.h}!Version6@{Version6}}
+\index{Version6@{Version6}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{Version6}{Version6}}
+{\footnotesize\ttfamily \#define Version6~32}
+
+
+
+h\+Size in \mbox{\hyperlink{structPGFPreHeader}{P\+G\+F\+Pre\+Header}} uses 32 bits instead of 16 bits 
+
+
+
+Definition at line 72 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a7ec86ea7c424e6e90984fb8ef0e3ada0}\label{PGFtypes_8h_a7ec86ea7c424e6e90984fb8ef0e3ada0}} 
+\index{PGFtypes.h@{PGFtypes.h}!Version7@{Version7}}
+\index{Version7@{Version7}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{Version7}{Version7}}
+{\footnotesize\ttfamily \#define Version7~64}
+
+
+
+Codec major and minor version number stored in \mbox{\hyperlink{structPGFHeader}{P\+G\+F\+Header}}. 
+
+
+
+Definition at line 73 of file P\+G\+Ftypes.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}\label{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}} 
+\index{PGFtypes.h@{PGFtypes.h}!DataT@{DataT}}
+\index{DataT@{DataT}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{DataT}{DataT}}
+{\footnotesize\ttfamily typedef I\+N\+T32 \mbox{\hyperlink{PGFtypes_8h_acb1ee3f52ccfad782dcaa0abd79e5d05}{DataT}}}
+
+
+
+Definition at line 268 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{PGFtypes_8h_a80e898ce785fbd6fb0dfcc5903be79c2}\label{PGFtypes_8h_a80e898ce785fbd6fb0dfcc5903be79c2}} 
+\index{PGFtypes.h@{PGFtypes.h}!RefreshCB@{RefreshCB}}
+\index{RefreshCB@{RefreshCB}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{RefreshCB}{RefreshCB}}
+{\footnotesize\ttfamily typedef void($\ast$ Refresh\+CB) (void $\ast$p)}
+
+
+
+Definition at line 273 of file P\+G\+Ftypes.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}\label{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}} 
+\index{PGFtypes.h@{PGFtypes.h}!Orientation@{Orientation}}
+\index{Orientation@{Orientation}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{Orientation}{Orientation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58}{Orientation}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LL@{LL}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!LL@{LL}}}\mbox{\Hypertarget{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}\label{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}} 
+LL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL@{HL}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!HL@{HL}}}\mbox{\Hypertarget{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}\label{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}} 
+HL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LH@{LH}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!LH@{LH}}}\mbox{\Hypertarget{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}\label{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}} 
+LH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HH@{HH}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!HH@{HH}}}\mbox{\Hypertarget{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}\label{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}} 
+HH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 99 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99 \{ \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58a11ea57bac296f79f8acbaf6fdf6bcc20}{LL}} = 0, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aad18f3a107c5bc020bff8923ad43bbc1}{HL}} = 1, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58aadab8e0111f669b137544a4ecce92997}{LH}} = 2, \mbox{\hyperlink{PGFtypes_8h_a871118a09520247c78a71ecd7b0abd58adb4fbeed3fdce116b66baef714de6667}{HH}} = 3 \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157e}\label{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157e}} 
+\index{PGFtypes.h@{PGFtypes.h}!ProgressMode@{ProgressMode}}
+\index{ProgressMode@{ProgressMode}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{ProgressMode}{ProgressMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157e}{Progress\+Mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_Relative@{PM\_Relative}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!PM\_Relative@{PM\_Relative}}}\mbox{\Hypertarget{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea441b3bb041d0f7715659f45d8b766983}\label{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea441b3bb041d0f7715659f45d8b766983}} 
+P\+M\+\_\+\+Relative&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PM\_Absolute@{PM\_Absolute}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!PM\_Absolute@{PM\_Absolute}}}\mbox{\Hypertarget{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea5c4b3258347f3f6ce4dbfb52ccd70e02}\label{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea5c4b3258347f3f6ce4dbfb52ccd70e02}} 
+P\+M\+\_\+\+Absolute&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 100 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100 \{ \mbox{\hyperlink{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea441b3bb041d0f7715659f45d8b766983}{PM\_Relative}}, \mbox{\hyperlink{PGFtypes_8h_a04561479f4f8aa5a0775d8b541a1157ea5c4b3258347f3f6ce4dbfb52ccd70e02}{PM\_Absolute}} \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096}\label{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096}} 
+\index{PGFtypes.h@{PGFtypes.h}!UserdataPolicy@{UserdataPolicy}}
+\index{UserdataPolicy@{UserdataPolicy}!PGFtypes.h@{PGFtypes.h}}
+\subsubsection{\texorpdfstring{UserdataPolicy}{UserdataPolicy}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096}{Userdata\+Policy}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP\_Skip@{UP\_Skip}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!UP\_Skip@{UP\_Skip}}}\mbox{\Hypertarget{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a6f539e0d2bcaaa46293243eb2842fd80}\label{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a6f539e0d2bcaaa46293243eb2842fd80}} 
+U\+P\+\_\+\+Skip&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP\_CachePrefix@{UP\_CachePrefix}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!UP\_CachePrefix@{UP\_CachePrefix}}}\mbox{\Hypertarget{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a36fd199cb724d615fbe67a12f7ab69d0}\label{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a36fd199cb724d615fbe67a12f7ab69d0}} 
+U\+P\+\_\+\+Cache\+Prefix&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP\_CacheAll@{UP\_CacheAll}!PGFtypes.h@{PGFtypes.h}}\index{PGFtypes.h@{PGFtypes.h}!UP\_CacheAll@{UP\_CacheAll}}}\mbox{\Hypertarget{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096ad52de87e33912adabcf1e22f05e38227}\label{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096ad52de87e33912adabcf1e22f05e38227}} 
+U\+P\+\_\+\+Cache\+All&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 101 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101 \{ \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a6f539e0d2bcaaa46293243eb2842fd80}{UP\_Skip}} = 0, \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096a36fd199cb724d615fbe67a12f7ab69d0}{UP\_CachePrefix}} = 1, \mbox{\hyperlink{PGFtypes_8h_a0e70eeba0994fafcbfe6cbea3a734096ad52de87e33912adabcf1e22f05e38227}{UP\_CacheAll}} = 2 \};}
+
+\end{DoxyCode}

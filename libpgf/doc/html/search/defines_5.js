@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['imagemodebitmap',['ImageModeBitmap',['../PGFplatform_8h.html#a8905b28d0e3b96cf340ed34957738648',1,'PGFplatform.h']]],
+  ['imagemodecmyk64',['ImageModeCMYK64',['../PGFplatform_8h.html#ac250ca543e6f93f370614801122b61f6',1,'PGFplatform.h']]],
+  ['imagemodecmykcolor',['ImageModeCMYKColor',['../PGFplatform_8h.html#af50b920dae1922b4eb0bcd82361d880c',1,'PGFplatform.h']]],
+  ['imagemodedeepmultichannel',['ImageModeDeepMultichannel',['../PGFplatform_8h.html#a79c7cc8a02b4ef28c758e8c0af7cf146',1,'PGFplatform.h']]],
+  ['imagemodeduotone',['ImageModeDuotone',['../PGFplatform_8h.html#a74586128f823ada3315809e5f0a28691',1,'PGFplatform.h']]],
+  ['imagemodeduotone16',['ImageModeDuotone16',['../PGFplatform_8h.html#ab55fcb3295421dc19ae7bb801d6da219',1,'PGFplatform.h']]],
+  ['imagemodegray16',['ImageModeGray16',['../PGFplatform_8h.html#aedd00370d778fa28db56e5d4032d4c5c',1,'PGFplatform.h']]],
+  ['imagemodegray32',['ImageModeGray32',['../PGFplatform_8h.html#a205e54791f7ad54d357330bb99cab3b2',1,'PGFplatform.h']]],
+  ['imagemodegrayscale',['ImageModeGrayScale',['../PGFplatform_8h.html#ac73bfc2f52b9da3083b7087d154c1e2e',1,'PGFplatform.h']]],
+  ['imagemodehsbcolor',['ImageModeHSBColor',['../PGFplatform_8h.html#aca2b65c53ff44940ed27f809de3b28f5',1,'PGFplatform.h']]],
+  ['imagemodehslcolor',['ImageModeHSLColor',['../PGFplatform_8h.html#a5e4deddebb6ff58e1168fc20b0e15cb3',1,'PGFplatform.h']]],
+  ['imagemodeindexedcolor',['ImageModeIndexedColor',['../PGFplatform_8h.html#af1937c5b38a21ec5e6b3e11851264be2',1,'PGFplatform.h']]],
+  ['imagemodelab48',['ImageModeLab48',['../PGFplatform_8h.html#ae7de617953bf44d768dfd82b62a98db5',1,'PGFplatform.h']]],
+  ['imagemodelabcolor',['ImageModeLabColor',['../PGFplatform_8h.html#aa1d93456909be3c716a8c5a30b191c00',1,'PGFplatform.h']]],
+  ['imagemodemultichannel',['ImageModeMultichannel',['../PGFplatform_8h.html#af6b085632d689b6a17e519f78e97502c',1,'PGFplatform.h']]],
+  ['imagemodergb12',['ImageModeRGB12',['../PGFplatform_8h.html#a1dbd9112d53e5eea856e65ed1e9c6d50',1,'PGFplatform.h']]],
+  ['imagemodergb16',['ImageModeRGB16',['../PGFplatform_8h.html#aadaf1bd7eedf80c33287cfd311dbf068',1,'PGFplatform.h']]],
+  ['imagemodergb48',['ImageModeRGB48',['../PGFplatform_8h.html#ac04b7a3633a0caadba20e20e161239e1',1,'PGFplatform.h']]],
+  ['imagemodergba',['ImageModeRGBA',['../PGFplatform_8h.html#ab7cb460804a8abce27d823d09682c85b',1,'PGFplatform.h']]],
+  ['imagemodergbcolor',['ImageModeRGBColor',['../PGFplatform_8h.html#a07e2059cc6697336c5484447578264fc',1,'PGFplatform.h']]],
+  ['imagemodeunknown',['ImageModeUnknown',['../PGFplatform_8h.html#a797bd5db500e431c26b93c6b4686c257',1,'PGFplatform.h']]],
+  ['interblocksize',['InterBlockSize',['../PGFtypes_8h.html#a2607d05ebbf21c8553d58352c6b19b70',1,'PGFtypes.h']]]
+];

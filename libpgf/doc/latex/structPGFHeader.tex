@@ -1,0 +1,201 @@
+\hypertarget{structPGFHeader}{}\section{P\+G\+F\+Header Struct Reference}
+\label{structPGFHeader}\index{PGFHeader@{PGFHeader}}
+
+
+P\+GF header.  
+
+
+
+
+{\ttfamily \#include $<$P\+G\+Ftypes.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPGFHeader_acdc6457170d5adce40fa0c05d0c09ed2}{P\+G\+F\+Header}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFHeader_a766a68c3284c2ae6d2f54c82e7350ed9}{width}}
+\begin{DoxyCompactList}\small\item\em image width in pixels \end{DoxyCompactList}\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFHeader_a7262335e99ca409759e1aa8c0f0164b1}{height}}
+\begin{DoxyCompactList}\small\item\em image height in pixels \end{DoxyCompactList}\item 
+U\+I\+N\+T8 \mbox{\hyperlink{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}{n\+Levels}}
+\begin{DoxyCompactList}\small\item\em number of F\+WT transforms \end{DoxyCompactList}\item 
+U\+I\+N\+T8 \mbox{\hyperlink{structPGFHeader_ac314a16d5984aea88f4a5ff38f49c08b}{quality}}
+\begin{DoxyCompactList}\small\item\em quantization parameter\+: 0=lossless, 4=standard, 6=poor quality \end{DoxyCompactList}\item 
+U\+I\+N\+T8 \mbox{\hyperlink{structPGFHeader_aedea199e29cd6c404c82ab97c67e46b4}{bpp}}
+\begin{DoxyCompactList}\small\item\em bits per pixel \end{DoxyCompactList}\item 
+U\+I\+N\+T8 \mbox{\hyperlink{structPGFHeader_abda7a5f282421cd7e789da62f657efa0}{channels}}
+\begin{DoxyCompactList}\small\item\em number of channels \end{DoxyCompactList}\item 
+U\+I\+N\+T8 \mbox{\hyperlink{structPGFHeader_a3ddaf075db8ee812ad688d9ed39e0698}{mode}}
+\begin{DoxyCompactList}\small\item\em image mode according to Adobe\textquotesingle{}s image modes \end{DoxyCompactList}\item 
+U\+I\+N\+T8 \mbox{\hyperlink{structPGFHeader_abddcc9ee6e17690986cf77a6d16aceb6}{used\+Bits\+Per\+Channel}}
+\begin{DoxyCompactList}\small\item\em number of used bits per channel in 16-\/ and 32-\/bit per channel modes \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPGFVersionNumber}{P\+G\+F\+Version\+Number}} \mbox{\hyperlink{structPGFHeader_a637699477fb97e62d8cc3c102fac1fbb}{version}}
+\begin{DoxyCompactList}\small\item\em codec version number\+: (since Version 7) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+GF header. 
+
+P\+GF header contains image information \begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+Definition at line 150 of file P\+G\+Ftypes.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structPGFHeader_acdc6457170d5adce40fa0c05d0c09ed2}\label{structPGFHeader_acdc6457170d5adce40fa0c05d0c09ed2}} 
+\index{PGFHeader@{PGFHeader}!PGFHeader@{PGFHeader}}
+\index{PGFHeader@{PGFHeader}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{PGFHeader()}{PGFHeader()}}
+{\footnotesize\ttfamily P\+G\+F\+Header\+::\+P\+G\+F\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 151 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{151 : \mbox{\hyperlink{structPGFHeader_a766a68c3284c2ae6d2f54c82e7350ed9}{width}}(0), \mbox{\hyperlink{structPGFHeader_a7262335e99ca409759e1aa8c0f0164b1}{height}}(0), \mbox{\hyperlink{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}{nLevels}}(0), \mbox{\hyperlink{structPGFHeader_ac314a16d5984aea88f4a5ff38f49c08b}{quality}}(0), \mbox{\hyperlink{structPGFHeader_aedea199e29cd6c404c82ab97c67e46b4}{bpp}}(0), \mbox{\hyperlink{structPGFHeader_abda7a5f282421cd7e789da62f657efa0}{channels}}(0), \mbox{\hyperlink{structPGFHeader_a3ddaf075db8ee812ad688d9ed39e0698}{mode}}(\mbox{\hyperlink{PGFplatform_8h_a797bd5db500e431c26b93c6b4686c257}{ImageModeUnknown}}), \mbox{\hyperlink{structPGFHeader_abddcc9ee6e17690986cf77a6d16aceb6}{usedBitsPerChannel}}(0), \mbox{\hyperlink{structPGFHeader_a637699477fb97e62d8cc3c102fac1fbb}{version}}(0, 0, 0) \{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structPGFHeader_aedea199e29cd6c404c82ab97c67e46b4}\label{structPGFHeader_aedea199e29cd6c404c82ab97c67e46b4}} 
+\index{PGFHeader@{PGFHeader}!bpp@{bpp}}
+\index{bpp@{bpp}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{bpp}{bpp}}
+{\footnotesize\ttfamily U\+I\+N\+T8 P\+G\+F\+Header\+::bpp}
+
+
+
+bits per pixel 
+
+
+
+Definition at line 156 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_abda7a5f282421cd7e789da62f657efa0}\label{structPGFHeader_abda7a5f282421cd7e789da62f657efa0}} 
+\index{PGFHeader@{PGFHeader}!channels@{channels}}
+\index{channels@{channels}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily U\+I\+N\+T8 P\+G\+F\+Header\+::channels}
+
+
+
+number of channels 
+
+
+
+Definition at line 157 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_a7262335e99ca409759e1aa8c0f0164b1}\label{structPGFHeader_a7262335e99ca409759e1aa8c0f0164b1}} 
+\index{PGFHeader@{PGFHeader}!height@{height}}
+\index{height@{height}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Header\+::height}
+
+
+
+image height in pixels 
+
+
+
+Definition at line 153 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_a3ddaf075db8ee812ad688d9ed39e0698}\label{structPGFHeader_a3ddaf075db8ee812ad688d9ed39e0698}} 
+\index{PGFHeader@{PGFHeader}!mode@{mode}}
+\index{mode@{mode}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily U\+I\+N\+T8 P\+G\+F\+Header\+::mode}
+
+
+
+image mode according to Adobe\textquotesingle{}s image modes 
+
+
+
+Definition at line 158 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}\label{structPGFHeader_a963890fa1e02a517923f9d0bf0d7e9eb}} 
+\index{PGFHeader@{PGFHeader}!nLevels@{nLevels}}
+\index{nLevels@{nLevels}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{nLevels}{nLevels}}
+{\footnotesize\ttfamily U\+I\+N\+T8 P\+G\+F\+Header\+::n\+Levels}
+
+
+
+number of F\+WT transforms 
+
+
+
+Definition at line 154 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_ac314a16d5984aea88f4a5ff38f49c08b}\label{structPGFHeader_ac314a16d5984aea88f4a5ff38f49c08b}} 
+\index{PGFHeader@{PGFHeader}!quality@{quality}}
+\index{quality@{quality}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{quality}{quality}}
+{\footnotesize\ttfamily U\+I\+N\+T8 P\+G\+F\+Header\+::quality}
+
+
+
+quantization parameter\+: 0=lossless, 4=standard, 6=poor quality 
+
+
+
+Definition at line 155 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_abddcc9ee6e17690986cf77a6d16aceb6}\label{structPGFHeader_abddcc9ee6e17690986cf77a6d16aceb6}} 
+\index{PGFHeader@{PGFHeader}!usedBitsPerChannel@{usedBitsPerChannel}}
+\index{usedBitsPerChannel@{usedBitsPerChannel}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{usedBitsPerChannel}{usedBitsPerChannel}}
+{\footnotesize\ttfamily U\+I\+N\+T8 P\+G\+F\+Header\+::used\+Bits\+Per\+Channel}
+
+
+
+number of used bits per channel in 16-\/ and 32-\/bit per channel modes 
+
+
+
+Definition at line 159 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_a637699477fb97e62d8cc3c102fac1fbb}\label{structPGFHeader_a637699477fb97e62d8cc3c102fac1fbb}} 
+\index{PGFHeader@{PGFHeader}!version@{version}}
+\index{version@{version}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPGFVersionNumber}{P\+G\+F\+Version\+Number}} P\+G\+F\+Header\+::version}
+
+
+
+codec version number\+: (since Version 7) 
+
+
+
+Definition at line 160 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFHeader_a766a68c3284c2ae6d2f54c82e7350ed9}\label{structPGFHeader_a766a68c3284c2ae6d2f54c82e7350ed9}} 
+\index{PGFHeader@{PGFHeader}!width@{width}}
+\index{width@{width}!PGFHeader@{PGFHeader}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Header\+::width}
+
+
+
+image width in pixels 
+
+
+
+Definition at line 152 of file P\+G\+Ftypes.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PGFtypes_8h}{P\+G\+Ftypes.\+h}}\end{DoxyCompactItemize}

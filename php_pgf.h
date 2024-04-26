@@ -37,7 +37,6 @@ extern "C" {
 	#define phpext_pgf_ptr &pgf_module_entry
 
 	ZEND_BEGIN_MODULE_GLOBALS(pgf)
-		zend_long scale;
 	ZEND_END_MODULE_GLOBALS(pgf)
 
 	ZEND_EXTERN_MODULE_GLOBALS(pgf)

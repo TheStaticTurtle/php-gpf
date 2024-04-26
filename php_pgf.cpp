@@ -8,6 +8,11 @@
 #include "php_pgf.h"
 #include "php_pgf_int.h"
 
+#include <string>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /* {{{ local prototypes */
 static PHP_MINIT_FUNCTION(pgf);
@@ -28,7 +33,6 @@ ZEND_DECLARE_MODULE_GLOBALS(pgf)
 
 /* {{{ ini entries */
 PHP_INI_BEGIN()
-	STD_PHP_INI_ENTRY("pgf.scale", "0", PHP_INI_ALL, OnUpdateLong, scale, zend_pgf_globals, pgf_globals)
 PHP_INI_END()
 /* }}} */
 
@@ -80,6 +84,11 @@ ZEND_GET_MODULE(pgf)
 #endif
 
 
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
+
+
 static PHP_MINIT_FUNCTION(pgf) {
 	REGISTER_INI_ENTRIES();
 	return SUCCESS;
@@ -94,17 +103,14 @@ PHP_MINFO_FUNCTION(pgf) {
     php_info_print_table_start();
     php_info_print_table_row(2, "PGF Support", "enabled");
     php_info_print_table_row(2, "Version", PHP_PGF_VERSION);
+    php_info_print_table_row(2, "PGFCodec Version", std::string(PGFCodecVersion).c_str());
     php_info_print_table_end();
 
 	DISPLAY_INI_ENTRIES();
 }
 
 static PHP_GINIT_FUNCTION(pgf) {
-	pgf_globals->scale = 0;
 }
-
-
-
 
 
 PHP_FUNCTION(pgf_fn1){

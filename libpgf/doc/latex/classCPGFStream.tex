@@ -1,0 +1,172 @@
+\hypertarget{classCPGFStream}{}\section{C\+P\+G\+F\+Stream Class Reference}
+\label{classCPGFStream}\index{CPGFStream@{CPGFStream}}
+
+
+Abstract stream base class.  
+
+
+
+
+{\ttfamily \#include $<$P\+G\+Fstream.\+h$>$}
+
+Inheritance diagram for C\+P\+G\+F\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCPGFStream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCPGFStream_a2384e79147a1c375e00722b1ef038121}{C\+P\+G\+F\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCPGFStream_a32718570401ef16b8f778fa08cdb6a7a}{$\sim$\+C\+P\+G\+F\+Stream}} ()
+\begin{DoxyCompactList}\small\item\em Standard destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCPGFStream_a0a46ae977995134787219288f4123134}{Write}} (int $\ast$count, void $\ast$buffer)=0
+\item 
+virtual void \mbox{\hyperlink{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}{Read}} (int $\ast$count, void $\ast$buffer)=0
+\item 
+virtual void \mbox{\hyperlink{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}{Set\+Pos}} (short pos\+Mode, I\+N\+T64 pos\+Off)=0
+\item 
+virtual U\+I\+N\+T64 \mbox{\hyperlink{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}{Get\+Pos}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{classCPGFStream_abf99169c9bcf0feb57edc55cec215b95}{Is\+Valid}} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract stream base class. 
+
+Abstract stream base class. \begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+Definition at line 39 of file P\+G\+Fstream.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCPGFStream_a2384e79147a1c375e00722b1ef038121}\label{classCPGFStream_a2384e79147a1c375e00722b1ef038121}} 
+\index{CPGFStream@{CPGFStream}!CPGFStream@{CPGFStream}}
+\index{CPGFStream@{CPGFStream}!CPGFStream@{CPGFStream}}
+\subsubsection{\texorpdfstring{CPGFStream()}{CPGFStream()}}
+{\footnotesize\ttfamily C\+P\+G\+F\+Stream\+::\+C\+P\+G\+F\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Standard constructor. 
+
+
+
+Definition at line 43 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCPGFStream_a32718570401ef16b8f778fa08cdb6a7a}\label{classCPGFStream_a32718570401ef16b8f778fa08cdb6a7a}} 
+\index{CPGFStream@{CPGFStream}!````~CPGFStream@{$\sim$CPGFStream}}
+\index{````~CPGFStream@{$\sim$CPGFStream}!CPGFStream@{CPGFStream}}
+\subsubsection{\texorpdfstring{$\sim$CPGFStream()}{~CPGFStream()}}
+{\footnotesize\ttfamily virtual C\+P\+G\+F\+Stream\+::$\sim$\+C\+P\+G\+F\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Standard destructor. 
+
+
+
+Definition at line 47 of file P\+G\+Fstream.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47 \{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}\label{classCPGFStream_a841e109647ea77dd9e589ab00ef4aad8}} 
+\index{CPGFStream@{CPGFStream}!GetPos@{GetPos}}
+\index{GetPos@{GetPos}!CPGFStream@{CPGFStream}}
+\subsubsection{\texorpdfstring{GetPos()}{GetPos()}}
+{\footnotesize\ttfamily virtual U\+I\+N\+T64 C\+P\+G\+F\+Stream\+::\+Get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get current stream position. \begin{DoxyReturn}{Returns}
+Current stream position 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCPGFMemoryStream_a40556ef625e2bd49144281b3f6e1f0dd}{C\+P\+G\+F\+Memory\+Stream}}, and \mbox{\hyperlink{classCPGFFileStream_a9ec4715342add84461c62631101e1ce6}{C\+P\+G\+F\+File\+Stream}}.
+
+\mbox{\Hypertarget{classCPGFStream_abf99169c9bcf0feb57edc55cec215b95}\label{classCPGFStream_abf99169c9bcf0feb57edc55cec215b95}} 
+\index{CPGFStream@{CPGFStream}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!CPGFStream@{CPGFStream}}
+\subsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily virtual bool C\+P\+G\+F\+Stream\+::\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Check stream validity. \begin{DoxyReturn}{Returns}
+True if stream and current position is valid 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCPGFMemoryStream_a5eb1f2ee69815d63fa764b100d883655}{C\+P\+G\+F\+Memory\+Stream}}, and \mbox{\hyperlink{classCPGFFileStream_a999b6c0ebc670ea58f5e34729e7f323a}{C\+P\+G\+F\+File\+Stream}}.
+
+\mbox{\Hypertarget{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}\label{classCPGFStream_afdc81fe9b4d2d962b8112e50eace95a2}} 
+\index{CPGFStream@{CPGFStream}!Read@{Read}}
+\index{Read@{Read}!CPGFStream@{CPGFStream}}
+\subsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily virtual void C\+P\+G\+F\+Stream\+::\+Read (\begin{DoxyParamCaption}\item[{int $\ast$}]{count,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Read some bytes from this stream and stores them into a buffer. 
+\begin{DoxyParams}{Parameters}
+{\em count} & A pointer to a value containing the number of bytes should be read. After this call it contains the number of read bytes. \\
+\hline
+{\em buffer} & A memory buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCPGFMemoryStream_a4cf0499309d901fcdcd9282a7351d24d}{C\+P\+G\+F\+Memory\+Stream}}, and \mbox{\hyperlink{classCPGFFileStream_a3ff32003518e1d996cc8af33c5bbbfaf}{C\+P\+G\+F\+File\+Stream}}.
+
+\mbox{\Hypertarget{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}\label{classCPGFStream_a69be67d4b04cd056c4f74d8147349a16}} 
+\index{CPGFStream@{CPGFStream}!SetPos@{SetPos}}
+\index{SetPos@{SetPos}!CPGFStream@{CPGFStream}}
+\subsubsection{\texorpdfstring{SetPos()}{SetPos()}}
+{\footnotesize\ttfamily virtual void C\+P\+G\+F\+Stream\+::\+Set\+Pos (\begin{DoxyParamCaption}\item[{short}]{pos\+Mode,  }\item[{I\+N\+T64}]{pos\+Off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set stream position either absolute or relative. 
+\begin{DoxyParams}{Parameters}
+{\em pos\+Mode} & A position mode (F\+S\+From\+Start, F\+S\+From\+Current, F\+S\+From\+End) \\
+\hline
+{\em pos\+Off} & A new stream position (absolute positioning) or a position offset (relative positioning) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCPGFMemoryStream_a28e8defe72f535c49535c40ffe2ad299}{C\+P\+G\+F\+Memory\+Stream}}, and \mbox{\hyperlink{classCPGFFileStream_a2460f1fdab77a44ddf24420139a50043}{C\+P\+G\+F\+File\+Stream}}.
+
+\mbox{\Hypertarget{classCPGFStream_a0a46ae977995134787219288f4123134}\label{classCPGFStream_a0a46ae977995134787219288f4123134}} 
+\index{CPGFStream@{CPGFStream}!Write@{Write}}
+\index{Write@{Write}!CPGFStream@{CPGFStream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual void C\+P\+G\+F\+Stream\+::\+Write (\begin{DoxyParamCaption}\item[{int $\ast$}]{count,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Write some bytes out of a buffer into this stream. 
+\begin{DoxyParams}{Parameters}
+{\em count} & A pointer to a value containing the number of bytes should be written. After this call it contains the number of written bytes. \\
+\hline
+{\em buffer} & A memory buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classCPGFMemoryStream_a627161d30d8d10fc306f50ea9c37f1a5}{C\+P\+G\+F\+Memory\+Stream}}, and \mbox{\hyperlink{classCPGFFileStream_a28a060662951edf72f7739ba575c9fff}{C\+P\+G\+F\+File\+Stream}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PGFstream_8h}{P\+G\+Fstream.\+h}}\end{DoxyCompactItemize}

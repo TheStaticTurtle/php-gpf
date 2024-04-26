@@ -1,0 +1,207 @@
+\hypertarget{structPGFRect}{}\section{P\+G\+F\+Rect Struct Reference}
+\label{structPGFRect}\index{PGFRect@{PGFRect}}
+
+
+Rectangle.  
+
+
+
+
+{\ttfamily \#include $<$P\+G\+Ftypes.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPGFRect_a5f161a099003b7ffb7d06fd295682c59}{P\+G\+F\+Rect}} ()
+\begin{DoxyCompactList}\small\item\em Standard constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPGFRect_abf81fef0acecca448c6f9f1b1c44f186}{P\+G\+F\+Rect}} (U\+I\+N\+T32 x, U\+I\+N\+T32 y, U\+I\+N\+T32 width, U\+I\+N\+T32 height)
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFRect_a70d366f5adc104f7037b627f35a18729}{Width}} () const
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFRect_a139b8bb60ea476cd14856476b2d37b0f}{Height}} () const
+\item 
+bool \mbox{\hyperlink{structPGFRect_a3bf955a2a3e56756776391ed71d1de80}{Is\+Inside}} (U\+I\+N\+T32 x, U\+I\+N\+T32 y) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}}
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}}
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFRect_a9174d8de6b9018e0c4ef8e29a501b10a}{right}}
+\item 
+U\+I\+N\+T32 \mbox{\hyperlink{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}{bottom}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Rectangle. 
+
+Rectangle \begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+Definition at line 224 of file P\+G\+Ftypes.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structPGFRect_a5f161a099003b7ffb7d06fd295682c59}\label{structPGFRect_a5f161a099003b7ffb7d06fd295682c59}} 
+\index{PGFRect@{PGFRect}!PGFRect@{PGFRect}}
+\index{PGFRect@{PGFRect}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{PGFRect()}{PGFRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily P\+G\+F\+Rect\+::\+P\+G\+F\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Standard constructor. 
+
+
+
+Definition at line 228 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{228 : \mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}}(0), \mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}}(0), \mbox{\hyperlink{structPGFRect_a9174d8de6b9018e0c4ef8e29a501b10a}{right}}(0), \mbox{\hyperlink{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}{bottom}}(0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structPGFRect_abf81fef0acecca448c6f9f1b1c44f186}\label{structPGFRect_abf81fef0acecca448c6f9f1b1c44f186}} 
+\index{PGFRect@{PGFRect}!PGFRect@{PGFRect}}
+\index{PGFRect@{PGFRect}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{PGFRect()}{PGFRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily P\+G\+F\+Rect\+::\+P\+G\+F\+Rect (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{x,  }\item[{U\+I\+N\+T32}]{y,  }\item[{U\+I\+N\+T32}]{width,  }\item[{U\+I\+N\+T32}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em x} & Left offset \\
+\hline
+{\em y} & Top offset \\
+\hline
+{\em width} & Rectangle width \\
+\hline
+{\em height} & Rectangle height \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{235 : \mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}}(x), \mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}}(y), \mbox{\hyperlink{structPGFRect_a9174d8de6b9018e0c4ef8e29a501b10a}{right}}(x + width), \mbox{\hyperlink{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}{bottom}}(y + height) \{\}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structPGFRect_a139b8bb60ea476cd14856476b2d37b0f}\label{structPGFRect_a139b8bb60ea476cd14856476b2d37b0f}} 
+\index{PGFRect@{PGFRect}!Height@{Height}}
+\index{Height@{Height}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{Height()}{Height()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Rect\+::\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Rectangle height 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{258 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}{bottom}} - \mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structPGFRect_a3bf955a2a3e56756776391ed71d1de80}\label{structPGFRect_a3bf955a2a3e56756776391ed71d1de80}} 
+\index{PGFRect@{PGFRect}!IsInside@{IsInside}}
+\index{IsInside@{IsInside}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{IsInside()}{IsInside()}}
+{\footnotesize\ttfamily bool P\+G\+F\+Rect\+::\+Is\+Inside (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{x,  }\item[{U\+I\+N\+T32}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Test if point (x,y) is inside this rectangle (inclusive top-\/left edges, exclusive bottom-\/right edges) 
+\begin{DoxyParams}{Parameters}
+{\em x} & Point coordinate x \\
+\hline
+{\em y} & Point coordinate y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point (x,y) is inside this rectangle (inclusive top-\/left edges, exclusive bottom-\/right edges) 
+\end{DoxyReturn}
+
+
+Definition at line 264 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{264 \{ \textcolor{keywordflow}{return} (x >= \mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}} \&\& x < right \&\& y >= \mbox{\hyperlink{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}{top}} \&\& y < \mbox{\hyperlink{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}{bottom}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structPGFRect_a70d366f5adc104f7037b627f35a18729}\label{structPGFRect_a70d366f5adc104f7037b627f35a18729}} 
+\index{PGFRect@{PGFRect}!Width@{Width}}
+\index{Width@{Width}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{Width()}{Width()}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Rect\+::\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Rectangle width 
+\end{DoxyReturn}
+
+
+Definition at line 255 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{255 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structPGFRect_a9174d8de6b9018e0c4ef8e29a501b10a}{right}} - \mbox{\hyperlink{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}{left}}; \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}\label{structPGFRect_a7dc57925fee73fb4b3a1e3744971f579}} 
+\index{PGFRect@{PGFRect}!bottom@{bottom}}
+\index{bottom@{bottom}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{bottom}{bottom}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Rect\+::bottom}
+
+
+
+Definition at line 225 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}\label{structPGFRect_ac3472e1dc20bc4b1584058376fd7b989}} 
+\index{PGFRect@{PGFRect}!left@{left}}
+\index{left@{left}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Rect\+::left}
+
+
+
+Definition at line 225 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFRect_a9174d8de6b9018e0c4ef8e29a501b10a}\label{structPGFRect_a9174d8de6b9018e0c4ef8e29a501b10a}} 
+\index{PGFRect@{PGFRect}!right@{right}}
+\index{right@{right}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Rect\+::right}
+
+
+
+Definition at line 225 of file P\+G\+Ftypes.\+h.
+
+\mbox{\Hypertarget{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}\label{structPGFRect_a79df6810b4ffbf8c8825a67733d56913}} 
+\index{PGFRect@{PGFRect}!top@{top}}
+\index{top@{top}!PGFRect@{PGFRect}}
+\subsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily U\+I\+N\+T32 P\+G\+F\+Rect\+::top}
+
+
+
+Definition at line 225 of file P\+G\+Ftypes.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PGFtypes_8h}{P\+G\+Ftypes.\+h}}\end{DoxyCompactItemize}

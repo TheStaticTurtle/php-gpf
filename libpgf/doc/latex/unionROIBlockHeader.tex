@@ -1,0 +1,115 @@
+\hypertarget{unionROIBlockHeader}{}\section{R\+O\+I\+Block\+Header Union Reference}
+\label{unionROIBlockHeader}\index{ROIBlockHeader@{ROIBlockHeader}}
+
+
+Block header used with R\+OI coding scheme.  
+
+
+
+
+{\ttfamily \#include $<$P\+G\+Ftypes.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structROIBlockHeader_1_1RBH}{R\+BH}}
+\begin{DoxyCompactList}\small\item\em Named R\+OI block header (part of the union) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{unionROIBlockHeader_aa831264ba94e20471457cf33d0372443}{R\+O\+I\+Block\+Header}} (U\+I\+N\+T16 v)
+\item 
+\mbox{\hyperlink{unionROIBlockHeader_aa3641f52d4bf3a1f5eafee97e64e5c4e}{R\+O\+I\+Block\+Header}} (U\+I\+N\+T32 size, bool end)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+I\+N\+T16 \mbox{\hyperlink{unionROIBlockHeader_a84e2058de6eb0cb75f6d5b0388915494}{val}}
+\item 
+struct \mbox{\hyperlink{structROIBlockHeader_1_1RBH}{R\+O\+I\+Block\+Header\+::\+R\+BH}} \mbox{\hyperlink{unionROIBlockHeader_a15ceb2e488c3767cc1ab774323c02ded}{rbh}}
+\begin{DoxyCompactList}\small\item\em R\+OI block header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Block header used with R\+OI coding scheme. 
+
+R\+OI block header is used with R\+OI coding scheme. It contains block size and tile end flag \begin{DoxyAuthor}{Author}
+C. Stamm 
+\end{DoxyAuthor}
+
+
+Definition at line 179 of file P\+G\+Ftypes.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{unionROIBlockHeader_aa831264ba94e20471457cf33d0372443}\label{unionROIBlockHeader_aa831264ba94e20471457cf33d0372443}} 
+\index{ROIBlockHeader@{ROIBlockHeader}!ROIBlockHeader@{ROIBlockHeader}}
+\index{ROIBlockHeader@{ROIBlockHeader}!ROIBlockHeader@{ROIBlockHeader}}
+\subsubsection{\texorpdfstring{ROIBlockHeader()}{ROIBlockHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily R\+O\+I\+Block\+Header\+::\+R\+O\+I\+Block\+Header (\begin{DoxyParamCaption}\item[{U\+I\+N\+T16}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em v} & Buffer size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{195 \{ \mbox{\hyperlink{unionROIBlockHeader_a84e2058de6eb0cb75f6d5b0388915494}{val}} = v; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{unionROIBlockHeader_aa3641f52d4bf3a1f5eafee97e64e5c4e}\label{unionROIBlockHeader_aa3641f52d4bf3a1f5eafee97e64e5c4e}} 
+\index{ROIBlockHeader@{ROIBlockHeader}!ROIBlockHeader@{ROIBlockHeader}}
+\index{ROIBlockHeader@{ROIBlockHeader}!ROIBlockHeader@{ROIBlockHeader}}
+\subsubsection{\texorpdfstring{ROIBlockHeader()}{ROIBlockHeader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily R\+O\+I\+Block\+Header\+::\+R\+O\+I\+Block\+Header (\begin{DoxyParamCaption}\item[{U\+I\+N\+T32}]{size,  }\item[{bool}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em size} & Buffer size \\
+\hline
+{\em end} & 0/1 Flag; 1\+: last part of a tile \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file P\+G\+Ftypes.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{200 \{ ASSERT(size < (1 << \mbox{\hyperlink{PGFtypes_8h_ac0d66809e03f0e5939ed8de744700079}{RLblockSizeLen}})); \mbox{\hyperlink{unionROIBlockHeader_a15ceb2e488c3767cc1ab774323c02ded}{rbh}}.\mbox{\hyperlink{structROIBlockHeader_1_1RBH_af0c3de8c247b06116a9d84d2f9515762}{bufferSize}} = size; \mbox{\hyperlink{unionROIBlockHeader_a15ceb2e488c3767cc1ab774323c02ded}{rbh}}.\mbox{\hyperlink{structROIBlockHeader_1_1RBH_ac9ec75c32770d57468eaab631fd316c4}{tileEnd}} = end; \}}
+
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{unionROIBlockHeader_a15ceb2e488c3767cc1ab774323c02ded}\label{unionROIBlockHeader_a15ceb2e488c3767cc1ab774323c02ded}} 
+\index{ROIBlockHeader@{ROIBlockHeader}!rbh@{rbh}}
+\index{rbh@{rbh}!ROIBlockHeader@{ROIBlockHeader}}
+\subsubsection{\texorpdfstring{rbh}{rbh}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structROIBlockHeader_1_1RBH}{R\+O\+I\+Block\+Header\+::\+R\+BH}}  R\+O\+I\+Block\+Header\+::rbh}
+
+
+
+R\+OI block header. 
+
+\mbox{\Hypertarget{unionROIBlockHeader_a84e2058de6eb0cb75f6d5b0388915494}\label{unionROIBlockHeader_a84e2058de6eb0cb75f6d5b0388915494}} 
+\index{ROIBlockHeader@{ROIBlockHeader}!val@{val}}
+\index{val@{val}!ROIBlockHeader@{ROIBlockHeader}}
+\subsubsection{\texorpdfstring{val}{val}}
+{\footnotesize\ttfamily U\+I\+N\+T16 R\+O\+I\+Block\+Header\+::val}
+
+unstructured union value 
+
+Definition at line 180 of file P\+G\+Ftypes.\+h.
+
+
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PGFtypes_8h}{P\+G\+Ftypes.\+h}}\end{DoxyCompactItemize}

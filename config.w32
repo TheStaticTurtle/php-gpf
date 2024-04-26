@@ -1,7 +1,7 @@
 ARG_WITH('pgf', 'The PGF image format support', 'no');
 
 if (PHP_PGF != 'no') {
+	
+	EXTENSION('pgf', 'php_pgf.cpp', null, "-Ilibpgf/include");
 	AC_DEFINE('HAVE_PGF', 1, 'pgf support enabled');
-
-	EXTENSION('pgf', 'php_pgf.c');
 }
