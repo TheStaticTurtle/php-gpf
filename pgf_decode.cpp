@@ -23,9 +23,6 @@ rgba_image pgf_decode_to_rgba(const std::string& input, int level) {
 }
 rgba_image pgf_decode_to_rgba(const std::string& input) { return pgf_decode_to_rgba(input, 0); }
 
-
-#ifdef HAVE_PGF_TO_PNG
-
 std::string pgf_decode_to_png(const std::string& input, int level) {
     auto rgba_image = pgf_decode_to_rgba(input, level);
     
@@ -40,5 +37,3 @@ std::string pgf_decode_to_png(const std::string& input, int level) {
     return std::string{(char*)output, output_size};
 }
 std::string pgf_decode_to_png(const std::string& input) { return pgf_decode_to_png(input, 0); }
-
-#endif

@@ -5,20 +5,29 @@ if (PHP_PGF != 'no') {
 		CHECK_HEADER_ADD_INCLUDE("PGFimage.h",    "CFLAGS_PGF", PHP_PGF + ";libpgf\\include") &&
 		CHECK_HEADER_ADD_INCLUDE("PGFplatform.h", "CFLAGS_PGF", PHP_PGF + ";libpgf\\include") &&
 		CHECK_HEADER_ADD_INCLUDE("PGFstream.h",   "CFLAGS_PGF", PHP_PGF + ";libpgf\\include") &&
-		CHECK_HEADER_ADD_INCLUDE("PGFtypes.h",    "CFLAGS_PGF", PHP_PGF + ";libpgf\\include")
+		CHECK_HEADER_ADD_INCLUDE("PGFtypes.h",    "CFLAGS_PGF", PHP_PGF + ";libpgf\\include") &&
+
+		CHECK_HEADER_ADD_INCLUDE("lodepng.h",    "CFLAGS_PGF", PHP_PGF + ";liblodepng")
 	) {
 
-		EXTENSION('pgf', 'php_pgf.cpp pgf_decode.cpp', null, "-Ilibpgf/include");
+		EXTENSION('pgf', 'php_pgf.cpp pgf_decode.cpp', null, "-Ilibpgf/include -Iliblodepng");
+
+		AC_DEFINE('HAVE_PGF', 1, 'PGF support enabled');
 
 		ADD_SOURCES(
 			"libpgf/src", 
 			"Decoder.cpp Encoder.cpp PGFimage.cpp PGFstream.cpp Subband.cpp WaveletTransform.cpp", 
 			"pgf"
 		);
-
-		AC_DEFINE('HAVE_PGF', 1, 'PGF support enabled');
-
 		PHP_INSTALL_HEADERS("libpgf/include", "PGFimage.h PGFplatform.h PGFstream.h PGFtypes.h");
+		
+		ADD_SOURCES(
+			"liblodepng", 
+			"lodepng.cpp", 
+			"pgf"
+		);
+		PHP_INSTALL_HEADERS("liblodepng", "lodepng.h");
+
 	} else {
 		WARNING("pgf not enabled; libraries and headers not found");
 	}

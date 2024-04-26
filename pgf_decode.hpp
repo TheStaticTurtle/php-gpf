@@ -7,6 +7,8 @@
 #include "PGFimage.h"
 #include "PGFstream.h"
 
+#include "lodepng.h"
+
 struct rgba_image {
     uint8_t* data;
     uint32_t width;
@@ -21,13 +23,8 @@ struct rgba_image {
 rgba_image pgf_decode_to_rgba(const std::string& input, int level);
 rgba_image pgf_decode_to_rgba(const std::string& input);
 
-
-#ifdef HAVE_PGF_TO_PNG
-#include "lodepng.h"
-
 std::string pgf_decode_to_png(const std::string& input, int level);
 std::string pgf_decode_to_png(const std::string& input);
-#endif
 
 
 #endif /* PHP_PGF_DECODE_H */

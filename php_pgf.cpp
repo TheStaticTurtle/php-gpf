@@ -24,9 +24,7 @@ static PHP_MINFO_FUNCTION(pgf);
 static PHP_GINIT_FUNCTION(pgf);
 
 static PHP_FUNCTION(pgf_decode_to_rgba);
-#ifdef HAVE_PGF_TO_PNG
 static PHP_FUNCTION(pgf_decode_to_png);
-#endif
 /* }}} */
 
 
@@ -47,18 +45,14 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_pgf_decode_to_rgba, ZEND_SEND_BY_VAL, ZEND_RETURN
 	ZEND_ARG_INFO(0, level)
 ZEND_END_ARG_INFO()
 
-#ifdef HAVE_PGF_TO_PNG
 ZEND_BEGIN_ARG_INFO_EX(arginfo_pgf_decode_to_png, ZEND_SEND_BY_VAL, ZEND_RETURN_VALUE, 1)
 	ZEND_ARG_INFO(0, pgf_data)
 	ZEND_ARG_INFO(0, level)
 ZEND_END_ARG_INFO()
-#endif
 
 static zend_function_entry pgf_functions[] = {
 	PHP_FE(pgf_decode_to_rgba,		arginfo_pgf_decode_to_rgba)
-#ifdef HAVE_PGF_TO_PNG
 	PHP_FE(pgf_decode_to_png,		arginfo_pgf_decode_to_png)
-#endif
 	PHP_FE_END
 };
 /* }}} */
@@ -115,12 +109,7 @@ PHP_MINFO_FUNCTION(pgf) {
     php_info_print_table_row(2, "PGF Support", "enabled");
     php_info_print_table_row(2, "Version", PHP_PGF_VERSION);
     php_info_print_table_row(2, "PGF Codec version", std::string(PGFCodecVersion).c_str());
-	#ifdef HAVE_PGF_TO_PNG
-    	php_info_print_table_row(2, "Export to PNG support", "On");
-    	php_info_print_table_row(2, "LodePNG version", LODEPNG_VERSION_STRING);
-	#else
-    	php_info_print_table_row(2, "Export to PNG support", "Off");
-	#endif
+    php_info_print_table_row(2, "LodePNG version", LODEPNG_VERSION_STRING);
     php_info_print_table_end();
 
 	DISPLAY_INI_ENTRIES();
@@ -146,7 +135,6 @@ PHP_FUNCTION(pgf_decode_to_rgba){
     RETURN_STR(result);
 }
 
-#ifdef HAVE_PGF_TO_PNG
 PHP_FUNCTION(pgf_decode_to_png){
 	zend_string* pgf_data;
 	int level = 0;
@@ -159,4 +147,3 @@ PHP_FUNCTION(pgf_decode_to_png){
 
 	RETURN_STR(png_result.c_str(), png_result.size());
 }
-#endif
