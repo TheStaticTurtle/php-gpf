@@ -3,6 +3,7 @@
 #define PHP_PGF_DECODE_H
 
 #include <string>
+#include <stdexcept>
 
 #include "PGFimage.h"
 #include "PGFstream.h"

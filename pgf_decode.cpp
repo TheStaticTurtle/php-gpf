@@ -7,6 +7,11 @@ rgba_image pgf_decode_to_rgba(const std::string& input, int level) {
     auto* pgf_stream = new CPGFMemoryStream((UINT8*)input.c_str(), input.size());
     auto* pgf_image = new CPGFImage();
     pgf_image->Open(pgf_stream);
+    
+    if(level < 0 || level >= pgf_image->Levels()) {
+        throw std::runtime_error {"Invalid level"};
+    }
+    
     pgf_image->Read(level);
     
     rgba_image img {

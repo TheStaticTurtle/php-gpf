@@ -4,6 +4,7 @@
 
 #include "PGFimage.h"
 #include "PGFstream.h"
+#include "PGFtypes.h"
 
 #ifdef __cplusplus
 extern "C" {
