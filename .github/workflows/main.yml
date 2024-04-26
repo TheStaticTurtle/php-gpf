@@ -22,7 +22,6 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "8.2"
           - "8.3"
         arch:
           - "x64"
@@ -53,7 +52,7 @@ jobs:
       - name: Generate build files
         run: phpize
       - name: Configure build
-        run: configure --with-gpf --with-prefix=${{ steps.setup-php.outputs.prefix }}
+        run: configure --with-pgf --with-prefix=${{ steps.setup-php.outputs.prefix }}
       - name: Report msvc problems
         uses: ammaraskar/msvc-problem-matcher@master
       - name: Build
@@ -63,5 +62,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: "yaml_${{ matrix.php-version }}_win32_${{ matrix.ts }}_${{ matrix.arch }}"
+          name: "pgf_${{ matrix.php-version }}_win32_${{ matrix.ts }}_${{ matrix.arch }}"
           path: x64/

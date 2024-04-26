@@ -1,7 +1,7 @@
-ARG_ENABLE('gpf', 'gpf support', 'no');
+ARG_WITH('pgf', 'The PGF image format support', 'no');
 
-if (PHP_TEST != 'no') {
-	AC_DEFINE('HAVE_TEST', 1, 'gpf support enabled');
+if (PHP_PGF != 'no') {
+	AC_DEFINE('HAVE_PGF', 1, 'pgf support enabled');
 
-	EXTENSION('gpf', 'php_gpf.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+	EXTENSION('pgf', 'php_pgf.c');
 }
