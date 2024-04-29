@@ -10,6 +10,61 @@ on:
   workflow_dispatch:
 
 jobs:
+  # ubuntu:
+  #   name: Ubuntu
+  #   runs-on: ubuntu-latest
+
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       php-version:
+  #         - "8.2"
+
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v3
+  #       with:
+  #         submodules: 'true'
+
+  #     - name: Setup PHP
+  #       uses: "shivammathur/setup-php@v2"
+  #       with:
+  #         php-version: "${{ matrix.php-version }}"
+  #         coverage: "none"
+  #         tools: "phpize, php-config"
+
+  #     - name: Generate build files
+  #       run: phpize
+
+  #     - name: Configure build
+  #       run: CFLAGS="-Werror -Wall -fno-strict-aliasing" ./configure --with-pgf
+
+  #     - name: Report gcc problems
+  #       uses: ammaraskar/gcc-problem-matcher@master
+
+  #     - name: Build
+  #       run: make all
+        
+  #     - name: Run tests
+  #       run: >-
+  #         REPORT_EXIT_STATUS=1
+  #         NO_INTERACTION=1
+  #         TEST_PHP_EXECUTABLE=$(which php)
+  #         php -n
+  #         -d open_basedir=
+  #         -d output_buffering=0
+  #         -d memory_limit=-1
+  #         run-tests.php -n
+  #         -d extension_dir=modules
+  #         -d extension=pgf.so
+  #         --show-diff
+  #         tests
+  #     - name: Upload artifacts
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: "pgf_${{ matrix.php-version }}_linux"
+  #         path: .libs/pgf.so
+
   windows:
     name: Windows
     runs-on: windows-2019
@@ -22,14 +77,14 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-#          - "8.0"
-#          - "8.1"
+          - "8.0"
+          - "8.1"
           - "8.2"
-#          - "8.3"
+          - "8.3"
         arch:
           - "x64"
         ts:
-#          - nts
+          - nts
           - ts
         vsversion:
           - "16.0"
