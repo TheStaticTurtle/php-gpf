@@ -7,6 +7,7 @@
 
 #include "PGFimage.h"
 #include "PGFstream.h"
+#include "PGFtypes.h"
 
 #include "lodepng.h"
 
