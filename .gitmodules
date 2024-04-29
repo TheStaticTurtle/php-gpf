@@ -1,3 +1,6 @@
 [submodule "liblodepng"]
 	path = liblodepng
 	url = https://github.com/lvandeve/lodepng
+[submodule "libpgf"]
+	path = libpgf
+	url = https://github.com/TheStaticTurtle/libpgf
